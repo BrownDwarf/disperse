@@ -1,0 +1,27 @@
+name: disperse_env
+channels:
+  - defaults
+  - astropy
+  - conda-forge
+dependencies:
+  - python=3.8
+  - numpy
+  - scipy
+  - matplotlib
+  - astropy
+  - specutils
+  - astroquery
+  - tqdm
+  - pandas
+  - jupyter
+  - ipython
+  - seaborn
+  - scikit-learn
+  - pyarrow
+  - pytest
+  - pip
+  - sphinx
+  - black
+  - pip:
+    - recommonmark
+    - emcee
