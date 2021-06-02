@@ -126,3 +126,6 @@ dmypy.json
 
 # https://direnv.net/
 .envrc
+
+# Telluric calibration data
+data/HPF/telluric_standards/Goldilocks*
