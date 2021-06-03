@@ -9,7 +9,7 @@ dependencies:
   - scipy
   - matplotlib
   - astropy
-  - specutils
+  - specutils>=1.2
   - astroquery
   - tqdm
   - pandas
@@ -25,6 +25,6 @@ dependencies:
   - sphinx
   - black
   - pip:
-    - recommonmark
-    - emcee
-    - corner
+      - recommonmark
+      - emcee
+      - corner
