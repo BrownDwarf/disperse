@@ -19,15 +19,16 @@
 \shorttitle{HPF spectral analysis}
 \shortauthors{TBD}
 
-\title{Disperse HPF line strengths of exoplanet host stars}
+\title{Atmospheric escape and star-planet-interaction in the HAT-P-67 b system}
 
 \author{TBD}
 \affiliation{TBD}
 
 
 \begin{abstract}
-    We measure the line strengths of exoplanet host stars in and out of transit.
+    We aim to understand how exoplanet atmospheres evolve across age, stellar irradiation environments, planet properties, and---for extremely close-in exoplanets---direct star-planet interaction (SPI) such as stellar winds, tidal forces, and magnetic interactions. The scarcity of exoplanet atmosphere measurements across a range of stellar properties has limited our ability to complete this picture.
 
+    The Helium Exospheres program with the Habitable Zone Planet Finder (HPF) spectrograph on the Hobby Eberly Telescope (HET) in West Texas has targeted 23 exoplanet systems over two years. Here, we present a study of HAT-P-67, an F subgiant hosting a low density planet with 0.3 $M_{\mathrm{Jup}}$ and 2.1 $R_{\mathrm{Jup}}$ on a close-in 4.8 day orbit. The high energy radiation environment should provide a uniquely harsh testing ground for examining atmospheric escape.  The planet shows prominent in-transit absorption in the He 10830 \AA triplet and infrared Ca II 8542 \AA triplet across 20 visits over the course of a year including in- and out-of-transit spectroscopy. We identify the rotational period of HAT-P-67 to be 5.417 days by using contemporaneous data from the Transiting Exoplanet Survey Satellite (TESS). We consider multiple interpretations of the HPF and TESS observations.  First, the period measured by TESS may be the rotational period of the star and thus, the star and planet are nearly-tidally locked. On the other hand, the period measured by TESS may result from SPI-induced hot spots on the surface that follow the magnetic field lines linked to the planet's orbital period. Finally, we consider the possibility of stellar surface inhomogeneity contaminating the He and Ca II transit signals.
 \end{abstract}
 
 \keywords{stars: fundamental parameters ---  stars: statistics}
@@ -114,13 +115,13 @@ Table \ref{tab:sample_properties} lists the sources in the sample, and their bul
 We observed the HAT-P-67 system using data from TESS sector 24 taken from April 16th, 2020 to May 13th, 2020 with an exposure time of 1800 seconds. Using the \textit{lightkurve} package, we attempted to phase fold our exoplanet transit plot to identify the stellar rotation signal and the exoplanet's transit signal. At first glance, the stellar flux decreases by about 0.2\% and the exoplanet transit signal decreases by about 0.7\%. In order to analyze the stellar rotation period, we must mask the planetary transit signal. By folding the normalized lightcurve with a given planetary orbital period of 4.810 days, we omitted the planetary transit signal. We then created a periodogram of just the stellar signal and arrived at an estimate of several parameters for HAT-P-67b: the planetary period is 4.809 days, the original transit time was 1958.082 BTJD, and the planetary duration was 0.25 days. We then created a cadence mask using the Box Least Squares parameters. The resulting periodogram of just the stellar variation described a rotational period of 5.417 days is shown in Figure \ref{fig:stellar_periodogram}.
 
 \begin{figure}
-    \includegraphics[width=\linewidth]{stellar_periodogram.png}
+    \includegraphics[width=\linewidth]{figures/stellar_periodogram.png}
     \caption{Periodogram of solely the stellar variation of the flux. }
     \label{fig:stellar_periodogram}
 \end{figure}
 
 \begin{figure}
-    \includegraphics[width=\linewidth]{planetary_periodogram.png}
+    \includegraphics[width=\linewidth]{figures/planetary_periodogram.png}
     \caption{Periodogram of the stellar variation coupled with the planetary transit signal of the flux. }
     \label{fig:planetary_periodogram}
 \end{figure}
@@ -136,7 +137,7 @@ After collecting the new parameters, we then calculated the equivalent width of 
 \subsection{Contemporaneous Stellar Activity Quantification}
 \subsection{Equivalent Width vs Phase}
 \begin{figure}
-    \includegraphics[width=\linewidth]{TESS_EW_HAT-P-67.jpg}
+    \includegraphics[width=\linewidth]{figures/TESS_EW_HAT-P-67.jpg}
     \caption{A boat.}
     \label{fig:boat1}
 \end{figure}
