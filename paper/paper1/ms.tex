@@ -61,7 +61,7 @@ We retrieved ground-based photometry with the \emph{All-Sky Automated Survey for
 \section{Analysis}
 Ideally we seek the pixel-to-pixel substructured spectrum of the helium exosphere, corrected for all the conceivable instrumental, telluric, and stellar contamination artifacts.  In practice, these corrections are incomplete and so some care is needed to assess the extent of contamination.  We experimented with a range of pre-processing and analysis techniques to quantify the accuracy and precision of our HPF spectra.
 
-\subsection{Pre-processing with \texttt{muler}}
+\subsection{Pre-processing with \texttt{muler} }
 
 The raw 2D echellograms were reduced with the \texttt{Goldilocks} package\footnote{\url{https://github.com/grzeimann/Goldilocks_Documentation}}, which outputs 1D extracted spectra for the target, and two reference fibers: blank sky and a laser frequency comb (LFC).  The observations were acquired with the LFC turned off, so this unilluminated spectrum was discarded.
 
@@ -165,15 +165,19 @@ Reiteration here.
     This research has made use of NASA’s Astrophysics Data System.
 \end{acknowledgements}
 
-\facilities{Smith (IGRINS), Gaia, ASAS}
+\facilities{HET (HPF), TESS, ASAS}
 
-\software{  pandas \citep{mckinney10},
-    emcee \citep{foreman13},
-    matplotlib \citep{hunter07},
-    numpy \citep{2020NumPy-Array},
-    scipy \citep{2020SciPy-NMeth},
-    ipython \citep{perez07},
-    seaborn \citep{waskom14}}
+\software{  \texttt{pandas} \citep{mckinney10},
+    \texttt{emcee} \citep{foreman13},
+    \texttt{matplotlib} \citep{hunter07},
+    \texttt{numpy} \citep{2020NumPy-Array},
+    \texttt{scipy} \citep{2020SciPy-NMeth},
+    \texttt{ipython} \citep{perez07},
+    \texttt{seaborn} \citep{waskom14},
+    \texttt{astropy} \citep{2013A&A...558A..33A,2018AJ....156..123A},
+    \texttt{muler} (Gully-Santiago et al., submitted),
+    \texttt{telfit} \citep{2014AJ....148...53G},
+    \texttt{jupyter} \citep{Kluyver2016jupyter}}
 
 
 \clearpage
