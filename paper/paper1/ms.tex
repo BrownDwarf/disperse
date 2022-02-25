@@ -1,10 +1,11 @@
-\documentclass{aastex631}
+\documentclass[modern]{aastex631}
 \bibliographystyle{aasjournal}
 
 \usepackage{graphicx}
 \usepackage[caption=false]{subfig}
 \usepackage{amsmath}
 \usepackage{booktabs}
+\usepackage{censor}
 
 \let\pwiflocal=\iffalse \let\pwifjournal=\iffalse
 %From: http://arxiv.org/format/1512.00483
@@ -34,20 +35,15 @@
 \keywords{stars: fundamental parameters ---  stars: statistics}
 
 \section{Introduction}\label{sec:intro}
+
+Exoplanets must possess a range of atmospheric properties well beyond what we have seen in our own Solar System.  Extreme radiation effects, atmospheric erosion, and unexpected chemistry must exist, but collecting examples of these phenomena remains at the edge of the possible today. The minuscule signal strengths of atmospheric shells has hidden all but the most conspicuous patterns of lines.  Helium 10830 $\AA$ has emerged as the most conspicuous of these, enabling ground-based detection with high-resolution near-infrared (IR) spectrographs.
+
+A total of \censor{xx} systems have Helium 10830 exosphere measurements to date: observations of the most extreme stellar systems reveal dramatic levels of mass loss, up to \censor{xx} $\%/\mathrm{Gyr}$.
+
 \citet{2020ApJ...894...97N} discusses the discovery of helium on exoplanets.
 
 We specified our observations on the HAT-P-67 system due to its unique rotational period. HAT-P-67 is a binary system of an F type sub-giant and a much cooler M2 star with the Saturn-sized planet HAT-P-67b. An extremely low density object, HAT-P-67b loses its atmosphere rather rapidly for transiting an evolved host star.
 
-\begin{deluxetable}{chc}
-    \tablecaption{Annotated bibliography for intro\label{table1}}
-    \tablehead{
-        \colhead{Reference} & \nocolhead{Other Column} & \colhead{Key idea}
-    }
-    \startdata
-    \citet{2020ApJ...894...97N} & - & HPF For Helium Exospheres\\
-    \citet{foreman13} & - & MCMC \\
-    \enddata
-\end{deluxetable}
 
 
 \section{Methodology}
@@ -270,10 +266,9 @@ Reiteration here.
 %\label{methods-details}
 
 
-\acknowledgements
-
-%ADS
-This research has made use of NASA’s Astrophysics Data System.
+\begin{acknowledgements}
+    This research has made use of NASA’s Astrophysics Data System.
+\end{acknowledgements}
 
 \facilities{Smith (IGRINS), Gaia, ASAS}
 
