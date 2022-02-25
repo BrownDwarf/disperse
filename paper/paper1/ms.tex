@@ -38,75 +38,63 @@
 
 Exoplanets must possess a dynamic range of atmospheric properties far beyond what we have seen in our own Solar System.  Extreme radiation effects, atmospheric erosion, and unexpected chemistry must exist, but collecting examples of these phenomena remains at the edge of the possible today. The minuscule signal strengths of atmospheric shells has hidden all but the most conspicuous phenomena.  Helium 10830 \AA has emerged as the most conspicuous exosphere indicator, enabling ground-based detection with high-resolution near-infrared (IR) spectrographs.
 
-A total of \censor{xx} systems have Helium 10830 exosphere measurements to date: \object[GJ 3470]{GJ3470} \citep{2020ApJ...894...97N}, \object{HD 63433 c} \citep{2022AJ....163...68Z}, WASP 107 b \citep{2019A&A...623A..58A}.
+A total of \censor{xx} systems have Helium 10830 exosphere measurements to date: \object[GJ 3470]{GJ3470} \citep{2020ApJ...894...97N, 2021A&A...647A.129L}, \object{HD 63433 c} \citep{2022AJ....163...68Z}, WASP 107 b \citep{2019A&A...623A..58A,2020AJ....159..115K}, HD 209458 b \citep{2019A&A...629A.110A}, WASP 69 b \citep{2020AJ....159..278V}, WASP 52 b \citep{2020AJ....159..278V}, HD 189733 b \citep{2021A&A...647A.129L}, and HAT-P-18 b \citep{2021ApJ...909L..10P}.
+
 
 We specified our observations on the HAT-P-67 system due to its unique rotational period. HAT-P-67 is a binary system of an F type sub-giant and a much cooler M2 star with the Saturn-sized planet HAT-P-67b. An extremely low density object, HAT-P-67b loses its atmosphere rather rapidly for transiting an evolved host star.
 
-
-
-\section{Methodology}
-\subsection{Closed Form MCMC Equivalent Widths}
-To estimate the uncertainty in our spectra we used the Monte Carlo MCMC chain \citep{foreman13}. %The equation for our equivalent width was derived with the variables for the Gaussian and the continuum:
-
-The model will consist of a straight-line trend with a Gaussian subtracted from it.  It has five parameters: the straight-line trend slope $m$ and offset $b$, and the Gaussian amplitude $A$, center wavelength $\mu$, and width $w$.
-
-\begin{gather}
-    f_\lambda(m, b, A, \mu, w)= 1 - \frac{A}{(m \mu + b)}\cdot e^{-\frac{1}{2} \frac{(\lambda-\mu)^2}{w^2}}
-\end{gather}
-
-We then focused on the sub-region defined by the line we were looking at. Using a generative model, we made guesses for the parameter values to create an initial guess fit for the data. We then used Monte Carlo Markov Chain to fine tune the parameters and develop a more accurate fit. The MCMC process spits out results for all five parameters with their corresponding equivalent widths. Using these values, we were able to calculate the equivalent width using the formula
-3
-
-\begin{gather}
-    W_\lambda=\frac{Aw}{[m (\mu-\textup{calcium line}) + b]}\cdot\sqrt{2\pi}
-\end{gather}
-
-We then took the mean and standard deviation of this result to get the equivalent width and uncertainty for each planet.
-
 \section{Observations}
-\subsection{Habitable zone Planet Finder}
+\subsection{Habitable Zone Planet Finder (HPF)}
 
-We observed the HAT-P-67 system with the Habitable Zone Planet Finder spectrograph (HPF) which is coupled to the 10-meter Hobby Eberly Telescope at the University of Texas at Austin's McDonald Observatory. HPF operates in the near-infrared light at 8100-12800 \AA using the \textit{z}, \textit{Y}, and \textit{J} bands. We observed HAT-P-67b with HPF in-transit on 2020 April 28, 2020 May 22, and 2020 June 15 and out-of-transit on 2020 April 27, 2020 May 20-21, 23-24, and 2020 June 13-16, 18. The observations on April 28th began at 06:10:31 and ended at 07:24:26, resulting in a total exposure time of 01:13:55. The observations on May 22nd began at 04:41:05 and ended at 05:55:00, resulting in a total exposure time of
-%ask gully if should keep doing this, very rough draft for now without good wording
+The Habitable Zone Planet Finder Spectrograph \citep[HPF][]{2012SPIE.8446E..1SM,2014SPIE.9147E..1GM, 2019Optic...6..233M} on the queue-schedule 10-meter \emph{Hobby-Eberly Telescope} \citep[HET][]{1998SPIE.3352...34R, 2007PASP..119..556S} operates in the near-IR from 8100-12800 \AA spanning the \textit{z}, \textit{Y}, and \textit{J} bands. We observed HAT-P-67b with HPF in-transit on 2020 April 28, 2020 May 22, and 2020 June 15 and out-of-transit on a total of \censor{xx} other nights.
 
-Table \ref{tab:sample_properties} lists the sources in the sample, and their bulk physical properties.
-
-\begin{deluxetable*}{lccc}[!ht]
-    \tablecaption{HPF Observations for HAT-P-67b \label{tab:observation_properties}}
-    \tablehead{
-        \colhead{Date} & \colhead{Time of Observation} & \colhead{Transit}}
-    \startdata
-    2020-04-28 & 06:10:31 & In transit\\
-    2020-04-28 & 06:16:12 & In transit\\
-    2020-04-28 & 06:21:53 & In transit\\
-    2020-04-28 & 06:27:34 & In transit\\
-    2020-04-28 & 06:33:15 & In transit\\
-    2020-04-28 & 06:38:57 & In transit\\
-    2020-04-28 & 06:44:38 & In transit\\
-    2020-04-28 & 06:50:19 & In transit\\
-    2020-04-28 & 06:10:31 & In transit\\
-    2020-04-28 & 06:10:31 & In transit\\
-    2020-04-28 & 06:10:31 & In transit\\
-    2020-04-28 & 06:10:31 & In transit\\
-    2020-04-28 & 06:10:31 & In transit
-    \enddata
-\end{deluxetable*}
-
-
-
-\begin{deluxetable*}{lccccc}[!ht]
-    \tablecaption{Stellar properties \label{tab:sample_properties}}
-    \tablehead{
-        \colhead{Name} & \colhead{$T_{eff}$ (K)} & \colhead{$\log{g}$} & \colhead{RV (km/s)} & \colhead{V sin(i) (km/s)} & \colhead{Reference}}
-    \startdata
-    HAT-P-32 & 6001 $\pm$ 88 & 4.22 $\pm$ 0.04 & -23.21 $\pm$ 0.26 & 20.7 $\pm$
-    0.5 & \cite{2019AJ....157...82W}\\
-    HAT-P-67 & $6406^{+65}_{-61}$ & $3.854^{+0.014}_{-0.023}$ & -1.4 $\pm$ 0.5 & 35.8 $\pm$ 1.1 & \cite{2017AJ....153..211Z}\\
-    \enddata
-\end{deluxetable*}
+\authorcomment1{We may want to put a observation log here, grouped by night.}
+% \input{tables/observation_flat_table.tex}
 
 \subsection{TESS Light Curve}
-We observed the HAT-P-67 system using data from TESS sector 24 taken from April 16th, 2020 to May 13th, 2020 with an exposure time of 1800 seconds. Using the \textit{lightkurve} package, we attempted to phase fold our exoplanet transit plot to identify the stellar rotation signal and the exoplanet's transit signal. At first glance, the stellar flux decreases by about 0.2\% and the exoplanet transit signal decreases by about 0.7\%. In order to analyze the stellar rotation period, we must mask the planetary transit signal. By folding the normalized lightcurve with a given planetary orbital period of 4.810 days, we omitted the planetary transit signal. We then created a periodogram of just the stellar signal and arrived at an estimate of several parameters for HAT-P-67b: the planetary period is 4.809 days, the original transit time was 1958.082 BTJD, and the planetary duration was 0.25 days. We then created a cadence mask using the Box Least Squares parameters. The resulting periodogram of just the stellar variation described a rotational period of 5.417 days is shown in Figure \ref{fig:stellar_periodogram}.
+HAT-P-67 was observed with the \emph{Transiting Exoplanet Survey Satellite} \citep[TESS][]{2014SPIE.9143E..20R} in Sector 24 from April 16th, 2020 to May 13th, 2020 with a 30 minute cadence.
+
+\subsection{ASAS-SN}
+We retrieved ground-based photometry with the \emph{All-Sky Automated Survey for Supernovae} (ASAS-SN) using the Sky-Portal (\censor{xx}).
+
+
+\section{Analysis}
+Ideally we seek the pixel-to-pixel substructured spectrum of the helium exosphere, corrected for all the conceivable instrumental, telluric, and stellar contamination artifacts.  In practice, these corrections are incomplete and so some care is needed to assess the extent of contamination.  We experimented with a range of pre-processing and analysis techniques to quantify the accuracy and precision of our HPF spectra.
+
+
+\subsection{MCMC}
+We fit Gaussian line profiles to the He 10830 line with \texttt{emcee} \citep{foreman13}. The model consists of a straight-line trend with a Gaussian absorption line.  It has five parameters: the straight-line trend slope $m$ and offset $b$, and the Gaussian amplitude $A$, center wavelength $\mu$, and width $w$.
+
+We computed the equivalent width with the closed-form integral:
+
+\begin{gather}
+    W_\lambda=\frac{Aw}{m \mu + b}\cdot\sqrt{2\pi}
+\end{gather}
+
+Ultimately the MCMC method was highly accurate but imprecise, and was replaced in favor of \emph{data-driven} methods.
+
+\subsection{Pre-processing with \texttt{muler}}
+
+The raw 2D echellograms were reduced with the \texttt{Goldilocks} package\footnote{\url{https://github.com/grzeimann/Goldilocks_Documentation}}, which outputs 1D extracted spectra for the target, and two reference fibers: blank sky and a laser frequency comb (LFC).  The observations were acquired with the LFC turned off, so this unilluminated spectrum was discarded.
+
+The sky fiber and target fiber have slightly different sizes and illumination properties so the sky fiber must be scaled prior to subtraction from the target spectrum.  On average the target fiber sees $93\%$ of the flux of the sky reference fiber, and in detail this ratio depends on wavelength.  We quantified the wavelength dependence by acquiring calibration observations of blank sky in both the target and sky fiber.  We applied this wavelength-based scale factor to each target spectrum's associated reference sky fiber to achieve near-imperceptible sky-line residuals.  A few lines exhibit residuals which may arise from slight differences in the local atmospheric conditions between the target and sky fiber.
+
+This refined sky-subtraction and all of our other standard pre-processing steps are implemented in a new open-source Python toolkit \texttt{muler} (Gully-Santiago \emph{et al.}, submitted).
+
+Table \ref{tab:sample_properties} lists the bulk physical properties for HAT-P-67.
+
+\begin{deluxetable*}{ccccc}[!ht]
+    \tablecaption{Stellar properties \label{tab:sample_properties}}
+    \tablehead{
+        \colhead{$T_{\mathrm{eff}}$ (K)} & \colhead{$\log{g}$} & \colhead{RV (km/s)} & \colhead{V sin(i) (km/s)} & \colhead{Reference}}
+    \startdata
+    $6406^{+65}_{-61}$ & $3.854^{+0.014}_{-0.023}$ & -1.4 $\pm$ 0.5 & 35.8 $\pm$ 1.1 & \cite{2017AJ....153..211Z}\\
+    \enddata
+\end{deluxetable*}
+
+
+\subsection{TESS Light Curve}
+We observed the HAT-P-67 system using data from TESS Sector 24 taken from April 16th, 2020 to May 13th, 2020 with an exposure time of 1800 seconds. Using the \texttt{lightkurve} package, we attempted to phase fold our exoplanet transit plot to identify the stellar rotation signal and the exoplanet's transit signal. At first glance, the stellar flux decreases by about 0.2\% and the exoplanet transit signal decreases by about 0.7\%. In order to analyze the stellar rotation period, we must mask the planetary transit signal. By folding the normalized lightcurve with a given planetary orbital period of 4.810 days, we omitted the planetary transit signal. We then created a periodogram of just the stellar signal and arrived at an estimate of several parameters for HAT-P-67b: the planetary period is 4.809 days, the original transit time was 1958.082 BTJD, and the planetary duration was 0.25 days. We then created a cadence mask using the Box Least Squares parameters. The resulting periodogram of just the stellar variation described a rotational period of 5.417 days is shown in Figure \ref{fig:stellar_periodogram}.
 
 \begin{figure}
     \includegraphics[width=\linewidth]{figures/stellar_periodogram.png}
@@ -144,7 +132,6 @@ After collecting the new parameters, we then calculated the equivalent width of 
     HAT-P-67 & Aug 7, 2020 & & $10328.493\pm0.017$ & & $0.1607\pm0.0059$\\
     HAT-P-67 & Aug 8, 2020 & & $10345.007\pm0.019$ & & $0.1122\pm0.0068$\\
     HAT-P-67 & Aug 8, 2020 & & $10344.993^{+0.015}_{-0.016}$ & & $0.1064\pm0.0051$\\
-    HAT-P-32 & Aug 8, 2020 & & $10344.991^{+0.016}_{-0.017}$ & & $0.1112\pm0.0055$\\
     \enddata
 \end{deluxetable*}
 
@@ -240,6 +227,10 @@ After collecting the new parameters, we then calculated the equivalent width of 
     \bottomrule
 \end{tabular}
 
+\subsection{Calculations}
+Using the contemporaneous TESS lightcurve, we notice that there is a 0.2\% flux variation. Assuming that this increase in flux is due to a hot spot with a contrast of 200\%, the hot spot must have a radius that is 12.49 times that of the radius of the Earth. Assuming that the mass loss rate of the planet is its mass over 10 billion years, we can assume that this hot spot is not caused by in falling mass from the planetary envelope as the mass is not enough to cause a 0.2\% modulation in the flux.
+
+We can also assume that the system is tidally locked.
 
 \section{Results}
 \subsection{Is there a difference in equivalent width in transit vs out?}
