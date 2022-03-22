@@ -129,3 +129,6 @@ dmypy.json
 
 # Telluric calibration data
 data/HPF/telluric_standards/Goldilocks*
+
+# Ignore figures, we have a lot of them
+figures/
