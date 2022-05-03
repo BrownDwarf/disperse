@@ -58,10 +58,13 @@ HAT-P-67 was observed with the \emph{Transiting Exoplanet Survey Satellite} \cit
 We retrieved ground-based photometry with the \emph{All-Sky Automated Survey for Supernovae} (ASAS-SN) using the Sky-Portal (\censor{xx}).
 
 
+
 \section{Analysis}
+
+
 Ideally we seek the pixel-to-pixel substructured spectrum of the helium exosphere, corrected for all the conceivable instrumental, telluric, and stellar contamination artifacts.  In practice, these corrections are incomplete and so some care is needed to assess the extent of contamination.  We experimented with a range of pre-processing and analysis techniques to quantify the accuracy and precision of our HPF spectra.
 
-\subsection{Pre-processing with \texttt{muler} }
+\subsection{HPF analysis with \texttt{muler} }
 
 The raw 2D echellograms were reduced with the \texttt{Goldilocks} package\footnote{\url{https://github.com/grzeimann/Goldilocks_Documentation}}, which outputs 1D extracted spectra for the target, and two reference fibers: blank sky and a laser frequency comb (LFC).  The observations were acquired with the LFC turned off, so this unilluminated spectrum was discarded.
 
@@ -73,6 +76,7 @@ We flatten the spectral to continuum indices near the He 10830 features and comp
 
 The sky-subtraction, telluric masking, barycentric correction, and all of our other standard pre-processing steps are implemented in a new open-source Python interface \texttt{muler}\footnote{\url{https://github.com/OttoStruve/muler/}} (Gully-Santiago \emph{et al.}, submitted).
 
+\authorcomment1{Add overplots of He and Ca II.}
 
 \subsection{EW Uncertainty quantification with MCMC}
 We assessed the uncertainty in our equivalent fit Gaussian line profiles to the He 10830 line with \texttt{emcee} \citep{foreman13}. The model consists of a straight-line trend with a Gaussian absorption line.  It has five parameters: the straight-line trend slope $m$ and offset $b$, and the Gaussian amplitude $A$, center wavelength $\mu$, and width $w$.
@@ -100,7 +104,13 @@ Table \ref{tab:sample_properties} lists the bulk physical properties for HAT-P-6
 
 
 \subsection{TESS Light Curve}
+
+\subsubsection{Stellar rotation rate from periodogram analysis}
+
 We observed the HAT-P-67 system using data from TESS Sector 24 taken from April 16th, 2020 to May 13th, 2020 with an exposure time of 1800 seconds. Using the \texttt{lightkurve} package, we attempted to phase fold our exoplanet transit plot to identify the stellar rotation signal and the exoplanet's transit signal. At first glance, the stellar flux decreases by about 0.2\% and the exoplanet transit signal decreases by about 0.7\%. In order to analyze the stellar rotation period, we must mask the planetary transit signal. By folding the normalized lightcurve with a given planetary orbital period of 4.810 days, we omitted the planetary transit signal. We then created a periodogram of just the stellar signal and arrived at an estimate of several parameters for HAT-P-67b: the planetary period is 4.809 days, the original transit time was 1958.082 BTJD, and the planetary duration was 0.25 days. We then created a cadence mask using the Box Least Squares parameters. The resulting periodogram of just the stellar variation described a rotational period of 5.417 days is shown in Figure \ref{fig:stellar_periodogram}.
+
+\subsubsection{Revised exoplanet parameters with exoplanet framework}
+\authorcomment1{Todo: Figure of TESS Transit}
 
 \begin{figure}
     \includegraphics[width=\linewidth]{figures/stellar_periodogram.png}
@@ -114,7 +124,6 @@ We observed the HAT-P-67 system using data from TESS Sector 24 taken from April 
     \label{fig:planetary_periodogram}
 \end{figure}
 
-\section{Analysis}
 \subsection{HPF MCMC}
 The methodology used to fit the HPF spectra was the Markov chain Monte Carlo (MCMC). After deblazing and normalizing the spectrum, we used a Gaussian line to fit the spectra with five parameters: width, center wavelength, amplitude, slope, and offset.  We focused on each sub-region of the spectrum by cutting of data outside of the $99.9\%-100.1\%*line$ threshold to create a better fit for the data. This threshold was determined as a result of which line we were looking at. The generative model consists of a straight-line trend with a Gaussian subtracted from it. The continuum of the spectrum was given by $continuum=m(\lambda-\lambda_{int})+b$ and the Gaussian fit was subtracted off of the continuum to get the absorption line fit. After applying values to the five parameters for the generative model, we improved our fitting with the MCMC process. We computed the log likelihood of the guessing parameters to determine a quality of fit metric. From there, we ran MCMC with the package \textit{emcee} at 5000 steps for the five parameters. After thinning out and discarding the last 1000 steps, we gathered the final draws for the given parameters with their corresponding uncertainties.
 
@@ -123,31 +132,44 @@ In addition to the MCMC method, we verified the precision of our numbers through
 
 After collecting the new parameters, we then calculated the equivalent width of the corresponding line with the formula $EW=\sqrt{2\pi}\frac{Aw}{m(\mu-line)+b}$. We then calculated the mean and standard deviation of the equivalent width.
 \subsection{Contemporaneous Stellar Activity Quantification}
-\subsection{Equivalent Width vs Phase}
+
+\input{tables/ew_table.tex}
+
+\section{Results}
+\subsection{Detection of Helium with Orbital Phase}
 \begin{figure}
     \includegraphics[width=\linewidth]{figures/TESS_EW_HAT-P-67.jpg}
     \caption{A boat.}
     \label{fig:boat1}
 \end{figure}
-
-\input{tables/ew_table.tex}
-
-
-\subsection{Calculations}
-Using the contemporaneous TESS lightcurve, we notice that there is a 0.2\% flux variation. Assuming that this increase in flux is due to a hot spot with a contrast of 200\%, the hot spot must have a radius that is 12.49 times that of the radius of the Earth. Assuming that the mass loss rate of the planet is its mass over 10 billion years, we can assume that this hot spot is not caused by in falling mass from the planetary envelope as the mass is not enough to cause a 0.2\% modulation in the flux.
-
-We can also assume that the system is tidally locked.
-
-\section{Results}
-\subsection{Is there a difference in equivalent width in transit vs out?}
 We can see that there is indeed a helium signature that arises when the planet is in transit with its host star.
 \subsection{Stellar Activity (non)detection versus Equivalent Width}
 There is a likelihood that a portion of the exoplanet emission spectra originates from stellar activity. Thus, we must identify which stellar features mimic a helium signature. Such features can be narrowed down to the star's radial velocity, star spots, and faculae.
 \subsection{Star Planet Interaction}
 Characterizing a host star's stellar environment is of utmost importance if we want to understand how exoplanet atmospheres are affected. While cool dwarfs generate high irradiation in the ultraviolet and stellar winds, the sub-giant category
+\subsection{Gas Motion Relative to Planet}
+\subsection{Parker Winds Model}
+\subsubsection{p-winds model failure}
+\subsection{Geometry of the Escaping Exosphere}
+We can depict the transit of HAT-P-67b from the orbital phase versus equivalent width plot. The plot exhibits helium absorption occurring before the planet is in-transit. We can attribute this shallow increase in the equivalent width to the shape of the helium exosphere. Because the absorption gradually increases, we created a leading tail that begins transit 2 days before the planet does. As a result, we mold the shape of the helium exosphere to mimic the irregular absorption with constraints on the velocity and length
 
 \section{Discussion}
+\subsection{Hot Spot Scenario}
+Using the contemporaneous TESS lightcurve, we notice that there is a 0.2\% flux variation. Assuming that this increase in flux is due to a hot spot with a contrast of 200\%, the hot spot must have a radius that is 12.49 times that of the radius of the Earth. Assuming that the mass loss rate of the planet is its mass over 10 billion years, we can assume that this hot spot is not caused by in falling mass from the planetary envelope as the mass is not enough to cause a 0.2\% modulation in the flux.
 
+\subsection{Tidal Locking Calculation}
+From section 3.3.1, we determined the rotational period of the star from contemporaneous TESS data. Given the orbital period of the planet, we concluded that the system is tidally locked.
+
+\subsection{Mass Loss Rate}
+Parker wind models, such as those implemented in the Python tool p-winds, are incapable of accurately measuring mass loss rates for systems as extreme as HAT-P-67. Instead, we must constrain the mass loss rate to the mass of the planet over the course of the age of the universe. The resulting value is $2.045*10^{12}$ g/s. 
+
+The first scenario is where the mass from the exosphere falls onto the surface of the star. The TESS lightkurve for this system exhibits a reoccurring 0.2\% increase in the flux that is not attributable to the planet’s transit. Assuming that this modulation is due to a hot spot on the stellar surface, we conclude that gravitational potential energy alone is not sufficient to increase the flux by such an amount. Larger mass loss rates could cause brighter hotspots, but this would cause the planet to disappear entirely over its lifetime, which is unphysical.
+
+\subsection{Confinement to Stellar Wind}
+\subsection{Limits of Stellar Activity Metrics}
+\authorcomment1{3D Heat Map Interpolation figure that mimics MacLeod paper}
+\subsection{Comparison to Other Systems}
+\authorcomment1{Parameter plot with HAT-P-67 system with others from exoplanet archive}
 \section{Conclusions}
 
 Reiteration here.
@@ -162,7 +184,7 @@ Reiteration here.
 
 
 \begin{acknowledgements}
-    This research has made use of NASA’s Astrophysics Data System.
+    This research has made use of NASA's Astrophysics Data System.
 \end{acknowledgements}
 
 \facilities{HET (HPF), TESS, ASAS}
