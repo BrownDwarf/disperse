@@ -1,0 +1,89 @@
+% file: fonts.tex
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsfonts}
+\usepackage{amsmath, amssymb, graphics, setspace}
+\usepackage{graphicx}
+\usepackage{multirow}
+\usepackage[legalpaper, margin=1in]{geometry}
+\usepackage[caption=false]{subfig}
+
+\newcommand{\mathsym}[1]{{}}
+\newcommand{\unicode}[1]{{}}
+
+\title{HAT-P-67 Calculations}
+\author{ag68874}
+\date{2/1/2022}
+
+\begin{document}
+
+\maketitle
+
+\section{Free Fall}
+Let's solve the free-fall problem where we throw a rock from HAT-P-67b onto its host star.
+$$PE_1+KE_1=PE_2+KE_2$$
+Using conservation of energy,
+$$PE_1+0=0+KE_2$$
+$$mgh=\frac{1}{2}mv^2$$
+$$v=\sqrt{2gh}$$
+In this case, $h=a-r$, which is this semi-major axis of the planetary system minus the radius of the star (as the in-falling mass lands on the surface of the star).
+$$v=\sqrt{2g(a-r)}=\sqrt{2g(0.06505\:au-1.842283*10^9m)}=\sqrt{2g(9731341489\:m-1.842283*10^9m)}$$
+We must calculate the new $g$ for the star with the formula
+$$g=\frac{GM}{r^2}=\frac{(6.67*10^{-11}Nm^2)(2.56968*10^{30}kg)}{(1.842283*10^9m)^2}=50.50\:m/s^2$$
+Using this new constant $g$, we get
+$$v=\sqrt{2g(a-r)}=\sqrt{2g(7.88905849*10^9m)}=\sqrt{2(50.50\:m/s^2)(7.889*10^9m)}=892633.7771\:m/s=8.926*10^5m/s$$
+
+\section{Hot Spots}
+We know that the planet transiting the star reduces the total flux by 0.7\%. The planet has a radius of 23.37 Earth radii. We can use this information to calculate the size of a hot spot needed to create a 0.2\% increase in the flux.
+
+$$A_p=\pi r_p^2=\pi (1.49057*10^8m)^2=6.980*10^{16}m^2$$
+$$\frac{A_p}{f_p}=\frac{A_h}{f_h}$$
+$$\frac{6.980*10^{16}m^2}{0.7\%}=\frac{A_h}{0.2\%}$$
+$$A_h=1.994*10^{16}m^2$$
+$$r_h=\sqrt{\frac{A_h}{\pi}}=\sqrt{\frac{1.994*10^{16}m^2}{\pi}}=79668683.5\:m=7.967*10^7m$$
+
+This is about 12.49 Earth radii. So, in order to have a flux increase of 0.2\%, you must have a hot spot with a radius that is 12.49 times the radius of Earth.
+
+\subsection{Contrast}
+Contrast defines the amount of light that shines through a spot on the surface of the star. A contrast of 0\% translates to a dark spot, where the flux decreases by 0.2\%. A contrast of 100\% translates to a spot with flux output equal to that of the rest of the stellar surface. For a contrast of 200\%, the flux increases by 0.2\% and translates to a hot spot.
+
+\section{Mass Loss Rate}
+Let's assume that the mass loss rate of the planet is the mass of the planet per 10 billion years. That gives us a value of 
+
+$$\frac{108\:M_\oplus}{10^{10}\:yr}=\frac{6.45*10^{26}kg}{10^{10}\:yr}=6.45*10^{16}\:kg/yr$$
+$$\frac{6.45*10^{16}\:kg}{year}*\frac{1000\:g}{kg}*\frac{year}{365\:days}*\frac{day}{24\:hr}*\frac{hr}{60\:min}*\frac{min}{60\:s}=2.045*10^{12}g/s$$
+
+Converting this to an energy per unit time, we get
+$$E=mgh=(2.045*10^{9}kg)(50.5\:m/s^2)(7.889*10^9m)=8.148*10^{20}J$$
+$$E/time={8.148*10^{20}\:J/s}=8.148*10^{20}W$$
+$$\frac{1\:W}{2.613*10^{-27}L_\odot}=\frac{8.148*10^{20}W}{L}$$
+$$L=2.129*10^{-6}L_\odot$$
+
+The luminosity of the host star is given as $1.0298 \log(L_\odot)$.
+
+\section{Tidal Locking}
+Let's use the formula for tidal locking to determine if our system is tidally locked. First, let's see if the planet is tidally locked by the star: 
+$$t_{\text{lock}} \approx \frac{\omega a^6 I Q}{3 G m_p^2 k_2 R^5}$$
+
+We can use a more simplified version of the prior equation where we assume the satellite is spherical.
+
+$$t_{lock}\approx 6\frac{a^6 R_p\mu}{m_pm_s^2}*10^{10}\:year$$
+$$t_{lock}\approx \frac{6(9.731*10^9\:m)^6 (1.491*10^8\:m)(3*10^{10}\: Nm^{-2})}{(6.45*10^{26}kg)(2.570*10^{30}kg)^2}*10^{10}\:year$$
+$$=53.5\:years$$
+
+While this value may be off by a large magnitude, it is nowhere close to a million years. The age of the system is much greater than $t_{lock}$, so the planet is tidally locked to the star.
+
+Now let's see if the host star is tidally locked by the planet:
+$$t_{lock}\approx \frac{6(9.731*10^9\:m)^6 (1.842*10^9\:m)(3*10^{10}\: Nm^{-2})}{(6.45*10^{26}kg)^2(2.570*10^{30}kg)}*10^{10}\:year$$
+$$=2.633*10^6\:years\approx 2.6 \text{ million years}$$
+
+\section{Scale Height}
+We will now calculate the scale height of our planet's atmosphere. We will assume a mean molecular weight equal to that of Saturn, which is $\mu=2.07$.
+
+Solving for gravity we get
+$$g=\frac{GM}{r^2}=\frac{(6.67*10^{-11}Nm^2)(6.45*10^{26}\:kg)}{(1.49057*10^8\:m)^2}=1.919\:m/s^2$$
+$$H=\frac{kT}{\mu m_H g}=\frac{(1.38 \times 10^{-23} \frac{J}{K})(400\:K)}{(1.66 \times 10^{-27} kg)(2.07)(1.919\:m/s^2)}=837.116\:km$$
+
+For a phase of 0.2, we have a length scale of $1.223*10^{10}m$. Converting this to scale heights, we get:
+$$\frac{1.223*10^{7}km}{837.116\:km}=14,609 \text{ scale heights}$$
+\end{document}
