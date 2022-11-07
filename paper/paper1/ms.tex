@@ -1,4 +1,4 @@
-\documentclass[modern]{aastex631}
+\documentclass[twocolumn]{aastex631}
 \bibliographystyle{aasjournal}
 
 \usepackage{graphicx}
@@ -38,18 +38,18 @@
 
 Exoplanets must possess a dynamic range of atmospheric properties far beyond what we have seen in our own Solar System.  Extreme radiation effects, atmospheric erosion, and unexpected chemistry must exist, but collecting examples of these phenomena remains at the edge of the possible today. The minuscule signal strengths of atmospheric shells has hidden all but the most conspicuous phenomena.  Helium 10830 \AA has emerged as the most conspicuous exosphere indicator, enabling ground-based detection with high-resolution near-infrared (IR) spectrographs.
 
-A total of \censor{xx} systems have Helium 10830 exosphere measurements to date: \object[GJ 3470]{GJ3470} \citep{2020ApJ...894...97N, 2021A&A...647A.129L}, \object{HD 63433 c} \citep{2022AJ....163...68Z}, WASP 107 b \citep{2019A&A...623A..58A,2020AJ....159..115K}, HD 209458 b \citep{2019A&A...629A.110A}, WASP 69 b \citep{2020AJ....159..278V}, WASP 52 b \citep{2020AJ....159..278V}, HD 189733 b \citep{2021A&A...647A.129L}, and HAT-P-18 b \citep{2021ApJ...909L..10P}.
+At least 8 systems have Helium 10830 exosphere measurements to date: \object[GJ 3470]{GJ3470} \citep{2020ApJ...894...97N, 2021A&A...647A.129L}, \object{HD 63433 c} \citep{2022AJ....163...68Z}, WASP 107 b \citep{2019A&A...623A..58A,2020AJ....159..115K}, HD 209458 b \citep{2019A&A...629A.110A}, WASP 69 b \citep{2020AJ....159..278V}, WASP 52 b \citep{2020AJ....159..278V}, HD 189733 b \citep{2021A&A...647A.129L}, and HAT-P-18 b \citep{2021ApJ...909L..10P}.
 
 
-We specified our observations on the HAT-P-67 system due to its unique rotational period. HAT-P-67 is a binary system of an F type sub-giant and a much cooler M2 star with the Saturn-sized planet HAT-P-67b. An extremely low density object, HAT-P-67b loses its atmosphere rather rapidly for transiting an evolved host star.
+Here we present a study of the exosphere of HAT-P-67b.  HAT-P-67 is a binary system of an F type sub-giant and a much cooler M2 star with the Saturn-sized planet HAT-P-67b.  HAT-P-67b stands out for a few reasons.  It has a relatively low surface gravity, which could make it amenable to rapid atmospheric mass loss, all else being equal.  It orbits an evolved star, which means it could have changed its instellation recently as the star's size and radiaiton properties have changed.  The star appears close to the star, making it conceivable that star-planet interactions could be at play.  These and other reasons make HAT-P-67b a unique laboratory for measuring the properties of exospheres and their interactions with their host stars.
 
 \section{Observations}
 \subsection{Habitable Zone Planet Finder (HPF)}
 
-The Habitable Zone Planet Finder Spectrograph \citep[HPF][]{2012SPIE.8446E..1SM,2014SPIE.9147E..1GM, 2019Optic...6..233M} on the queue-schedule 10-meter \emph{Hobby-Eberly Telescope} \citep[HET][]{1998SPIE.3352...34R, 2007PASP..119..556S} operates in the near-IR from 8100-12800 \AA spanning the \textit{z}, \textit{Y}, and \textit{J} bands. We observed HAT-P-67b with HPF in-transit on 2020 April 28, 2020 May 22, and 2020 June 15 and out-of-transit on a total of \censor{xx} other nights.
+The Habitable Zone Planet Finder Spectrograph \citep[HPF][]{2012SPIE.8446E..1SM,2014SPIE.9147E..1GM, 2019Optic...6..233M} on the queue-scheduled 10-meter \emph{Hobby-Eberly Telescope} \citep[HET][]{1998SPIE.3352...34R, 2007PASP..119..556S} operates in the near-IR from $8100-12800~\mathrm{\AA}\;$ spanning the \textit{z}, \textit{Y}, and \textit{J} bands. We observed HAT-P-67b with HPF in-transit on 2020 April 28, 2020 May 22, and 2020 June 15 and out-of-transit on a total of \censorbox{xx} other nights.
 
-\authorcomment1{We may want to put a observation log here, grouped by night.}
-% \input{tables/observation_flat_table.tex}
+
+\input{tables/observations_flat_table.tex}
 
 \subsection{TESS Light Curve}
 HAT-P-67 was observed with the \emph{Transiting Exoplanet Survey Satellite} \citep[TESS][]{2014SPIE.9143E..20R} in Sector 24 from April 16th, 2020 to May 13th, 2020 with a 30 minute cadence.
@@ -161,7 +161,7 @@ Using the contemporaneous TESS lightcurve, we notice that there is a 0.2\% flux 
 From section 3.3.1, we determined the rotational period of the star from contemporaneous TESS data. Given the orbital period of the planet, we concluded that the system is tidally locked.
 
 \subsection{Mass Loss Rate}
-Parker wind models, such as those implemented in the Python tool p-winds, are incapable of accurately measuring mass loss rates for systems as extreme as HAT-P-67. Instead, we must constrain the mass loss rate to the mass of the planet over the course of the age of the universe. The resulting value is $2.045*10^{12}$ g/s. 
+Parker wind models, such as those implemented in the Python tool p-winds, are incapable of accurately measuring mass loss rates for systems as extreme as HAT-P-67. Instead, we must constrain the mass loss rate to the mass of the planet over the course of the age of the universe. The resulting value is $2.045*10^{12}$ g/s.
 
 The first scenario is where the mass from the exosphere falls onto the surface of the star. The TESS lightkurve for this system exhibits a reoccurring 0.2\% increase in the flux that is not attributable to the planet’s transit. Assuming that this modulation is due to a hot spot on the stellar surface, we conclude that gravitational potential energy alone is not sufficient to increase the flux by such an amount. Larger mass loss rates could cause brighter hotspots, but this would cause the planet to disappear entirely over its lifetime, which is unphysical.
 
