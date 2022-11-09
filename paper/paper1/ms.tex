@@ -12,6 +12,84 @@
 %\input{setup}
 %\input{mgs_setup}
 
+%% General
+\newcommand{\msini}{\ensuremath{m \sin i}}
+\newcommand{\mplsini}{\ensuremath{\mpl\sin i}}
+\newcommand{\teff}{\ensuremath{T_{\rm eff}}}
+\newcommand{\logg}{\ensuremath{\log{g}}}
+\newcommand{\vsini}{\ensuremath{v \sin{I_\star}}}
+\newcommand{\feh}{\ensuremath{\rm [Fe/H]}}
+\newcommand{\logl}{\ensuremath{\log{L}}}
+\newcommand{\vmac}{\ensuremath{v_{\rm mac}}}
+\newcommand{\vmic}{\ensuremath{v_{\rm mic}}}
+% Activity index R'_HK
+\newcommand{\rhk}{\ensuremath{R^{\prime}_{HK}}}
+% log of R'_HK
+\newcommand{\logrhk}{\ensuremath{\log\rhk}}
+% S average value
+\newcommand{\Savg}{\ensuremath{\langle S\rangle}}
+
+
+%% ---------------------------------------------------------------------
+%% Solar quantities 
+\newcommand{\rsun}{\ensuremath{R_\sun}}
+\newcommand{\msun}{\ensuremath{M_\sun}}
+\newcommand{\lsun}{\ensuremath{L_\sun}}
+\newcommand{\loglsun}{\ensuremath{\log{L_\sun}}}
+\newcommand{\teffsun}{\ensuremath{T_{eff,\sun}}}
+\newcommand{\rhosun}{\ensuremath{\rho_\sun}}
+\newcommand{\loggsun}{\ensuremath{\log{g_{\sun}}}}
+
+%% ---------------------------------------------------------------------
+%% Stellar quantities 
+\newcommand{\rstar}{\ensuremath{R_\star}}
+\newcommand{\mstar}{\ensuremath{M_\star}}
+\newcommand{\lstar}{\ensuremath{L_\star}}
+\newcommand{\astar}{\ensuremath{a_\star}}
+\newcommand{\loglstar}{\ensuremath{\log{L_\star}}}
+\newcommand{\teffstar}{\ensuremath{T_{\rm eff\star}}}
+\newcommand{\rhostar}{\ensuremath{\rho_\star}}
+\newcommand{\loggstar}{\ensuremath{\log{g_{\star}}}}
+
+%% ---------------------------------------------------------------------
+%% Earth
+\newcommand{\rearth}{\ensuremath{R_\earth}}
+\newcommand{\mearth}{\ensuremath{M_\earth}}
+\newcommand{\learth}{\ensuremath{L_\earth}}
+\newcommand{\teffearth}{\ensuremath{T_{\rm eff,\earth}}}
+\newcommand{\rhoearth}{\ensuremath{\rho_\earth}}
+
+%% ---------------------------------------------------------------------
+%% Planetary
+\newcommand{\rpl}{\ensuremath{R_{p}}}
+\newcommand{\mpl}{\ensuremath{M_{p}}}
+\newcommand{\lpl}{\ensuremath{L_{p}}}
+\newcommand{\teffpl}{\ensuremath{T_{\rm eff,{p}}}}
+\newcommand{\rhopl}{\ensuremath{\rho_{p}}}
+\newcommand{\ipl}{\ensuremath{i_{p}}}
+\newcommand{\epl}{\ensuremath{e_{p}}}
+\newcommand{\gpl}{\ensuremath{g_{p}}}
+\newcommand{\loggpl}{\ensuremath{\log g_{p}}}
+
+\newcommand{\arstar}{\ensuremath{a/\rstar}}
+\newcommand{\zrstar}{\ensuremath{\zeta/\rstar}}
+
+%% ---------------------------------------------------------------------
+%% Jupiter
+\newcommand{\rjup}{\ensuremath{R_{\rm J}}}
+\newcommand{\mjup}{\ensuremath{M_{\rm J}}}
+\newcommand{\ljup}{\ensuremath{L_{\rm J}}}
+\newcommand{\teffjup}{\ensuremath{T_{eff,{\rm J}}}}
+\newcommand{\rhojup}{\ensuremath{\rho_{\rm J}}}
+\newcommand{\gjup}{\ensuremath{\g_{\rm J}}}
+
+\newcommand{\rjuplong}{\ensuremath{R_{\rm Jup}}}
+\newcommand{\mjuplong}{\ensuremath{M_{\rm Jup}}}
+\newcommand{\ljuplong}{\ensuremath{L_{\rm Jup}}}
+\newcommand{\teffjuplong}{\ensuremath{T_{eff,{\rm Jup}}}}
+\newcommand{\rhojuplong}{\ensuremath{\rho_{\rm Jup}}}
+\newcommand{\gjuplong}{\ensuremath{\g_{\rm Jup}}}
+
 \providecommand{\eprint}[1]{\href{http://arxiv.org/abs/#1}{#1}}
 \providecommand{\adsurl}[1]{\href{#1}{ADS}}
 \newcommand{\project}[1]{\textsl{#1}}
@@ -46,7 +124,7 @@ Here we present a study of the exosphere of HAT-P-67b.  HAT-P-67 is a binary sys
 \section{Observations}
 \subsection{Habitable Zone Planet Finder (HPF)}
 
-The Habitable Zone Planet Finder Spectrograph \citep[HPF][]{2012SPIE.8446E..1SM,2014SPIE.9147E..1GM, 2019Optic...6..233M} on the queue-scheduled 10-meter \emph{Hobby-Eberly Telescope} \citep[HET][]{1998SPIE.3352...34R, 2007PASP..119..556S} operates in the near-IR from $8100-12800~\mathrm{\AA}\;$ spanning the \textit{z}, \textit{Y}, and \textit{J} bands. We observed HAT-P-67b with HPF in-transit on 2020 April 28, 2020 May 22, and 2020 June 15 and out-of-transit on a total of \censorbox{xx} other nights.
+The Habitable Zone Planet Finder Spectrograph \citep[HPF][]{2012SPIE.8446E..1SM,2014SPIE.9147E..1GM, 2019Optic...6..233M} on the queue-scheduled 10-meter \emph{Hobby-Eberly Telescope} \citep[HET][]{1998SPIE.3352...34R, 2007PASP..119..556S} operates in the near-IR from $8100-12800~\AA\;$ spanning the \textit{z}, \textit{Y}, and \textit{J} bands. We observed HAT-P-67b with HPF in-transit on 2020 April 28, 2020 May 22, and 2020 June 15 and out-of-transit on a total of \censorbox{xx} other nights.
 
 
 \input{tables/observations_flat_table.tex}
@@ -110,6 +188,35 @@ Table \ref{tab:sample_properties} lists the bulk physical properties for HAT-P-6
 We observed the HAT-P-67 system using data from TESS Sector 24 taken from April 16th, 2020 to May 13th, 2020 with an exposure time of 1800 seconds. Using the \texttt{lightkurve} package, we attempted to phase fold our exoplanet transit plot to identify the stellar rotation signal and the exoplanet's transit signal. At first glance, the stellar flux decreases by about 0.2\% and the exoplanet transit signal decreases by about 0.7\%. In order to analyze the stellar rotation period, we must mask the planetary transit signal. By folding the normalized lightcurve with a given planetary orbital period of 4.810 days, we omitted the planetary transit signal. We then created a periodogram of just the stellar signal and arrived at an estimate of several parameters for HAT-P-67b: the planetary period is 4.809 days, the original transit time was 1958.082 BTJD, and the planetary duration was 0.25 days. We then created a cadence mask using the Box Least Squares parameters. The resulting periodogram of just the stellar variation described a rotational period of 5.417 days is shown in Figure \ref{fig:stellar_periodogram}.
 
 \subsubsection{Revised exoplanet parameters with exoplanet framework}
+
+\begin{deluxetable*}{lrrrh}
+    \tablewidth{0pc}
+    \tabletypesize{\scriptsize}
+    \tablecaption{
+        Revised orbital and planetary parameters
+        \label{tabOrbit}
+    }
+    \tablehead{
+        \colhead{Parameter}   &
+        \colhead{Zhou et al. 2017} &
+        \colhead{Ivshina \& Winn 2022} &
+        \colhead{This Work} &
+        \nocolhead{Alternate}
+    }
+    \startdata
+    %%
+    ~~~$P$ (days)             \dotfill    & $4.8101025_{-0.00000033}^{+0.00000043}$ & x & y & z \\
+    ~~~$T_c$ (${\rm BJD}$)  \dotfill    & $2455961.38467_{-0.00064}^{+0.00076}$ & x & y & z \\
+    ~~~$T_{14}$ (days)  \dotfill    & $0.2912 \pm 0.0019$ & x & y & z \\
+    ~~~$T_{12} = T_{34}$ (days)  \dotfill    & $0.0229\pm0.0010$ & x & y & z \\
+    ~~~$\arstar$              \dotfill    & $5.691_{-0.124}^{+0.057}$ & x & y & z \\
+    ~~~$\rpl/\rstar$          \dotfill    & $0.0834\pm0.0017$ & x & y & z \\
+    ~~~$b \equiv a \cos i/\rstar$
+    \dotfill    & $0.12_{-0.08}^{+0.12}$ & x & y & z \\
+    ~~~$i$ (deg)              \dotfill    & $88.8_{-1.3}^{+1.1}$ & x & y & z \\
+    \enddata
+\end{deluxetable*}
+
 \authorcomment1{Todo: Figure of TESS Transit}
 
 \begin{figure}
