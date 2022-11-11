@@ -132,3 +132,6 @@ data/HPF/telluric_standards/Goldilocks*
 
 # Ignore figures, we have a lot of them
 figures/
+
+# Open office spreadsheets
+*.ods
