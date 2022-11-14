@@ -130,7 +130,7 @@ The Habitable Zone Planet Finder Spectrograph \citep[HPF][]{2012SPIE.8446E..1SM,
 \input{tables/observations_flat_table.tex}
 
 \subsection{TESS Light Curve}
-HAT-P-67 was observed with the \emph{Transiting Exoplanet Survey Satellite} \citep[TESS][]{2014SPIE.9143E..20R} in Sectors 24, 26, 51, 52, 53 with 2-minute cadence, and in Sector 25 with 30-minute (FFI) cadence.
+HAT-P-67 was observed with the \emph{Transiting Exoplanet Survey Satellite} \citep[TESS][]{2014SPIE.9143E..20R} in Sectors 24, 26, 51, 52, 53 with 2-minute cadence, and in Sector 25 with 30-minute (FFI) cadence.  The Sector 25 FFI data appeared malformed, possibly due to problems with pipeline CCD smear correction, and was disregarded.
 
 \subsection{ASAS-SN}
 We retrieved ground-based photometry with the \emph{All-Sky Automated Survey for Supernovae} (ASAS-SN) using the Sky-Portal \citep{shappee14,2017PASP..129j4502K}.
@@ -162,11 +162,31 @@ Ideally we seek the pixel-to-pixel substructured spectrum of the helium exospher
 \subsection{TESS Light Curve}
 
 \subsubsection{Revised exoplanet parameters with exoplanet framework}
-We assembled a composite lightcurve by stitching TESS Sectors 24, 26, 51, 52, 53, which were reduced with the default SPOC pipeline \citep{2020RNAAS...4..201C}.  These TESS data exhibit an RMS scatter of better than 1 part-per-thousand (ppt) at native 2-minute sampling.  We fit a Keplerian orbit model to the TESS lightcurve using the \texttt{exoplanet} framework \citep{exoplanet:joss}.  We obtained a best fit orbital period of $4.81011$ days, non-zero eccentricity of 0.19, an impact parameter of 0.46, planet-to-star radius of 0.0823, transit depth of 0.74\%, and $T_0$ of 1958.07933 in BTJD.  We did not attempt MCMC sampling to quantify degeneracy among these parameters, and we suspect that the orbit is adequately modeled by a circular orbit.
+We assembled a composite lightcurve by stitching TESS Sectors 24, 26, 51, 52, 53, which were reduced with the default SPOC pipeline \citep{2020RNAAS...4..201C}, and lightly post-processed with \texttt{lightkurve} \citep{geert_barentsen_2019_2565212}.  These TESS data exhibit an RMS scatter of better than 1 part-per-thousand (ppt) at native 2-minute sampling.  We fit a Keplerian orbit model to the TESS lightcurve using the \texttt{exoplanet} framework \citep{exoplanet:joss}.  We obtained a best fit orbital period of $4.81011$ days, non-zero eccentricity of 0.19, an impact parameter of 0.46, planet-to-star radius of 0.0823, transit depth of 0.74\%, and $T_0$ of 1958.07933 in BTJD.  We did not attempt MCMC sampling to quantify degeneracy among these parameters, and we suspect that the transit is adequately modeled by a circular orbit.  Figure \ref{fig:transit} shows the best-fit orbit overlaid on the detrended TESS lightcurve.  Table \ref{tabOrbit} lists a previous orbit determination and solutions reported here.
+
+
+\begin{figure}
+    \includegraphics[width=\linewidth]{figures/best_fit_orbit.png}
+    \caption{Best fit orbit overlaid on the composite TESS lightcurve.  The 1 ppt TESS precision improves upon the ground-based detection and refining the orbital properties and ephemerides.}
+    \label{fig:transit}
+\end{figure}
+
 
 \subsubsection{Stellar rotation rate from periodogram analysis}
 
-Using the \texttt{lightkurve} package, we attempted to phase fold our exoplanet transit plot to identify the stellar rotation signal and the exoplanet's transit signal. At first glance, the stellar flux decreases by about 0.2\% and the exoplanet transit signal decreases by about 0.7\%. In order to analyze the stellar rotation period, we must mask the planetary transit signal. By folding the normalized lightcurve with a given planetary orbital period of 4.810 days, we omitted the planetary transit signal. We then created a periodogram of just the stellar signal and arrived at an estimate of several parameters for HAT-P-67b: the planetary period is 4.809 days, the original transit time was 1958.082 BTJD, and the planetary duration was 0.25 days. We then created a cadence mask using the Box Least Squares parameters. The resulting periodogram of just the stellar variation described a rotational period of 5.417 days is shown in Figure \ref{fig:stellar_periodogram}.
+The TESS Sector 26 lightcurve exhibits a weak $\sim3\;$ppt peak-to-valley out-of-transit modulation on timescales comparable to the exoplanet orbit. TESS Sectors 51-53 do not show as conspicuous a modulation signal as does Sector 26.  Figure \ref{fig:TESSmodulation} shows this modulation in the minimally processed TESS lightcurve.  During the exoplanet orbit fitting, we fit the TESS lightcurve modulation with a quasiperiodic Gaussian Process (GP) model using \citep{celerite} \citep{celerite1,celerite2}.  The GP model fit to the entire composite lightcurve yields a period of 4.68 days; when fit to individual sectors alone the periods hover around 5.9 days.
+
+If we assume the TESS modulation signal is attributable to stellar activity, we obtain a rotation period $P_\mathrm{rot}$ between 4.7 and 5.9 days.  The reported $v\sin{i}=35.8\pm1.1$ km/s would yield an $R_\star \sin{i}$ =
+
+
+\begin{figure}
+    \includegraphics[width=\linewidth]{figures/TESS_S26_trend.png}
+    \caption{Stellar lightcurve modulation observed in TESS Sector 26.  The stellar surface pattern speed appears to have a slightly longer period than the exoplanet orbit, causing the transit to occur earlier in the phase of the modulation upon each orbit.}
+    \label{fig:TESSmodulation}
+\end{figure}
+
+
+
 
 
 
@@ -198,7 +218,6 @@ Using the \texttt{lightkurve} package, we attempted to phase fold our exoplanet 
     \enddata
 \end{deluxetable*}
 
-\authorcomment1{Todo: Figure of TESS Transit}
 
 \subsection{HPF analysis with \texttt{muler} }
 
@@ -239,19 +258,12 @@ Table \ref{tab:sample_properties} lists the bulk physical properties for HAT-P-6
 \end{deluxetable*}
 
 
-
-
 \begin{figure}
     \includegraphics[width=\linewidth]{figures/stellar_periodogram.png}
     \caption{Periodogram of solely the stellar variation of the flux. }
     \label{fig:stellar_periodogram}
 \end{figure}
 
-\begin{figure}
-    \includegraphics[width=\linewidth]{figures/planetary_periodogram.png}
-    \caption{Periodogram of the stellar variation coupled with the planetary transit signal of the flux. }
-    \label{fig:planetary_periodogram}
-\end{figure}
 
 \subsection{HPF MCMC}
 The methodology used to fit the HPF spectra was the Markov chain Monte Carlo (MCMC). After deblazing and normalizing the spectrum, we used a Gaussian line to fit the spectra with five parameters: width, center wavelength, amplitude, slope, and offset.  We focused on each sub-region of the spectrum by cutting of data outside of the $99.9\%-100.1\%*line$ threshold to create a better fit for the data. This threshold was determined as a result of which line we were looking at. The generative model consists of a straight-line trend with a Gaussian subtracted from it. The continuum of the spectrum was given by $continuum=m(\lambda-\lambda_{int})+b$ and the Gaussian fit was subtracted off of the continuum to get the absorption line fit. After applying values to the five parameters for the generative model, we improved our fitting with the MCMC process. We computed the log likelihood of the guessing parameters to determine a quality of fit metric. From there, we ran MCMC with the package \textit{emcee} at 5000 steps for the five parameters. After thinning out and discarding the last 1000 steps, we gathered the final draws for the given parameters with their corresponding uncertainties.
