@@ -130,7 +130,7 @@ The Habitable Zone Planet Finder Spectrograph \citep[HPF][]{2012SPIE.8446E..1SM,
 \input{tables/observations_flat_table.tex}
 
 \subsection{TESS Light Curve}
-HAT-P-67 was observed with the \emph{Transiting Exoplanet Survey Satellite} \citep[TESS][]{2014SPIE.9143E..20R} in Sectors 24, 26, 51, 52, 53 with 2-minute cadence.
+HAT-P-67 was observed with the \emph{Transiting Exoplanet Survey Satellite} \citep[TESS][]{2014SPIE.9143E..20R} in Sectors 24, 26, 51, 52, 53 with 2-minute cadence, and in Sector 25 with 30-minute (FFI) cadence.
 
 \subsection{ASAS-SN}
 We retrieved ground-based photometry with the \emph{All-Sky Automated Survey for Supernovae} (ASAS-SN) using the Sky-Portal \citep{shappee14,2017PASP..129j4502K}.
@@ -157,6 +157,48 @@ We searched for observations of HAT-P-67 in public archives.  It has one $R\sim8
 
 
 Ideally we seek the pixel-to-pixel substructured spectrum of the helium exosphere, corrected for all the conceivable instrumental, telluric, and stellar contamination artifacts.  In practice, these corrections are incomplete and so some care is needed to assess the extent of contamination.  We experimented with a range of pre-processing and analysis techniques to quantify the accuracy and precision of our HPF spectra.
+
+
+\subsection{TESS Light Curve}
+
+\subsubsection{Revised exoplanet parameters with exoplanet framework}
+We assembled a composite lightcurve from TESS Sectors 24, 26, 51, 52, 53, which were reduced with the default SPOC pipeline \citep{2020RNAAS...4..201C}.  These TESS data exhibit a native RMS scatter of better than 1 part-per-thousand (ppt).  We fit a Keplerian orbit model to the TESS lightcurve using the \texttt{exoplanet} framework \citep{exoplanet:joss}.
+
+\subsubsection{Stellar rotation rate from periodogram analysis}
+
+Using the \texttt{lightkurve} package, we attempted to phase fold our exoplanet transit plot to identify the stellar rotation signal and the exoplanet's transit signal. At first glance, the stellar flux decreases by about 0.2\% and the exoplanet transit signal decreases by about 0.7\%. In order to analyze the stellar rotation period, we must mask the planetary transit signal. By folding the normalized lightcurve with a given planetary orbital period of 4.810 days, we omitted the planetary transit signal. We then created a periodogram of just the stellar signal and arrived at an estimate of several parameters for HAT-P-67b: the planetary period is 4.809 days, the original transit time was 1958.082 BTJD, and the planetary duration was 0.25 days. We then created a cadence mask using the Box Least Squares parameters. The resulting periodogram of just the stellar variation described a rotational period of 5.417 days is shown in Figure \ref{fig:stellar_periodogram}.
+
+
+
+\begin{deluxetable*}{lrrrh}
+    \tablewidth{0pc}
+    \tabletypesize{\scriptsize}
+    \tablecaption{
+        Revised orbital and planetary parameters
+        \label{tabOrbit}
+    }
+    \tablehead{
+        \colhead{Parameter}   &
+        \colhead{Zhou et al. 2017} &
+        \colhead{Ivshina \& Winn 2022} &
+        \colhead{This Work} &
+        \nocolhead{Alternate}
+    }
+    \startdata
+    %%
+    ~~~$P$ (days)             \dotfill    & $4.8101025_{-3.3\times 10^{-7}}^{+4.3\times 10^{-7}}$ & 4.8101046$\pm1.7\times10^{-6}$ & 4.81011 & z \\
+    ~~~$T_c$ (${\rm BTJD}$)  \dotfill    & $-1038.61533_{-0.00064}^{+0.00076}$ & 1958.08059$\pm$0.00032 & 1958.07933 & z \\
+    ~~~$T_{14}$ (hours)  \dotfill    & $6.9888 \pm 0.046$ & x & 7.0636 & z \\
+    ~~~$T_{12} = T_{34}$ (days)  \dotfill    & $0.0229\pm0.0010$ & x & y & z \\
+    ~~~$\arstar$              \dotfill    & $5.691_{-0.124}^{+0.057}$ & x & y & z \\
+    ~~~$\rpl/\rstar$          \dotfill    & $0.0834\pm0.0017$ & x & 0.08231 & z \\
+    ~~~$b \equiv a \cos i/\rstar$
+    \dotfill    & $0.12_{-0.08}^{+0.12}$ & x & 0.45616 & z \\
+    ~~~$i$ (deg)              \dotfill    & $88.8_{-1.3}^{+1.1}$ & x & y & z \\
+    \enddata
+\end{deluxetable*}
+
+\authorcomment1{Todo: Figure of TESS Transit}
 
 \subsection{HPF analysis with \texttt{muler} }
 
@@ -197,43 +239,7 @@ Table \ref{tab:sample_properties} lists the bulk physical properties for HAT-P-6
 \end{deluxetable*}
 
 
-\subsection{TESS Light Curve}
 
-\subsubsection{Stellar rotation rate from periodogram analysis}
-
-We observed the HAT-P-67 system using data from TESS Sector 24 taken from April 16th, 2020 to May 13th, 2020 with an exposure time of 1800 seconds. Using the \texttt{lightkurve} package, we attempted to phase fold our exoplanet transit plot to identify the stellar rotation signal and the exoplanet's transit signal. At first glance, the stellar flux decreases by about 0.2\% and the exoplanet transit signal decreases by about 0.7\%. In order to analyze the stellar rotation period, we must mask the planetary transit signal. By folding the normalized lightcurve with a given planetary orbital period of 4.810 days, we omitted the planetary transit signal. We then created a periodogram of just the stellar signal and arrived at an estimate of several parameters for HAT-P-67b: the planetary period is 4.809 days, the original transit time was 1958.082 BTJD, and the planetary duration was 0.25 days. We then created a cadence mask using the Box Least Squares parameters. The resulting periodogram of just the stellar variation described a rotational period of 5.417 days is shown in Figure \ref{fig:stellar_periodogram}.
-
-\subsubsection{Revised exoplanet parameters with exoplanet framework}
-
-\begin{deluxetable*}{lrrrh}
-    \tablewidth{0pc}
-    \tabletypesize{\scriptsize}
-    \tablecaption{
-        Revised orbital and planetary parameters
-        \label{tabOrbit}
-    }
-    \tablehead{
-        \colhead{Parameter}   &
-        \colhead{Zhou et al. 2017} &
-        \colhead{Ivshina \& Winn 2022} &
-        \colhead{This Work} &
-        \nocolhead{Alternate}
-    }
-    \startdata
-    %%
-    ~~~$P$ (days)             \dotfill    & $4.8101025_{-3.3\times 10^{-7}}^{+4.3\times 10^{-7}}$ & 4.8101046$\pm1.7\times10^{-6}$ & 4.81011 & z \\
-    ~~~$T_c$ (${\rm BTJD}$)  \dotfill    & $-1038.61533_{-0.00064}^{+0.00076}$ & 1958.08059$\pm$0.00032 & 1958.07933 & z \\
-    ~~~$T_{14}$ (hours)  \dotfill    & $6.9888 \pm 0.046$ & x & 7.0636 & z \\
-    ~~~$T_{12} = T_{34}$ (days)  \dotfill    & $0.0229\pm0.0010$ & x & y & z \\
-    ~~~$\arstar$              \dotfill    & $5.691_{-0.124}^{+0.057}$ & x & y & z \\
-    ~~~$\rpl/\rstar$          \dotfill    & $0.0834\pm0.0017$ & x & 0.08231 & z \\
-    ~~~$b \equiv a \cos i/\rstar$
-    \dotfill    & $0.12_{-0.08}^{+0.12}$ & x & 0.45616 & z \\
-    ~~~$i$ (deg)              \dotfill    & $88.8_{-1.3}^{+1.1}$ & x & y & z \\
-    \enddata
-\end{deluxetable*}
-
-\authorcomment1{Todo: Figure of TESS Transit}
 
 \begin{figure}
     \includegraphics[width=\linewidth]{figures/stellar_periodogram.png}
@@ -322,7 +328,9 @@ Reiteration here.
     \texttt{astropy} \citep{2013A&A...558A..33A,2018AJ....156..123A},
     \texttt{muler} (Gully-Santiago et al., submitted),
     \texttt{telfit} \citep{2014AJ....148...53G},
-    \texttt{jupyter} \citep{Kluyver2016jupyter}}
+    \texttt{exoplanet} \citep{exoplanet:joss},
+    \texttt{jupyter} \citep{Kluyver2016jupyter},
+}
 
 
 \clearpage
