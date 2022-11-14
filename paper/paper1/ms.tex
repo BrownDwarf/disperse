@@ -162,7 +162,7 @@ Ideally we seek the pixel-to-pixel substructured spectrum of the helium exospher
 \subsection{TESS Light Curve}
 
 \subsubsection{Revised exoplanet parameters with exoplanet framework}
-We assembled a composite lightcurve from TESS Sectors 24, 26, 51, 52, 53, which were reduced with the default SPOC pipeline \citep{2020RNAAS...4..201C}.  These TESS data exhibit a native RMS scatter of better than 1 part-per-thousand (ppt).  We fit a Keplerian orbit model to the TESS lightcurve using the \texttt{exoplanet} framework \citep{exoplanet:joss}.
+We assembled a composite lightcurve by stitching TESS Sectors 24, 26, 51, 52, 53, which were reduced with the default SPOC pipeline \citep{2020RNAAS...4..201C}.  These TESS data exhibit an RMS scatter of better than 1 part-per-thousand (ppt) at native 2-minute sampling.  We fit a Keplerian orbit model to the TESS lightcurve using the \texttt{exoplanet} framework \citep{exoplanet:joss}.  We obtained a best fit orbital period of $4.81011$ days, non-zero eccentricity of 0.19, an impact parameter of 0.46, planet-to-star radius of 0.0823, transit depth of 0.74\%, and $T_0$ of 1958.07933 in BTJD.  We did not attempt MCMC sampling to quantify degeneracy among these parameters, and we suspect that the orbit is adequately modeled by a circular orbit.
 
 \subsubsection{Stellar rotation rate from periodogram analysis}
 
