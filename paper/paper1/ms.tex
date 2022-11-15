@@ -223,21 +223,17 @@ We masked spectral regions predicted to have significant telluric lines with a t
 
 The sky-subtraction, telluric masking, barycentric correction, and all of our other standard pre-processing steps are implemented in the open-source Python interface \texttt{muler} \citep{2022JOSS....7.4302G}.
 
-Figure X shows 
+Figure \ref{fig:HPF2022campaign} shows a zoom-in on the He 10830 region of interest.
 
-\authorcomment1{Add overplots of He and Ca II.}
 
-\subsection{EW Uncertainty quantification with MCMC}
-We assessed the uncertainty in our equivalent fit Gaussian line profiles to the He 10830 line with \texttt{emcee} \citep{foreman13}. The model consists of a straight-line trend with a Gaussian absorption line.  It has five parameters: the straight-line trend slope $m$ and offset $b$, and the Gaussian amplitude $A$, center wavelength $\mu$, and width $w$.
+\begin{figure}
+    \includegraphics[width=\linewidth]{figures/HAT-P-67_2022_clean.png}
+    \caption{HPF spectrum of HAT-P-67 around the spring 2022 campaign.  We see conspicuous absorption during and immediately preceding the transit, but not immediately after.  The continuum normalization indices are shown by the vertical blue shaded region and the region used for computing EW is shown in the faint gray vertical band.}
+    \label{fig:HPF2022campaign}
+\end{figure}
 
-We computed the equivalent width with the closed-form integral:
-
-\begin{gather}
-    W_\lambda=\frac{Aw}{m \mu + b}\cdot\sqrt{2\pi}
-\end{gather}
-
-Ultimately the MCMC method was highly accurate but imprecise, and was replaced in favor of \emph{data-driven} methods.
-
+%\subsection{EW Uncertainty quantification with MCMC}
+%We assessed the uncertainty in our equivalent fit Gaussian line profiles to the He 10830 line with \texttt{emcee} \citep{foreman13}. The model consists of a straight-line trend with a Gaussian absorption line.  It has five parameters: the straight-line trend slope $m$ and offset $b$, and the Gaussian amplitude $A$, center wavelength $\mu$, and width $w$.
 
 
 Table \ref{tab:sample_properties} lists the bulk physical properties for HAT-P-67.
@@ -250,13 +246,6 @@ Table \ref{tab:sample_properties} lists the bulk physical properties for HAT-P-6
     $6406^{+65}_{-61}$ & $3.854^{+0.014}_{-0.023}$ & -1.4 $\pm$ 0.5 & 35.8 $\pm$ 1.1 & \cite{2017AJ....153..211Z}\\
     \enddata
 \end{deluxetable*}
-
-
-\begin{figure}
-    \includegraphics[width=\linewidth]{figures/stellar_periodogram.png}
-    \caption{Periodogram of solely the stellar variation of the flux. }
-    \label{fig:stellar_periodogram}
-\end{figure}
 
 
 \subsection{HPF MCMC}
