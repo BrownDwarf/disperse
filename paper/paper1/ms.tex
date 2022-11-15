@@ -155,13 +155,9 @@ We searched for observations of HAT-P-67 in public archives.  It has one $R\sim8
 \end{figure}
 
 
-
-Ideally we seek the pixel-to-pixel substructured spectrum of the helium exosphere, corrected for all the conceivable instrumental, telluric, and stellar contamination artifacts.  In practice, these corrections are incomplete and so some care is needed to assess the extent of contamination.  We experimented with a range of pre-processing and analysis techniques to quantify the accuracy and precision of our HPF spectra.
-
-
 \subsection{TESS Light Curve}
 
-\subsubsection{Revised exoplanet parameters with exoplanet framework}
+\subsubsection{Revised exoplanet orbital parameters}
 We assembled a composite lightcurve by stitching TESS Sectors 24, 26, 51, 52, 53, which were reduced with the default SPOC pipeline \citep{2020RNAAS...4..201C}, and lightly post-processed with \texttt{lightkurve} \citep{geert_barentsen_2019_2565212}.  These TESS data exhibit an RMS scatter of better than 1 part-per-thousand (ppt) at native 2-minute sampling.  We fit a Keplerian orbit model to the TESS lightcurve using the \texttt{exoplanet} framework \citep{exoplanet:joss}.  We obtained a best fit orbital period of $4.81011$ days, non-zero eccentricity of 0.19, an impact parameter of 0.46, planet-to-star radius of 0.0823, transit depth of 0.74\%, and $T_0$ of 1958.07933 in BTJD.  We did not attempt MCMC sampling to quantify degeneracy among these parameters, and we suspect that the transit is adequately modeled by a circular orbit.  Figure \ref{fig:transit} shows the best-fit orbit overlaid on the detrended TESS lightcurve.  Table \ref{tabOrbit} lists a previous orbit determination and solutions reported here.
 
 
@@ -174,9 +170,9 @@ We assembled a composite lightcurve by stitching TESS Sectors 24, 26, 51, 52, 53
 
 \subsubsection{Stellar rotation rate from periodogram analysis}
 
-The TESS Sector 26 lightcurve exhibits a weak $\sim3\;$ppt peak-to-valley out-of-transit modulation on timescales comparable to the exoplanet orbit. TESS Sectors 51-53 do not show as conspicuous a modulation signal as does Sector 26.  Figure \ref{fig:TESSmodulation} shows this modulation in the minimally processed TESS lightcurve.  During the exoplanet orbit fitting, we fit the TESS lightcurve modulation with a quasiperiodic Gaussian Process (GP) model using \citep{celerite} \citep{celerite1,celerite2}.  The GP model fit to the entire composite lightcurve yields a period of 4.7 days; when fit to individual sectors alone the periods hover around 5.9 days.
+The TESS Sector 26 lightcurve exhibits a weak $\sim3\;$ppt peak-to-valley out-of-transit modulation on timescales comparable to the exoplanet orbit. TESS Sectors 51-53 do not show as conspicuous a modulation signal.  Figure \ref{fig:TESSmodulation} shows this modulation in the minimally processed TESS lightcurve.  During the exoplanet orbit fitting, we fit the TESS lightcurve modulation with a quasiperiodic Gaussian Process (GP) model using \citep{celerite} \citep{celerite1,celerite2}.  The GP model fit to the entire composite lightcurve yields a period of 4.7 days; when fit to individual sectors alone the periods hover around 5.9 days.
 
-If we attribute the TESS modulation signal to stellar activity, we obtain a rotation period $P_\mathrm{rot}$ between 4.7 and 5.9 days.  \citet{2017AJ....153..211Z} reported a $v\sin{i}=35.8\pm1.1$ km/s, or possibly as $v\sin{i}=30\pm1.1$ km/s if macroturbulence were included. We obtain a geometric constraint on $2.85< R_\star \sin{i} (R_\odot) < 4.2 $.  These constraints are consistent with  the 1-$\sigma$ range of $2.0 < R_\star (R_\odot) < 3.2$ provided in \citet{2017AJ....153..211Z} from different isochrones and orbit fits, and assuming a near-edge-on orbital inclination.  The Gaia \emph{DR3}-derived distance is 8\% greater than the \emph{Gaia} DR1 estimate used in \citet{2017AJ....153..211Z}, which would tend to increase the radius estimate by 16\% to match the observed SED in isochrone-fitting.  We would therefore expect an $R_\star$ range closer to $2.5-3.14 R_\odot$, where we have dropped the 1-$\sigma$ uncertainties which had included the less certain Gaia DR 1 parallax and its uncertain correction terms.
+If we attribute the TESS modulation signal to stellar activity, we obtain a rotation period $P_\mathrm{rot}$ between 4.7 and 5.9 days.  \citet{2017AJ....153..211Z} reported a $v\sin{i}=35.8\pm1.1$ km/s, or possibly as $v\sin{i}=30\pm1.1$ km/s if macroturbulence were included. We obtain a combined geometric constraint $2.85< R_\star \sin{i} (R_\odot) < 4.2 $.  The lower end of these constraints are consistent with  the 1-$\sigma$ range of $2.0 < R_\star (R_\odot) < 3.2$ provided in \citet{2017AJ....153..211Z} from different isochrones and orbit fits, and assuming a near-edge-on orbital inclination.  The Gaia \emph{DR3}-derived distance is 8\% greater than the \emph{Gaia} DR1 estimate used in \citet{2017AJ....153..211Z}; the revised larger distance would tend to increase the radius estimate by 16\% to match the observed SED in isochrone-fitting.  We would therefore expect an isochrone-deived $R_\star$ range closer to $2.5-3.14 R_\odot$, where we have dropped the 1-$\sigma$ uncertainties which had included the less certain Gaia DR 1 parallax and its uncertain correction terms.
 
 
 \begin{figure}
@@ -184,9 +180,6 @@ If we attribute the TESS modulation signal to stellar activity, we obtain a rota
     \caption{Stellar lightcurve modulation observed in TESS Sector 26.  The stellar surface pattern speed appears to have a slightly longer period than the exoplanet orbit, causing the transit to occur earlier in the phase of the modulation upon each orbit.}
     \label{fig:TESSmodulation}
 \end{figure}
-
-
-
 
 
 
@@ -219,17 +212,18 @@ If we attribute the TESS modulation signal to stellar activity, we obtain a rota
 \end{deluxetable*}
 
 
-\subsection{HPF analysis with \texttt{muler} }
+\subsection{HPF analysis}
+Ideally we seek the pixel-to-pixel substructured spectrum of the helium exosphere, corrected for all the conceivable instrumental, telluric, and stellar contamination artifacts.  In practice, these corrections are incomplete and so some care is needed to assess the extent of contamination.  We experimented with a range of pre-processing and analysis techniques to quantify the accuracy and precision of our HPF spectra.
 
 The raw 2D echellograms were reduced with the \texttt{Goldilocks} package\footnote{\url{https://github.com/grzeimann/Goldilocks_Documentation}}, which outputs 1D extracted spectra for the target, and two reference fibers: blank sky and a laser frequency comb (LFC).  The observations were acquired with the LFC turned off, so this unilluminated spectrum was discarded.
 
-The sky fiber and target fiber have slightly different throughputs and illumination properties so the sky fiber must be scaled prior to subtraction from the target spectrum.  On average the target fiber sees $93\%$ of the flux of the sky reference fiber, and in detail this ratio depends on wavelength.  We quantified the wavelength dependence by acquiring calibration observations of blank sky in both the target and sky fiber.  We applied this wavelength-based scale factor to each target spectrum's associated reference sky fiber to achieve near-imperceptible sky-line residuals.  A few lines exhibit residuals which may arise from slight differences in the local atmospheric conditions between the target and sky fiber.
+The sky fiber and target fiber have slightly different throughputs and illumination properties so the sky fiber must be scaled prior to subtraction from the target spectrum.  On average the target fiber sees $93\%$ of the flux of the sky reference fiber, and in detail this ratio depends on wavelength, and to-some-extent season.  We quantified the wavelength dependence by acquiring calibration observations of blank sky in both the target and sky fiber.  We applied this wavelength-based scale factor to each target spectrum's associated reference sky fiber to achieve near-imperceptible sky-line residuals.  A few lines exhibit residuals which may arise from genuine differences in the local atmospheric conditions between the target and sky fiber.
 
 We masked spectral regions predicted to have significant telluric lines with a template generated by \texttt{telfit} \citep{2014AJ....148...53G}.  We shifted the spectral coordinates to their common barycentric-corrected reference frame \citep{2014PASP..126..838W} as implemented in \texttt{astropy} \citep{2013A&A...558A..33A,2018AJ....156..123A}.
 
-We flatten the spectral to continuum indices near the He 10830 features and compute the equivalent width (EW) defined over the spectral region \censorbox{xx,xxx}$-$\censorbox{xx,xxx} shown in Figure \censorbox{XX}.
+The sky-subtraction, telluric masking, barycentric correction, and all of our other standard pre-processing steps are implemented in the open-source Python interface \texttt{muler} \citep{2022JOSS....7.4302G}.
 
-The sky-subtraction, telluric masking, barycentric correction, and all of our other standard pre-processing steps are implemented in a new open-source Python interface \texttt{muler}\footnote{\url{https://github.com/OttoStruve/muler/}} (Gully-Santiago \emph{et al.}, submitted).
+Figure X shows 
 
 \authorcomment1{Add overplots of He and Ca II.}
 
