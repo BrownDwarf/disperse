@@ -170,7 +170,7 @@ We assembled a composite lightcurve by stitching TESS Sectors 24, 26, 51, 52, 53
 
 \subsubsection{Stellar rotation rate from periodogram analysis}
 
-The TESS Sector 26 lightcurve exhibits a weak $\sim3\;$ppt peak-to-valley out-of-transit modulation on timescales comparable to the exoplanet orbit. TESS Sectors 51-53 do not show as conspicuous a modulation signal.  Figure \ref{fig:TESSmodulation} shows this modulation in the minimally processed TESS lightcurve.  During the exoplanet orbit fitting, we fit the TESS lightcurve modulation with a quasiperiodic Gaussian Process (GP) model using \citep{celerite} \citep{celerite1,celerite2}.  The GP model fit to the entire composite lightcurve yields a period of 4.7 days; when fit to individual sectors alone the periods hover around 5.9 days.
+The TESS Sector 26 lightcurve exhibits a weak $\sim3\;$ppt peak-to-valley out-of-transit modulation on timescales comparable to the exoplanet orbit. TESS Sectors 51-53 do not show as conspicuous a modulation signal.  Figure \ref{fig:TESSmodulation} shows this modulation in the minimally processed TESS lightcurve.  During the exoplanet orbit fitting, we fit the TESS lightcurve modulation with a quasiperiodic Gaussian Process (GP) model using \texttt{celerite} \citep{celerite1,celerite2}.  The GP model fit to the entire composite lightcurve yields a period of 4.7 days; when fit to individual sectors alone the periods hover around 5.9 days.
 
 If we attribute the TESS modulation signal to stellar activity, we obtain a rotation period $P_\mathrm{rot}$ between 4.7 and 5.9 days.  \citet{2017AJ....153..211Z} reported a $v\sin{i}=35.8\pm1.1$ km/s, or possibly as $v\sin{i}=30\pm1.1$ km/s if macroturbulence were included. We obtain a combined geometric constraint $2.85< R_\star \sin{i} (R_\odot) < 4.2 $.  The lower end of these constraints are consistent with  the 1-$\sigma$ range of $2.0 < R_\star (R_\odot) < 3.2$ provided in \citet{2017AJ....153..211Z} from different isochrones and orbit fits, and assuming a near-edge-on orbital inclination.  The Gaia \emph{DR3}-derived distance is 8\% greater than the \emph{Gaia} DR1 estimate used in \citet{2017AJ....153..211Z}; the revised larger distance would tend to increase the radius estimate by 16\% to match the observed SED in isochrone-fitting.  We would therefore expect an isochrone-deived $R_\star$ range closer to $2.5-3.14 R_\odot$, where we have dropped the 1-$\sigma$ uncertainties which had included the less certain Gaia DR 1 parallax and its uncertain correction terms.
 
@@ -201,13 +201,13 @@ If we attribute the TESS modulation signal to stellar activity, we obtain a rota
     %%
     ~~~$P$ (days)             \dotfill    & $4.8101025_{-3.3\times 10^{-7}}^{+4.3\times 10^{-7}}$ & 4.8101046$\pm1.7\times10^{-6}$ & 4.81011 & z \\
     ~~~$T_c$ (${\rm BTJD}$)  \dotfill    & $-1038.61533_{-0.00064}^{+0.00076}$ & 1958.08059$\pm$0.00032 & 1958.07933 & z \\
-    ~~~$T_{14}$ (hours)  \dotfill    & $6.9888 \pm 0.046$ & x & 7.0636 & z \\
-    ~~~$T_{12} = T_{34}$ (days)  \dotfill    & $0.0229\pm0.0010$ & x & y & z \\
-    ~~~$\arstar$              \dotfill    & $5.691_{-0.124}^{+0.057}$ & x & y & z \\
-    ~~~$\rpl/\rstar$          \dotfill    & $0.0834\pm0.0017$ & x & 0.08231 & z \\
+    ~~~$T_{14}$ (hours)  \dotfill    & $6.9888 \pm 0.046$ &  & 7.0636 & z \\
+    ~~~$T_{12} = T_{34}$ (days)  \dotfill    & $0.0229\pm0.0010$ &  &  & z \\
+    ~~~$\arstar$              \dotfill    & $5.691_{-0.124}^{+0.057}$ &  &  & z \\
+    ~~~$\rpl/\rstar$          \dotfill    & $0.0834\pm0.0017$ &  & 0.08231 & z \\
     ~~~$b \equiv a \cos i/\rstar$
-    \dotfill    & $0.12_{-0.08}^{+0.12}$ & x & 0.45616 & z \\
-    ~~~$i$ (deg)              \dotfill    & $88.8_{-1.3}^{+1.1}$ & x & y & z \\
+    \dotfill    & $0.12_{-0.08}^{+0.12}$ &  & 0.45616 & z \\
+    ~~~$i$ (deg)              \dotfill    & $88.8_{-1.3}^{+1.1}$ &  &  & z \\
     \enddata
 \end{deluxetable*}
 
@@ -232,71 +232,40 @@ Figure \ref{fig:HPF2022campaign} shows a zoom-in on the He 10830 region of inter
     \label{fig:HPF2022campaign}
 \end{figure}
 
-%\subsection{EW Uncertainty quantification with MCMC}
-%We assessed the uncertainty in our equivalent fit Gaussian line profiles to the He 10830 line with \texttt{emcee} \citep{foreman13}. The model consists of a straight-line trend with a Gaussian absorption line.  It has five parameters: the straight-line trend slope $m$ and offset $b$, and the Gaussian amplitude $A$, center wavelength $\mu$, and width $w$.
 
+\begin{figure}
+    \includegraphics[width=\linewidth]{figures/HAT_P_67b_Helium10830EW_byCampaign.png}
+    \caption{Time series EW lightcurve of Helium absorption in HAT-P-67b.  The system exhibits a characteristic absorption leading up to transit, followed by a sharp decline after transit passage.  }
+    \label{fig:HPFtimeseries}
+\end{figure}
 
-Table \ref{tab:sample_properties} lists the bulk physical properties for HAT-P-67.
-
-\begin{deluxetable*}{ccccc}[!ht]
-    \tablecaption{Stellar properties \label{tab:sample_properties}}
-    \tablehead{
-        \colhead{$T_{\mathrm{eff}}$ (K)} & \colhead{$\log{g}$} & \colhead{RV (km/s)} & \colhead{V sin(i) (km/s)} & \colhead{Reference}}
-    \startdata
-    $6406^{+65}_{-61}$ & $3.854^{+0.014}_{-0.023}$ & -1.4 $\pm$ 0.5 & 35.8 $\pm$ 1.1 & \cite{2017AJ....153..211Z}\\
-    \enddata
-\end{deluxetable*}
-
-
-\subsection{HPF MCMC}
-The methodology used to fit the HPF spectra was the Markov chain Monte Carlo (MCMC). After deblazing and normalizing the spectrum, we used a Gaussian line to fit the spectra with five parameters: width, center wavelength, amplitude, slope, and offset.  We focused on each sub-region of the spectrum by cutting of data outside of the $99.9\%-100.1\%*line$ threshold to create a better fit for the data. This threshold was determined as a result of which line we were looking at. The generative model consists of a straight-line trend with a Gaussian subtracted from it. The continuum of the spectrum was given by $continuum=m(\lambda-\lambda_{int})+b$ and the Gaussian fit was subtracted off of the continuum to get the absorption line fit. After applying values to the five parameters for the generative model, we improved our fitting with the MCMC process. We computed the log likelihood of the guessing parameters to determine a quality of fit metric. From there, we ran MCMC with the package \textit{emcee} at 5000 steps for the five parameters. After thinning out and discarding the last 1000 steps, we gathered the final draws for the given parameters with their corresponding uncertainties.
-
-\subsection{HPF Equivalent Width Determination}
-In addition to the MCMC method, we verified the precision of our numbers through another fitting method. While the MCMC method produced an accurate result, it lacked the precision required. Thus, we chose to analyze the data again with the summation method.
-
-After collecting the new parameters, we then calculated the equivalent width of the corresponding line with the formula $EW=\sqrt{2\pi}\frac{Aw}{m(\mu-line)+b}$. We then calculated the mean and standard deviation of the equivalent width.
-\subsection{Contemporaneous Stellar Activity Quantification}
-
-\input{tables/ew_table.tex}
+\subsection{Calcium IR Triplet lines}
 
 \section{Results}
-\subsection{Detection of Helium with Orbital Phase}
-\begin{figure}
-    \includegraphics[width=\linewidth]{figures/TESS_EW_HAT-P-67.jpg}
-    \caption{A boat.}
-    \label{fig:boat1}
-\end{figure}
-We can see that there is indeed a helium signature that arises when the planet is in transit with its host star.
-\subsection{Stellar Activity (non)detection versus Equivalent Width}
-There is a likelihood that a portion of the exoplanet emission spectra originates from stellar activity. Thus, we must identify which stellar features mimic a helium signature. Such features can be narrowed down to the star's radial velocity, star spots, and faculae.
+
+\subsection{Geometry of the Escaping Exosphere}
+Helium absorption occurs before the planet is in-transit, indicating a \emph{leading} tail escaping the planet. We see excess as early as 30\% of the orbital path, or about 130 planetary radii.
+
 \subsection{Star Planet Interaction}
-Characterizing a host star's stellar environment is of utmost importance if we want to understand how exoplanet atmospheres are affected. While cool dwarfs generate high irradiation in the ultraviolet and stellar winds, the sub-giant category
 \subsection{Gas Motion Relative to Planet}
 \subsection{Parker Winds Model}
-\subsubsection{p-winds model failure}
-\subsection{Geometry of the Escaping Exosphere}
-We can depict the transit of HAT-P-67b from the orbital phase versus equivalent width plot. The plot exhibits helium absorption occurring before the planet is in-transit. We can attribute this shallow increase in the equivalent width to the shape of the helium exosphere. Because the absorption gradually increases, we created a leading tail that begins transit 2 days before the planet does. As a result, we mold the shape of the helium exosphere to mimic the irregular absorption with constraints on the velocity and length
+
 
 \section{Discussion}
 \subsection{Hot Spot Scenario}
-Using the contemporaneous TESS lightcurve, we notice that there is a 0.2\% flux variation. Assuming that this increase in flux is due to a hot spot with a contrast of 200\%, the hot spot must have a radius that is 12.49 times that of the radius of the Earth. Assuming that the mass loss rate of the planet is its mass over 10 billion years, we can assume that this hot spot is not caused by in falling mass from the planetary envelope as the mass is not enough to cause a 0.2\% modulation in the flux.
+The TESS 0.2\% flux variation could hypothetically arise from the foot-print of a star-planet interaction. Assuming that this increase in flux is due to a hot spot with a contrast of 200\% the ambient photosphere in the TESS bandpass, the hot spot would have a modest 5\% coverage fraction.  Thermal radiation from gravitational infall alone cannot explain the luminosity of this spot, so it would have to stem from a non-thermal cause.
 
 \subsection{Tidal Locking Calculation}
-From section 3.3.1, we determined the rotational period of the star from contemporaneous TESS data. Given the orbital period of the planet, we concluded that the system is tidally locked.
+The similarity of the rotation period with the orbital period suggests the star-planet system may be tidally locked.
 
 \subsection{Mass Loss Rate}
-Parker wind models, such as those implemented in the Python tool p-winds, are incapable of accurately measuring mass loss rates for systems as extreme as HAT-P-67. Instead, we must constrain the mass loss rate to the mass of the planet over the course of the age of the universe. The resulting value is $2.045*10^{12}$ g/s.
-
-The first scenario is where the mass from the exosphere falls onto the surface of the star. The TESS lightkurve for this system exhibits a reoccurring 0.2\% increase in the flux that is not attributable to the planet’s transit. Assuming that this modulation is due to a hot spot on the stellar surface, we conclude that gravitational potential energy alone is not sufficient to increase the flux by such an amount. Larger mass loss rates could cause brighter hotspots, but this would cause the planet to disappear entirely over its lifetime, which is unphysical.
+A steady state mass loss rate greater than $2\times10^{12}$ g/s would erode the planet over the age of the stellar system.
 
 \subsection{Confinement to Stellar Wind}
 \subsection{Limits of Stellar Activity Metrics}
-\authorcomment1{3D Heat Map Interpolation figure that mimics MacLeod paper}
 \subsection{Comparison to Other Systems}
-\authorcomment1{Parameter plot with HAT-P-67 system with others from exoplanet archive}
 \section{Conclusions}
 
-Reiteration here.
 
 \clearpage
 \pagebreak
@@ -320,8 +289,8 @@ Reiteration here.
     \texttt{scipy} \citep{2020SciPy-NMeth},
     \texttt{ipython} \citep{perez07},
     \texttt{seaborn} \citep{waskom14},
-    \texttt{astropy} \citep{2013A&A...558A..33A,2018AJ....156..123A},
-    \texttt{muler} (Gully-Santiago et al., submitted),
+    \texttt{astropy} \citep{2022ApJ...935..167A},
+    \texttt{muler} \citep{2022JOSS....7.4302G},
     \texttt{telfit} \citep{2014AJ....148...53G},
     \texttt{exoplanet} \citep{exoplanet:joss},
     \texttt{jupyter} \citep{Kluyver2016jupyter},
