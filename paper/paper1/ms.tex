@@ -149,7 +149,7 @@ We searched for observations of HAT-P-67 in public archives.  It has one $R\sim8
 \section{Analysis}
 
 \begin{figure}
-    \includegraphics[width=\linewidth]{../../figures/Gaia_HAT_P_67_AB.png}
+    \includegraphics[width=\linewidth]{figures/Gaia_HAT_P_67_AB.png}
     \caption{HR Diagram of F star HAT-P-67A with its assumed M-dwarf main sequence companion HAT-P-67B.  The density of stars comes from the \emph{Kepler} prime field estimated by \citet{2020AJ....160..108B} using \emph{Gaia DR2}.}
     \label{fig:gaiaHRD}
 \end{figure}
@@ -174,9 +174,9 @@ We assembled a composite lightcurve by stitching TESS Sectors 24, 26, 51, 52, 53
 
 \subsubsection{Stellar rotation rate from periodogram analysis}
 
-The TESS Sector 26 lightcurve exhibits a weak $\sim3\;$ppt peak-to-valley out-of-transit modulation on timescales comparable to the exoplanet orbit. TESS Sectors 51-53 do not show as conspicuous a modulation signal as does Sector 26.  Figure \ref{fig:TESSmodulation} shows this modulation in the minimally processed TESS lightcurve.  During the exoplanet orbit fitting, we fit the TESS lightcurve modulation with a quasiperiodic Gaussian Process (GP) model using \citep{celerite} \citep{celerite1,celerite2}.  The GP model fit to the entire composite lightcurve yields a period of 4.68 days; when fit to individual sectors alone the periods hover around 5.9 days.
+The TESS Sector 26 lightcurve exhibits a weak $\sim3\;$ppt peak-to-valley out-of-transit modulation on timescales comparable to the exoplanet orbit. TESS Sectors 51-53 do not show as conspicuous a modulation signal as does Sector 26.  Figure \ref{fig:TESSmodulation} shows this modulation in the minimally processed TESS lightcurve.  During the exoplanet orbit fitting, we fit the TESS lightcurve modulation with a quasiperiodic Gaussian Process (GP) model using \citep{celerite} \citep{celerite1,celerite2}.  The GP model fit to the entire composite lightcurve yields a period of 4.7 days; when fit to individual sectors alone the periods hover around 5.9 days.
 
-If we assume the TESS modulation signal is attributable to stellar activity, we obtain a rotation period $P_\mathrm{rot}$ between 4.7 and 5.9 days.  The reported $v\sin{i}=35.8\pm1.1$ km/s would yield an $R_\star \sin{i}$ =
+If we attribute the TESS modulation signal to stellar activity, we obtain a rotation period $P_\mathrm{rot}$ between 4.7 and 5.9 days.  \citet{2017AJ....153..211Z} reported a $v\sin{i}=35.8\pm1.1$ km/s, or possibly as $v\sin{i}=30\pm1.1$ km/s if macroturbulence were included. We obtain a geometric constraint on $2.85< R_\star \sin{i} (R_\odot) < 4.2 $.  These constraints are consistent with  the 1-$\sigma$ range of $2.0 < R_\star (R_\odot) < 3.2$ provided in \citet{2017AJ....153..211Z} from different isochrones and orbit fits, and assuming a near-edge-on orbital inclination.  The Gaia \emph{DR3}-derived distance is 8\% greater than the \emph{Gaia} DR1 estimate used in \citet{2017AJ....153..211Z}, which would tend to increase the radius estimate by 16\% to match the observed SED in isochrone-fitting.  We would therefore expect an $R_\star$ range closer to $2.5-3.14 R_\odot$, where we have dropped the 1-$\sigma$ uncertainties which had included the less certain Gaia DR 1 parallax and its uncertain correction terms.
 
 
 \begin{figure}
