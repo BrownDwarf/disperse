@@ -128,7 +128,34 @@ The Habitable Zone Planet Finder Spectrograph \citep[HPF][]{2012SPIE.8446E..1SM,
 
 Finally, the observation scheduling was strategically restricted to the spring season when the Barycentric Earth Radial Velocity (BERV) would Doppler shift telluric absorption lines sufficiently far away from the core of the Helium 10833$\AA~$ feature.  The small BERV still means the redward Helium linewing has significant telluric contamination between 10834-10836$\AA$, but the core and blue line wings appear pristine.
 
-\input{tables/observations_flat_table.tex}
+
+\begin{deluxetable*}{lrrrccr}
+    \tablewidth{0pc}
+    \tabletypesize{\scriptsize}
+    \tablecaption{
+        HPF Observation Log
+        \label{tabHPFLog}
+    }
+    \tablehead{
+        \colhead{Date}   &
+        \colhead{Track} &
+        \colhead{Transit?} &
+        \colhead{BTJD} &
+        \colhead{$N_\mathrm{exp}$} &
+        \colhead{$t_\mathrm{exp}$} &
+        \colhead{$\phi$}\\
+        \colhead{}   &
+        \colhead{} &
+        \colhead{} &
+        \colhead{(days)} &
+        \colhead{} &
+        \colhead{(s)} &
+        \colhead{$\in(-0.5, 0.5)$}
+    }
+    \startdata
+    \input{tables/observation_log.tex}
+    \enddata
+\end{deluxetable*}
 
 \subsection{TESS Light Curve}
 HAT-P-67 was observed with the \emph{Transiting Exoplanet Survey Satellite} \citep[TESS][]{2014SPIE.9143E..20R} in Sectors 24, 26, 51, 52, 53 with 2-minute cadence, and in Sector 25 with 30-minute (FFI) cadence.  The Sector 25 FFI data appeared malformed, possibly due to problems with pipeline CCD smear correction, and was disregarded.
