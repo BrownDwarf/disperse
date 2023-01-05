@@ -139,3 +139,6 @@ figures/
 *.exe
 *.synctex.gz
 *.blg
+
+data/HPF/HAT_P_67_psu/*
+data/HPF/HAT_P_67_glks/*
