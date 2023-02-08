@@ -163,6 +163,8 @@ Only 19 out of the 39 nights possess A0V telluric calibration standard stars.  T
 \subsection{TESS Light Curve}
 HAT-P-67 was observed with the \emph{Transiting Exoplanet Survey Satellite} \citep[TESS][]{2014SPIE.9143E..20R} in Sectors 24, 26, 51, 52, 53 with 2-minute cadence, and in Sector 25 with 30-minute (FFI) cadence.  The Sector 25 FFI data appeared malformed, possibly due to problems with pipeline CCD smear correction, and was disregarded.
 
+We also assembled a comparison sample of about 1000 lightcurves to interpret the  prevalence of lightcurve modulation and stellar activity among broadly F subgiant-like stars.  We selected sources based on \emph{Gaia} DR3 $T_\mathrm{eff}$ estimates and similar $\log{g}$,  and availability of at least one sector of TESS 2-minute cadence data\footnote{The requirement to have 2-minute cadence data---a data reduction convenience---may include biases stemming from the pre-selection of TESS targets, but it is not clear whether such a pre-selection would favor more or less stellar activity}.  We also visually spot-checked these lightcurves to understand artifacts and windowing effects.
+
 \subsection{ASAS-SN}
 We retrieved ground-based photometry with the \emph{All-Sky Automated Survey for Supernovae} (ASAS-SN) using the Sky-Portal \citep{shappee14,2017PASP..129j4502K}.  The precision of ASAS-SN was too low to perceive stellar variability, and so the photometry is not presented further.
 
@@ -191,6 +193,7 @@ We searched for observations of HAT-P-67 in public archives.  It has one $R\sim8
 We assembled a composite lightcurve by stitching TESS Sectors 24, 26, 51, 52, 53, which were reduced with the default SPOC pipeline \citep{2020RNAAS...4..201C}, and lightly post-processed with \texttt{lightkurve} \citep{geert_barentsen_2019_2565212}.  These TESS data exhibit an RMS scatter of better than 1 part-per-thousand (ppt) at native 2-minute sampling.  We fit a Keplerian orbit model to the TESS lightcurve using the \texttt{exoplanet} framework \citep{exoplanet:joss}.  We obtained a best fit orbital period of $4.81011$ days, non-zero eccentricity of 0.19, an impact parameter of 0.46, planet-to-star radius ratio of 0.0823, transit depth of 0.74\%, and $T_0$ of 1958.07933 in BTJD.  These properties are consistent with the previously reported values from \citet{2017AJ....153..211Z} and the updated ephemeris of \citet{2022ApJS..259...62I}.  Figure \ref{fig:transit} shows the best-fit orbit overlaid on the detrended TESS lightcurve.  Table \ref{tabOrbit} lists one of the previous orbit determinations and solution reported here.
 
 
+
 \begin{figure}
     \includegraphics[width=\linewidth]{figures/best_fit_orbit.png}
     \caption{Best fit orbit overlaid on the composite TESS lightcurve.  The 1 ppt TESS precision improves upon the ground-based detection and refining the orbital properties and ephemerides.}
@@ -203,6 +206,9 @@ We assembled a composite lightcurve by stitching TESS Sectors 24, 26, 51, 52, 53
 The TESS Sector 26 lightcurve exhibits a weak $\sim3\;$ppt peak-to-valley out-of-transit modulation on timescales comparable to the exoplanet orbit. TESS Sectors 51-53 do not show as conspicuous a modulation signal.  Figure \ref{fig:TESSmodulation} shows this modulation in the minimally processed TESS lightcurve.  During the exoplanet orbit fitting, we fit the TESS lightcurve modulation with a quasiperiodic Gaussian Process (GP) model using \texttt{celerite} \citep{celerite1,celerite2}.  The GP model fit to the entire composite lightcurve yields a period of 4.7 days; when fit to individual sectors alone the periods hover around 5.9 days.
 
 If we attribute the TESS modulation signal to stellar activity, we obtain a rotation period $P_\mathrm{rot}$ between 4.7 and 5.9 days.  \citet{2017AJ....153..211Z} estimated $v\sin{i}=35.8\pm1.1$ km/s, or lower ($v\sin{i}=30\pm1.1$ km/s) if macroturbulence was accounted for.  We obtain a combined geometric constraint $2.85< R_\star \sin{i}  < 4.2 $ in units of $R_\odot$.  The lower end of these constraints is consistent with  the 1-$\sigma$ range of $2.0 < R_\star < 3.2$ provided in \citet{2017AJ....153..211Z} from different isochrones and orbit fits, and assuming a near-equator-on orbital inclination.  The Gaia \emph{DR3}-derived distance is 8\% greater than the \emph{Gaia} DR1 estimate used in \citet{2017AJ....153..211Z}; the revised larger distance would tend to increase the radius estimate by 16\% to match the observed SED in isochrone-fitting.  We would therefore expect an isochrone-derived $R_\star$ range closer to $2.5-3.14 R_\odot$, where we have dropped the 1-$\sigma$ uncertainties which had included the less certain Gaia DR 1 parallax and its uncertain correction terms.  For a fixed $R_p/R_\star$, the larger $R_\star$ implies a proportionally larger planet radius, revising the already-low density of HAT-P-67 even lower.
+
+\subsubsection{Lightcurve modulation amplitude}
+Finally, we computed the peak-to-valley modulation for the 1000-lightcurve comparison sample, defined as the difference between the 90$^{th}$ to 10$^{th}$ percentile of each normalized TESS lightcurve.   We find that most lightcurves are consistent with negligible astrophysical variability and/or variability predominated by instrumental artifacts. Nevertheless, \object{HAT-P-67 b}'s 0.36$\%$ lightcurve modulation was slightly larger than the typical comparison source, ranking in the 87$^{th}$ percentile of the ensemble.  However the higher-modulation sources exhibited 3-5$\times$ the level of modulation seen in \object{HAT-P-67 b}, whereas \object{HAT-P-67 b} was only about 0.5$\times$ above the median.
 
 
 \begin{figure}
@@ -302,42 +308,36 @@ We examined the \ion{Ca}{2} IR Triplet lines (Ca IRT) for evidence of variabilit
 \end{figure}
 
 \subsection{Velocity substructure}
-Figure \ref{fig:HeliumScanZoom} shows a zoom-in of the in-transit portion of the absorption residual scan.  The scan exhibits some velocity substructure.  At transit ingress, the absorption
-
+Figure \ref{fig:HeliumScanZoom} shows a zoom-in of the in-transit portion of the absorption residual scan.  The scan appears to exhibit some velocity substructure.  At transit ingress, the absorption appears more centrally concentrated near the vertical 10833 \AA~ line.  The line depth gets slightly shallower with a slight redshift approaching transit midcenter.
 
 \begin{figure}
     \includegraphics[width=\linewidth]{figures/phase_2D_diagram_zoom.png}
-    \caption{A zoom-in of the in-transit and post-transit phase scan for the Helium 10830 triplet.  Some velocity substructure may be seen.}
+    \caption{A zoom-in of the in-transit and post-transit phase scan for the Helium 10830 triplet.  Some velocity substructure may be apparent.}
     \label{fig:HeliumScanZoom}
 \end{figure}
 
 
+\section{Atmospheric Escape}
+
+\subsection{Size and geometry of atmospheric escape}
+Helium absorption occurs predominantly before the planet is in-transit, indicating a \emph{leading} tail escaping the planet.  The excess occurs as early as 30\% of the orbital path.  That large fraction of an orbit translates to about 0.1 AU, 130 planetary radii, and well outside of the Roche Lobe, with its Hill radius of merely 2.6 planetary radii.  We are therefore primarily detecting gas that is entirely unbound from the planet.  The leading gas tail does not appear to accelerate, neither blue-shifting nor redshifting.   The bulk of the detectable unbound gas may therefore follow its own Keplerian trajectory at a slightly shorter period orbit.  Such a scenario may arise from preferential emission on the planet dayside, and other hypotheticals that we discussion in Section \ref{secDiscuss}.
+
+We
 
 
+\section{Discussion} \label{secDiscuss}
+%\subsection{Hot Spot Scenario}
+%The TESS 0.2\% flux variation could hypothetically arise from the foot-print of a star-planet interaction. Assuming that this increase in flux is due to a hot spot with a contrast of 200\% the ambient photosphere in the TESS bandpass, the hot spot would have a modest 5\% coverage fraction.  Thermal radiation from gravitational infall alone cannot explain the luminosity of this spot, so it would have to stem from a non-thermal cause.
 
-\section{Results}
+%\subsection{Tidal Locking Calculation}
+%The similarity of the rotation period with the orbital period suggests the star-planet system may be tidally locked.
 
-\subsection{Geometry of the Escaping Exosphere}
-Helium absorption occurs before the planet is in-transit, indicating a \emph{leading} tail escaping the planet. We see excess as early as 30\% of the orbital path, or about 130 planetary radii.
+%\subsection{Mass Loss Rate}
+%A steady state mass loss rate greater than $2\times10^{12}$ g/s would erode the planet over the age of the stellar system.
 
-\subsection{Star Planet Interaction}
-\subsection{Gas Motion Relative to Planet}
-\subsection{Parker Winds Model}
-
-
-\section{Discussion}
-\subsection{Hot Spot Scenario}
-The TESS 0.2\% flux variation could hypothetically arise from the foot-print of a star-planet interaction. Assuming that this increase in flux is due to a hot spot with a contrast of 200\% the ambient photosphere in the TESS bandpass, the hot spot would have a modest 5\% coverage fraction.  Thermal radiation from gravitational infall alone cannot explain the luminosity of this spot, so it would have to stem from a non-thermal cause.
-
-\subsection{Tidal Locking Calculation}
-The similarity of the rotation period with the orbital period suggests the star-planet system may be tidally locked.
-
-\subsection{Mass Loss Rate}
-A steady state mass loss rate greater than $2\times10^{12}$ g/s would erode the planet over the age of the stellar system.
-
-\subsection{Confinement to Stellar Wind}
-\subsection{Limits of Stellar Activity Metrics}
-\subsection{Comparison to Other Systems}
+%\subsection{Confinement to Stellar Wind}
+%\subsection{Limits of Stellar Activity Metrics}
+%\subsection{Comparison to Other Systems}
 \section{Conclusions}
 
 
