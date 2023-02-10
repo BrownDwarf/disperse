@@ -9,8 +9,6 @@
 
 \let\pwiflocal=\iffalse \let\pwifjournal=\iffalse
 %From: http://arxiv.org/format/1512.00483
-%\input{setup}
-%\input{mgs_setup}
 
 %% General
 \newcommand{\msini}{\ensuremath{m \sin i}}
@@ -79,7 +77,6 @@
 \newcommand{\rjup}{\ensuremath{R_{\rm J}}}
 \newcommand{\mjup}{\ensuremath{M_{\rm J}}}
 \newcommand{\ljup}{\ensuremath{L_{\rm J}}}
-\newcommand{\teffjup}{\ensuremath{T_{eff,{\rm J}}}}
 \newcommand{\rhojup}{\ensuremath{\rho_{\rm J}}}
 \newcommand{\gjup}{\ensuremath{\g_{\rm J}}}
 
@@ -245,13 +242,6 @@ We searched for observations of HAT-P-67 in public archives.  It has one $R\sim8
 
 \section{Analysis}
 
-%\begin{figure}
-%    \includegraphics[width=\linewidth]{figures/Gaia_HAT_P_67_AB.png}
-%    \caption{HR Diagram of F star HAT-P-67A with its assumed M-dwarf main sequence companion HAT-P-67B.  The density of stars comes from the \emph{Kepler} prime field estimated by \citet{2020AJ....160..108B} using \emph{Gaia DR2}.}
-%    \label{fig:gaiaHRD}
-%\end{figure}
-
-
 \subsection{TESS Light Curve}
 
 \subsubsection{Revised exoplanet orbital parameters}
@@ -303,12 +293,9 @@ Finally, we computed the peak-to-valley modulation for the 1000-lightcurve compa
     ~~~$P$ (days)             \dotfill    & $4.8101025_{-3.3\times 10^{-7}}^{+4.3\times 10^{-7}}$ & 4.8101046$\pm1.7\times10^{-6}$ & 4.81011 & z \\
     ~~~$T_c$ (${\rm BTJD}$)  \dotfill    & $-1038.61533_{-0.00064}^{+0.00076}$ & 1958.08059$\pm$0.00032 & 1958.07933 & z \\
     ~~~$T_{14}$ (hours)  \dotfill    & $6.9888 \pm 0.046$ &  & 7.0636 & z \\
-    %~~~$T_{12} = T_{34}$ (days)  \dotfill    & $0.0229\pm0.0010$ &  &  & z \\
-    %~~~$\arstar$              \dotfill    & $5.691_{-0.124}^{+0.057}$ &  &  & z \\
     ~~~$\rpl/\rstar$          \dotfill    & $0.0834\pm0.0017$ &  & 0.08231 & z \\
     ~~~$b \equiv a \cos i/\rstar$
     \dotfill    & $0.12_{-0.08}^{+0.12}$ &  & 0.45616 & z \\
-    %~~~$i$ (deg)              \dotfill    & $88.8_{-1.3}^{+1.1}$ &  &  & z \\
     \enddata
 \end{deluxetable*}
 
@@ -350,12 +337,6 @@ Finally, a tentative much weaker post-egress bifurcation into blue-shifted absor
     \label{fig:HPFscanResid}
 \end{figure}
 
-%\begin{figure}
-%    \includegraphics[width=\linewidth]{figures/HAT-P-67_2022_clean.png}
-%    \caption{HPF spectra of HAT-P-67 from the April/May 2022 campaign.  We see conspicuous absorption during and immediately preceding the transit, but not immediately after.}
-%    \label{fig:HPF2022campaign}
-%\end{figure}
-
 
 \begin{figure}
     \includegraphics[width=\linewidth]{figures/HAT_P_67b_Helium10830EW_byCampaign.png}
@@ -393,8 +374,22 @@ The out-of-transit excess exhibits approximately the same line width as the stel
 \subsection{Inapplicability of the Parker Wind model}
 As mentioned, most of the excess we see resides outside the Roche Lobe,  extended emissions
 
+\subsection{The timescale of gas motion}
+The The density and ionization properties of this material only permit its observation during the 1.5 days immediately after its release.
 
 \section{Discussion} \label{secDiscuss}
+
+\subsection{Physical mechanisms for atmospheric escape}
+\object{HAT-P-67 b} exhibits both dramatic atmospheric escape and significant radius inflation.  Ohmic dissipation stands out as a physical mechanism that could be responsible for both of these attributes.  \citet{2011ApJ...738....1B} showed that ohmic heating acts to inflate hot Jupiters, with low mass hot Jupiters overflowing their Roche lobes and leading to evaporation on Gyr timescales.  The ohmic heating scenario requires only on a modest planetary magnetic field and enough photoionization to ionize some modest fraction of neutral metals.  The ``sweet spot'' for this phenomenon appears to prefer equilibrium temperatures in the range of $1500<T_\mathrm{eq}<2000$ K, well matched to HAT-P-67 b's $\sim$1900 K.  The inflation timescale goes as (Eq. 20 in \citet{2011ApJ...738....1B}):
+\begin{equation}
+    \tau_{\textit{infl}}\sim \left(\frac{0.01}{\epsilon} \right) \left(\frac{M}{M_{J}}\right)^2 \left(\frac{R_{J}}{R}\right)^3 \left(\frac{1500 \textrm{K}}{T_\mathrm{eff}}\right)^4 \textrm{Gyr}.
+\end{equation}
+
+
+\noindent yielding an incredibly short 5 Myr timescale for HAT-P-67 b, assuming a typical $\epsilon\sim0.01$.  The order of magnitude of this inflation timescale is so fleetingly short that HAT-P-67 b must be firmly in the runaway stage of inflation, growing in surface area and proportionally fueling the ohmic dissipation mechanism.  This runaway Roche lobe overflow would explain the large leading tail as the byproduct of such profound mass loss as to create an orbit-filling torus of material.
+
+
+
 %\subsection{Hot Spot Scenario}
 %The TESS 0.2\% flux variation could hypothetically arise from the foot-print of a star-planet interaction. Assuming that this increase in flux is due to a hot spot with a contrast of 200\% the ambient photosphere in the TESS bandpass, the hot spot would have a modest 5\% coverage fraction.  Thermal radiation from gravitational infall alone cannot explain the luminosity of this spot, so it would have to stem from a non-thermal cause.
 
