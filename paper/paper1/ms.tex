@@ -94,15 +94,80 @@
 \providecommand{\adsurl}[1]{\href{#1}{ADS}}
 \newcommand{\project}[1]{\textsl{#1}}
 
+%% ---------------------------------------------------------------------
+%% Affiliations
+\newcommand{\PSUAA}{Department of Astronomy \& Astrophysics, 525 Davey Laboratory, The Pennsylvania State University, University Park, PA, 16802, USA}
+\newcommand{\PSUCEHW}{Center for Exoplanets and Habitable Worlds, 525 Davey Laboratory, The Pennsylvania State University, University Park, PA, 16802, USA}
+\newcommand{\Princeton}{Department of Astrophysical Sciences, Princeton University, 4 Ivy Lane, Princeton, NJ 08540, USA}
+\newcommand{\RUSSELL}{Henry Norris Russell Fellow}
+\newcommand{\CFA}{Center for Astrophysics $\vert$ Harvard $\&$ Smithsonian, 60 Garden Street, MS-16, Cambridge, MA 02138, USA}
+\newcommand{\UTAustin}{Department of Astronomy, The University of Texas at Austin, 2515 Speedway, Austin, TX 78712, USA}
+\newcommand{\MCDonald}{McDonald Observatory and Department of Astronomy, The University of Texas at Austin, 2515 Speedway, Austin, TX 78712, USA}
+\newcommand{\UTSpace}{Center for Planetary Systems Habitability, The University of Texas at Austin, 2515 Speedway, Austin, TX 78712, USA}
+\newcommand{\Amsterdam}{Anton Pannekoek Institute for Astronomy, University of Amsterdam, Science Park 904, NL-1098 XH Amsterdam, The Netherlands}
+\newcommand{\UCSC}{Department of Astronomy \& Astrophysics, University of California, Santa Cruz, 1156 High St, Santa Cruz, CA 95064, USA}
+
+
+% -------------------------------------------------------
+
 \begin{document}
 \shorttitle{HPF spectral analysis}
 \shortauthors{TBD}
 
-\title{Atmospheric escape and star-planet-interaction in the HAT-P-67 b system}
+\title{A large leading tail of atmospheric escape in the HAT-P-67 b system}
 
-\author{TBD}
-\affiliation{TBD}
+\author[0000-0002-4020-3457]{Michael Gully-Santiago}
+\affil{\UTAustin}
 
+\author[0000-0003-2649-2288]{Brendan P. Bowler}
+\affiliation{\UTAustin}
+
+\author[0000-0001-9662-3496]{William D. Cochran}
+\affil{\MCDonald}
+\affil{\UTSpace}
+
+\author[0000-0002-1846-196X]{Aishwarya Ganesh}
+\affil{\UTAustin}
+
+\author[0000-0001-9811-568X]{Adam L. Kraus}
+\affil{\UTAustin}
+
+\author[0000-0001-9626-0613]{Daniel M. Krolikowski}
+\affil{\UTAustin}
+
+\author[0000-0003-2152-9248]{Jessica Luna}
+\affil{\UTAustin}
+
+\author[0000-0002-1417-8024]{Morgan MacLeod}
+\affiliation{\CFA}
+
+\author[0000-0001-9596-7983]{Suvrath Mahadevan}
+\affil{\PSUAA}
+\affil{\PSUCEHW}
+
+\author[0000-0002-4404-0456]{Caroline V. Morley}
+\affil{\UTAustin}
+
+\author[0000-0001-8720-5612]{Joe P.\ Ninan}
+\affil{\PSUAA}
+\affil{\PSUCEHW}
+
+\author[0000-0002-9584-6476]{Antonija Oklop{\v{c}}i{\'c}}
+\affil{\Amsterdam}
+
+\author[0000-0001-7409-5688]{Guðmundur Stefánsson}
+\affil{\Princeton}
+\affil{\RUSSELL}
+
+\author[0000-0001-6532-6755]{Quang H. Tran}
+\affiliation{\UTAustin}
+
+\author[0000-0002-3726-4881]{Zhoujian Zhang}\thanks{NASA Sagan Fellow}
+\affiliation{\UCSC}
+
+% and more...
+
+\collaboration{1}{HPF Helium Exospheres Collaboration}
 
 \begin{abstract}
     To be overhauled...
@@ -112,7 +177,7 @@
 
 \section{Introduction}\label{sec:intro}
 
-Atmospheric escape appears to be a compulsory phase for exoplanets of a certain size and insolation, statistically imprinted in the dearth of 1.5-2.0~$R_\oplus$ planets in the California-Kepler survey \citep{2017AJ....154..109F}.  The two physical mechanisms for this fleeting interlude between mini-Neptunes and super-Earths include photoevaporation \citep{2013ApJ...775..105O,2017ApJ...847...29O} and core-powered mass loss \citep{2019MNRAS.487...24G}.  Whatever the cause, some large fraction of planets must undergo atmospheric escape and the signal should be widely discernable, at least in observationally favorable configurations such as transiting planets.
+Atmospheric escape appears to be a compulsory phase for exoplanets of a certain size and insolation, statistically imprinted in the dearth of 1.5-2.0~$R_\oplus$ planets \citep{2017AJ....154..109F}.  The two physical mechanisms for this rapid transition between mini-Neptunes and super-Earths include photoevaporation \citep{2013ApJ...775..105O,2017ApJ...847...29O} and core-powered mass loss \citep{2019MNRAS.487...24G}.  Whatever the cause, some large fraction of planets must undergo atmospheric escape and the signal should be widely discernable, at least in observationally favorable configurations such as transiting planets.
 
 Enough uncertainty exists in the tradeoffs among physical mechanisms, system ages, and timescales to make it unclear whether any given exoplanet will be actively undergoing atmospheric escape.  The most favorable traits may include close-in, low surface gravity exoplanets within a strategically chosen radius range.  The 1.5-2.0 Earth radius range could be expected to harbor atmospheres that have not yet shed their gaseous envelopes, still in the act of descending to their final state.  Alternatively, inflated Hot Jupiters could be so dramatically ablated as to overcome the somewhat stronger potential well.  Significant gains in understanding can therefore be expected from observational studies sampling the extremes of the exoplanet distribution.
 
@@ -326,7 +391,7 @@ The out-of-transit excess exhibits approximately the same line width as the stel
 
 
 \subsection{Inapplicability of the Parker Wind model}
-As mentioned, most of the excess we see resides outside the Roche Lobe,  extended emissions 
+As mentioned, most of the excess we see resides outside the Roche Lobe,  extended emissions
 
 
 \section{Discussion} \label{secDiscuss}
