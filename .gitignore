@@ -142,3 +142,7 @@ figures/
 
 data/HPF/HAT_P_67_psu/*
 data/HPF/HAT_P_67_glks/*
+data/gaia/
+data/literature/
+data/TESS/
+data/NIRSPEC/
