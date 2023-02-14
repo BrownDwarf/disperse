@@ -223,7 +223,7 @@ Only 19 out of the 39 nights possess A0V telluric calibration standard stars.  T
 \end{deluxetable*}
 
 \subsection{TESS Light Curve}
-HAT-P-67 was observed with the \emph{Transiting Exoplanet Survey Satellite} \citep[TESS][]{2014SPIE.9143E..20R} in Sectors 24, 26, 51, 52, 53 with 2-minute cadence, and in Sector 25 with 30-minute (FFI) cadence.  The Sector 25 FFI data appeared malformed, possibly due to problems with pipeline CCD smear correction, and was disregarded.
+HAT-P-67 was observed with the \emph{Transiting Exoplanet Survey Satellite} \citep[TESS,][]{2014SPIE.9143E..20R} in Sectors 24, 26, 51, 52, 53 with 2-minute cadence, and in Sector 25 with 30-minute (FFI) cadence.  The Sector 25 FFI data appeared malformed, possibly due to problems with pipeline CCD smear correction, and was disregarded.
 
 We also assembled a comparison sample of about 1000 lightcurves to interpret the  prevalence of lightcurve modulation and stellar activity among broadly F subgiant-like stars.  We selected sources based on \emph{Gaia} DR3 $T_\mathrm{eff}$ estimates and similar $\log{g}$,  and availability of at least one sector of TESS 2-minute cadence data\footnote{The requirement to have 2-minute cadence data---a data reduction convenience---may include biases stemming from the pre-selection of TESS targets, but it is not clear whether such a pre-selection would favor more or less stellar activity}.  We also visually spot-checked these lightcurves to understand artifacts and windowing effects.
 
@@ -353,6 +353,10 @@ We examined the \ion{Ca}{2} IR Triplet lines (Ca IRT) for evidence of variabilit
     \label{fig:CaPhaseScan}
 \end{figure}
 
+\subsection{Keck HIRES}
+We retrieved 22 epochs of archival \emph{Keck HIRES} spectra via the Keck Observatory Archive (KOA). Of these, 19 were acquired through the iodine cell as reported by \citet{2017AJ....153..211Z}, providing RV orbit constraints.  Only 8 were acquired with the B5 decker, with the rest through the C2 decker.  The 14\arcsec slit height of the C2 decker appears to cause order overlap in \ion{Ca}{2} H and K lines, which contaminated the spectral extraction.  The 3.5\farcs B2 deck   Most of the spectra were acquired with the C2 decker
+
+
 \subsection{Velocity substructure}
 Figure \ref{fig:HeliumScanZoom} shows a zoom-in of the in-transit portion of the absorption residual scan.  The scan appears to exhibit some velocity substructure.  At transit ingress, the absorption appears more centrally concentrated near the vertical 10833 \AA~ line.  The line depth gets slightly shallower with a slight redshift approaching transit midcenter.
 
@@ -423,6 +427,17 @@ The non-detection of variability in the \ion{Ca}{2} H and K lines and H~$\alpha$
 
 
 \begin{acknowledgements}
+
+    This material is based upon work supported by the National Aeronautics and Space Administration under Grant Number 80NSSC20K0257 for the XRP program issued through the Science Mission Directorate.
+
+    Based on observations obtained with the Hobby-Eberly Telescope (HET), which is a joint project of the University of Texas at Austin, the Pennsylvania State University, Ludwig-Maximillians-Universitaet Muenchen, and Georg-August Universitaet Goettingen. The HET is named in honor of its principal benefactors, William P. Hobby and Robert E. Eberly.
+
+    These results are based on observations obtained with the Habitable-zone Planet Finder Spectrograph on the HET. The HPF team acknowledges support from NSF grants AST-1006676, AST-1126413, AST-1310885, AST-1517592, AST-1310875, ATI 2009889, ATI-2009982, AST-2108512, and the NASA Astrobiology Institute (NNA09DA76A) in the pursuit of precision radial velocities in the NIR. The HPF team also acknowledges support from the Heising-Simons Foundation via grant 2017-0494.  
+
+    This paper includes data collected with the TESS mission, obtained from the MAST data archive at the Space Telescope Science Institute (STScI). Funding for the TESS mission is provided by the NASA Explorer Program. STScI is operated by the Association of Universities for Research in Astronomy, Inc., under NASA contract NAS 5–26555.
+
+    This research has made use of the Keck Observatory Archive (KOA), which is operated by the W. M. Keck Observatory and the NASA Exoplanet Science Institute (NExScI), under contract with the National Aeronautics and Space Administration.
+
     This research has made use of NASA's Astrophysics Data System.
 \end{acknowledgements}
 
