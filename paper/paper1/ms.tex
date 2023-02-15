@@ -10,6 +10,9 @@
 \let\pwiflocal=\iffalse \let\pwifjournal=\iffalse
 %From: http://arxiv.org/format/1512.00483
 
+\newcommand{\hatp}{\object{HAT-P-67}}
+\newcommand{\hatpb}{\object{HAT-P-67 b}}
+
 %% General
 \newcommand{\msini}{\ensuremath{m \sin i}}
 \newcommand{\mplsini}{\ensuremath{\mpl\sin i}}
@@ -103,8 +106,6 @@
 \newcommand{\UTSpace}{Center for Planetary Systems Habitability, The University of Texas at Austin, 2515 Speedway, Austin, TX 78712, USA}
 \newcommand{\Amsterdam}{Anton Pannekoek Institute for Astronomy, University of Amsterdam, Science Park 904, NL-1098 XH Amsterdam, The Netherlands}
 \newcommand{\UCSC}{Department of Astronomy \& Astrophysics, University of California, Santa Cruz, 1156 High St, Santa Cruz, CA 95064, USA}
-
-
 % -------------------------------------------------------
 
 \begin{document}
@@ -194,7 +195,7 @@ The observation scheduling was strategically restricted to the spring season whe
 Only 19 out of the 39 nights possess A0V telluric calibration standard stars.  These standard stars, when available, were used to spot-check our telluric mitigation strategy.
 
 
-\begin{deluxetable*}{lrrrccr}
+\begin{deluxetable}{lccrchr}
     \tablewidth{0pc}
     \tabletypesize{\scriptsize}
     \tablecaption{
@@ -207,22 +208,23 @@ Only 19 out of the 39 nights possess A0V telluric calibration standard stars.  T
         \colhead{Transit?} &
         \colhead{BTJD} &
         \colhead{$N_\mathrm{exp}$} &
-        \colhead{$t_\mathrm{exp}$} &
+        \nocolhead{$t_\mathrm{exp}$} &
         \colhead{$\phi$}\\
         \colhead{}   &
         \colhead{} &
         \colhead{} &
         \colhead{(days)} &
         \colhead{} &
-        \colhead{(s)} &
+        \nocolhead{(s)} &
         \colhead{$\in(-0.5, 0.5)$}
     }
     \startdata
     \input{tables/observation_log.tex}
     \enddata
-\end{deluxetable*}
+    \tablecomments{All exposure times were 308.85~s except for observations from 2020-07-21 to 2021-03-30, which were 511.20~s.}
+\end{deluxetable}
 
-\subsection{TESS Light Curve}
+\subsection{TESS Light Curves}
 HAT-P-67 was observed with the \emph{Transiting Exoplanet Survey Satellite} \citep[TESS,][]{2014SPIE.9143E..20R} in Sectors 24, 26, 51, 52, 53 with 2-minute cadence, and in Sector 25 with 30-minute (FFI) cadence.  The Sector 25 FFI data appeared malformed, possibly due to problems with pipeline CCD smear correction, and was disregarded.
 
 We also assembled a comparison sample of about 1000 lightcurves to interpret the  prevalence of lightcurve modulation and stellar activity among broadly F subgiant-like stars.  We selected sources based on \emph{Gaia} DR3 $T_\mathrm{eff}$ estimates and similar $\log{g}$,  and availability of at least one sector of TESS 2-minute cadence data\footnote{The requirement to have 2-minute cadence data---a data reduction convenience---may include biases stemming from the pre-selection of TESS targets, but it is not clear whether such a pre-selection would favor more or less stellar activity}.  We also visually spot-checked these lightcurves to understand artifacts and windowing effects.
@@ -239,13 +241,20 @@ HAT-P-67A (\emph{Gaia DR3 1358614983131339392}) has a parallax of $2.69\pm0.01$ 
 \subsection{Other archives}
 We searched for observations of HAT-P-67 in public archives.  It has one $R\sim8000$ spectrum from the Intermediate Dispersion Spectrograph on the INT, centered near 4000 \AA.  It has 26 photometry points from \emph{Pan-STARRS} spread across its 5 filters.  The other archival observations have been previously reported by \citet{2017AJ....153..211Z}, including Keck HIRES, Keck NIRC2, and WIYN High-Resolution Infrared Camera.  The northern source does not appear in ESO archives, nor the Gemini Archive, and it is not publicly accessible in the Zwicky Transient Factory (ZTF) archive.  It was not targeted by \emph{Spitzer} or \emph{Hubble}.
 
+\begin{figure*}
+    \centering
+    \includegraphics[width=0.7\linewidth]{figures/TESS_HAT-P-67b_overview.png}
+    \caption{Overview of all available TESS Sectors showing 24 full or partial transits with 34 visits with HPF (vertical gray bars), 7 of which coincide with transits, and the rest sample out-of-transit phase.  The 8 HPF visits between BTJD 2050 and 2690 are not shown.}
+    \label{fig:TESSoverview}
+\end{figure*}
+
 
 \section{Analysis}
 
 \subsection{TESS Light Curve}
-
+Previously, \hatp transits had only been detected with \emph{HATNet} \citep{2004PASP..116..266B} and followed up with KeplerCam on the FLWO 1.2 m telescope. These ground-based photometers were not intended to measure, and did not detect, long term stellar variability signals.  We therefore examined the \emph{TESS} lightcurves for out-of-transit photometric variability.  
 \subsubsection{Revised exoplanet orbital parameters}
-We assembled a composite lightcurve by stitching TESS Sectors 24, 26, 51, 52, 53, which were reduced with the default SPOC pipeline \citep{2020RNAAS...4..201C}, and lightly post-processed with \texttt{lightkurve} \citep{geert_barentsen_2019_2565212}.  These TESS data exhibit an RMS scatter of better than 1 part-per-thousand (ppt) at native 2-minute sampling.  We fit a Keplerian orbit model to the TESS lightcurve using the \texttt{exoplanet} framework \citep{exoplanet:joss}.  We obtained a best fit orbital period of $4.81011$ days, non-zero eccentricity of 0.19, an impact parameter of 0.46, planet-to-star radius ratio of 0.0823, transit depth of 0.74\%, and $T_0$ of 1958.07933 in BTJD.  These properties are consistent with the previously reported values from \citet{2017AJ....153..211Z} and the updated ephemeris of \citet{2022ApJS..259...62I}.  Figure \ref{fig:transit} shows the best-fit orbit overlaid on the detrended TESS lightcurve.  Table \ref{tabOrbit} lists one of the previous orbit determinations and solution reported here.
+We assembled a composite lightcurve by stitching TESS Sectors 24, 26, 51, 52, 53, which were reduced with the default SPOC pipeline \citep{2020RNAAS...4..201C}, and lightly post-processed with \texttt{lightkurve} \citep{geert_barentsen_2019_2565212}.  These TESS data exhibit an RMS scatter of better than 1 part-per-thousand (ppt) at native 2-minute sampling.  We fit a Keplerian orbit model to the TESS lightcurve using the \texttt{exoplanet} framework \citep{exoplanet:joss}.  We obtained a best fit orbital period of $4.81011$ days, non-zero eccentricity of 0.19, an impact parameter of 0.46, planet-to-star radius ratio of 0.0823, transit depth of 0.74\%, and $T_0$ of 1958.07933 in BTJD.  These properties are consistent with the previously reported values from \citet{2017AJ....153..211Z} and the updated ephemeris of \citet{2022ApJS..259...62I}.  Figure \ref{fig:TESSoverview} shows an overview of all the TESS Sectors demarcated with the epochs of HPF measurements.  Figure \ref{fig:transit} shows the best-fit orbit overlaid on the detrended TESS lightcurve.  Table \ref{tabOrbit} lists one of the previous orbit determinations and solution reported here.
 
 
 
@@ -264,14 +273,6 @@ If we attribute the TESS modulation signal to stellar activity, we obtain a rota
 
 \subsubsection{Lightcurve modulation amplitude}
 Finally, we computed the peak-to-valley modulation for the 1000-lightcurve comparison sample, defined as the difference between the 90$^{th}$ to 10$^{th}$ percentile of each normalized TESS lightcurve.   We find that most lightcurves are consistent with negligible astrophysical variability and/or variability predominated by instrumental artifacts. Nevertheless, \object{HAT-P-67 b}'s 0.36$\%$ lightcurve modulation was slightly larger than the typical comparison source, ranking in the 87$^{th}$ percentile of the ensemble.  However the higher-modulation sources exhibited 3-5$\times$ the level of modulation seen in \object{HAT-P-67 b}, whereas \object{HAT-P-67 b} was only about 0.5$\times$ above the median.
-
-
-\begin{figure}
-    \includegraphics[width=\linewidth]{figures/TESS_S26_trend.png}
-    \caption{Stellar lightcurve modulation observed in TESS Sector 26.  The stellar surface pattern speed appears to have a slightly longer period than the exoplanet orbit, causing the transit to occur earlier in the phase of the modulation upon each orbit.}
-    \label{fig:TESSmodulation}
-\end{figure}
-
 
 
 \begin{deluxetable*}{lrrrh}
@@ -354,7 +355,7 @@ We examined the \ion{Ca}{2} IR Triplet lines (Ca IRT) for evidence of variabilit
 \end{figure}
 
 \subsection{Keck HIRES}
-We retrieved 22 epochs of archival \emph{Keck HIRES} spectra via the Keck Observatory Archive (KOA). Of these, 19 were acquired through the iodine cell as reported by \citet{2017AJ....153..211Z}, providing RV orbit constraints.  Only 8 were acquired with the B5 decker, with the rest through the C2 decker.  The 14\arcsec slit height of the C2 decker appears to cause order overlap in \ion{Ca}{2} H and K lines, which contaminated the spectral extraction.  The 3.5\farcs B2 deck   Most of the spectra were acquired with the C2 decker
+We retrieved 22 epochs of archival \emph{Keck HIRES} spectra via the Keck Observatory Archive (KOA). Of these, 19 were acquired through the iodine cell as reported by \citet{2017AJ....153..211Z}, providing RV orbit constraints.  The 14\arcsec~ slit height of the C2 decker appears to cause order overlap in \ion{Ca}{2} H and K lines, which contaminated the spectral extraction for 14 of the 22 spectra.  The 3\farcs5 B2 decker allowed the faithful extraction of this region for 6 spectra.  The 
 
 
 \subsection{Velocity substructure}
