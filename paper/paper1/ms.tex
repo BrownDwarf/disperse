@@ -258,18 +258,17 @@ We assembled a composite lightcurve by stitching TESS Sectors 24, 26, 51, 52, 53
 
 
 
-\begin{figure}
-    \includegraphics[width=\linewidth]{figures/best_fit_orbit.png}
-    \caption{Best fit orbit overlaid on the composite TESS lightcurve.  The 1 ppt TESS precision improves upon the ground-based detection and refining the orbital properties and ephemerides.}
-    \label{fig:transit}
-\end{figure}
-
-
 \subsubsection{Stellar rotation rate from periodogram analysis}
 
 The TESS Sector 26 lightcurve exhibits a weak $\sim3\;$ppt peak-to-valley out-of-transit modulation on timescales comparable to the exoplanet orbit. TESS Sectors 51-53 do not show as conspicuous a modulation signal.  Figure \ref{fig:TESSmodulation} shows this modulation in the minimally processed TESS lightcurve.  During the exoplanet orbit fitting, we fit the TESS lightcurve modulation with a quasiperiodic Gaussian Process (GP) model using \texttt{celerite} \citep{celerite1,celerite2}.  The GP model fit to the entire composite lightcurve yields a period of 4.7 days; when fit to individual sectors alone the periods hover around 5.9 days.
 
 If we attribute the TESS modulation signal to stellar activity, we obtain a rotation period $P_\mathrm{rot}$ between 4.7 and 5.9 days.  \citet{2017AJ....153..211Z} estimated $v\sin{i}=35.8\pm1.1$ km/s, or lower ($v\sin{i}=30\pm1.1$ km/s) if macroturbulence was accounted for.  Assuming a stellar radius of 2.1-2.7 $R_\odot$, we obtain combined geometric constraint $3.0 < \frac{P_\mathrm{rot}}{\sin{i}}  < 4.5 $ days.  This range is close to---but slightly lower than---the TESS modulation period.   The Gaia \emph{DR3}-derived distance is 8\% greater than the \emph{Gaia} DR1 estimate used in \citet{2017AJ....153..211Z}; the revised larger distance would tend to increase the radius estimate by 16\% to match the observed SED in isochrone-fitting.  We would therefore expect an isochrone-derived $R_\star$ range closer to $2.5-3.14 R_\odot$, where we have dropped the 1-$\sigma$ uncertainties which had included the less certain Gaia DR 1 parallax and its uncertain correction terms.  For a fixed $R_p/R_\star$, the larger $R_\star$ implies a proportionally larger planet radius, revising the already-low density of HAT-P-67 even lower.
+
+\begin{figure}
+    \includegraphics[width=\linewidth]{figures/best_fit_orbit.png}
+    \caption{Best fit orbit overlaid on the composite TESS lightcurve.}
+    \label{fig:transit}
+\end{figure}
 
 \subsubsection{Lightcurve modulation amplitude}
 Finally, we computed the peak-to-valley modulation for the 1000-lightcurve comparison sample, defined as the difference between the 90$^{th}$ to 10$^{th}$ percentile of each normalized TESS lightcurve.   We find that most lightcurves are consistent with negligible astrophysical variability and/or variability predominated by instrumental artifacts. Nevertheless, \object{HAT-P-67 b}'s 0.36$\%$ lightcurve modulation was slightly larger than the typical comparison source, ranking in the 87$^{th}$ percentile of the ensemble.  However the higher-modulation sources exhibited 3-5$\times$ the level of modulation seen in \object{HAT-P-67 b}, whereas \object{HAT-P-67 b} was only about 0.5$\times$ above the median.
