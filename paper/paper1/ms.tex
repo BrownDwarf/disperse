@@ -252,7 +252,7 @@ We searched for observations of HAT-P-67 in public archives.  It has one $R\sim8
 \section{Analysis}
 
 \subsection{TESS Light Curve}
-Previously, \hatp transits had only been detected with \emph{HATNet} \citep{2004PASP..116..266B} and followed up with KeplerCam on the FLWO 1.2 m telescope. These ground-based photometers were not intended to measure, and did not detect, long term stellar variability signals.  We therefore examined the \emph{TESS} lightcurves for out-of-transit photometric variability.  
+Previously, \hatp transits had only been detected with \emph{HATNet} \citep{2004PASP..116..266B} and followed up with KeplerCam on the FLWO 1.2 m telescope. These ground-based photometers were not intended to measure, and did not detect, long term stellar variability signals.  We therefore examined the \emph{TESS} lightcurves for out-of-transit photometric variability.
 \subsubsection{Revised exoplanet orbital parameters}
 We assembled a composite lightcurve by stitching TESS Sectors 24, 26, 51, 52, 53, which were reduced with the default SPOC pipeline \citep{2020RNAAS...4..201C}, and lightly post-processed with \texttt{lightkurve} \citep{geert_barentsen_2019_2565212}.  These TESS data exhibit an RMS scatter of better than 1 part-per-thousand (ppt) at native 2-minute sampling.  We fit a Keplerian orbit model to the TESS lightcurve using the \texttt{exoplanet} framework \citep{exoplanet:joss}.  We obtained a best fit orbital period of $4.81011$ days, non-zero eccentricity of 0.19, an impact parameter of 0.46, planet-to-star radius ratio of 0.0823, transit depth of 0.74\%, and $T_0$ of 1958.07933 in BTJD.  These properties are consistent with the previously reported values from \citet{2017AJ....153..211Z} and the updated ephemeris of \citet{2022ApJS..259...62I}.  Figure \ref{fig:TESSoverview} shows an overview of all the TESS Sectors demarcated with the epochs of HPF measurements.  Figure \ref{fig:transit} shows the best-fit orbit overlaid on the detrended TESS lightcurve.  Table \ref{tabOrbit} lists one of the previous orbit determinations and solution reported here.
 
@@ -381,6 +381,16 @@ As mentioned, most of the excess we see resides outside the Roche Lobe,  extende
 \subsection{The timescale of gas motion}
 The The density and ionization properties of this material only permit its observation during the 1.5 days immediately after its release.
 
+
+\section{1D Parker wind models}
+The dramatic leading tail of atmospheric escape suggests an underlying 6-dimensionality (3 space dimensions and 3 velocity dimensions), coupled with stellar wind \citep{2022ApJ...926..226M} may be needed to depict the problem faithfully.  MHD simulations are needed.  Here we explore one-dimensional (1D) models, which offer ease of interpretation and rapid calculation.  We employ the open-source \texttt{p-winds} code \citep{2022A&A...659A..62D}, which implements a transonic 1D Parker wind model with radiative transfer of the Helium 10830 triplet \citep{2018ApJ...855L..11O,2020A&A...636A..13L}.
+
+The predicted Helium ionization depends sensitively on the XUV flux \citep{2019ApJ...881..133O}.  Few XUV measurements exist for F stars, with the F7IV-V \object[tau Boo]{$\tau$ Boo} serving as the closest analog \citep{2011A&A...532A...6S}.  \hatp resides closer to the Kraft break than does \object[tau Boo]{$\tau$ Boo}, which may be associated with rapid changes in the stellar wind and other atmospheric changes leading to much lower XUV flux.  We explore incident XUV fluxes of $100\times$ higher and lower than \object[tau Boo]{$\tau$ Boo} to gauge the sensitivity.  Figure XX shows the range of conceivable XUV SEDs.
+
+Figure XX shows the 1D wind velocity and density computed with \texttt{p-winds}, assuming the baseline planet properties, a characteristic exosphere temperature of $T\sim10^4$ K, and including tidal gravity.
+
+
+
 \section{Discussion} \label{secDiscuss}
 
 \subsection{Physical mechanisms for atmospheric escape}
@@ -432,7 +442,7 @@ The non-detection of variability in the \ion{Ca}{2} H and K lines and H~$\alpha$
 
     Based on observations obtained with the Hobby-Eberly Telescope (HET), which is a joint project of the University of Texas at Austin, the Pennsylvania State University, Ludwig-Maximillians-Universitaet Muenchen, and Georg-August Universitaet Goettingen. The HET is named in honor of its principal benefactors, William P. Hobby and Robert E. Eberly.
 
-    These results are based on observations obtained with the Habitable-zone Planet Finder Spectrograph on the HET. The HPF team acknowledges support from NSF grants AST-1006676, AST-1126413, AST-1310885, AST-1517592, AST-1310875, ATI 2009889, ATI-2009982, AST-2108512, and the NASA Astrobiology Institute (NNA09DA76A) in the pursuit of precision radial velocities in the NIR. The HPF team also acknowledges support from the Heising-Simons Foundation via grant 2017-0494.  
+    These results are based on observations obtained with the Habitable-zone Planet Finder Spectrograph on the HET. The HPF team acknowledges support from NSF grants AST-1006676, AST-1126413, AST-1310885, AST-1517592, AST-1310875, ATI 2009889, ATI-2009982, AST-2108512, and the NASA Astrobiology Institute (NNA09DA76A) in the pursuit of precision radial velocities in the NIR. The HPF team also acknowledges support from the Heising-Simons Foundation via grant 2017-0494.
 
     This paper includes data collected with the TESS mission, obtained from the MAST data archive at the Space Telescope Science Institute (STScI). Funding for the TESS mission is provided by the NASA Explorer Program. STScI is operated by the Association of Universities for Research in Astronomy, Inc., under NASA contract NAS 5–26555.
 
