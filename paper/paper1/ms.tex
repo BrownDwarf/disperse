@@ -385,7 +385,19 @@ The The density and ionization properties of this material only permit its obser
 \section{1D Parker wind models}
 The dramatic leading tail of atmospheric escape suggests an underlying 6-dimensionality (3 space dimensions and 3 velocity dimensions), coupled with stellar wind \citep{2022ApJ...926..226M} may be needed to depict the problem faithfully.  MHD simulations are needed.  Here we explore one-dimensional (1D) models, which offer ease of interpretation and rapid calculation.  We employ the open-source \texttt{p-winds} code \citep{2022A&A...659A..62D}, which implements a transonic 1D Parker wind model with radiative transfer of the Helium 10830 triplet \citep{2018ApJ...855L..11O,2020A&A...636A..13L}.
 
-The predicted Helium ionization depends sensitively on the XUV flux \citep{2019ApJ...881..133O}.  Few XUV measurements exist for F stars, with the F7IV-V \object[tau Boo]{$\tau$ Boo} serving as the closest analog \citep{2011A&A...532A...6S}.  \hatp resides closer to the Kraft break than does \object[tau Boo]{$\tau$ Boo}, which may be associated with rapid changes in the stellar wind and other atmospheric changes leading to much lower XUV flux.  We explore incident XUV fluxes of $100\times$ higher and lower than \object[tau Boo]{$\tau$ Boo} to gauge the sensitivity.  Figure XX shows the range of conceivable XUV SEDs.
+The predicted Helium ionization depends sensitively on the XUV flux \citep{2019ApJ...881..133O}.  Ideally we would have a measurement of the XUV spectrum of \hatp, but the limited facilities and distance of the source preclude these challenging observations.  Instead we constructed panchromatic X-ray to visible SEDs by scaling and stitching together synthetic spectra to provide a range of high and low $L_X/L_\mathrm{bol}$.  We chose a 6400 K PHOENIX \citep{husser13} solar metallicity photospheric specrtral template with $\log{g}=3.5$, scaled to the solid angle seen by \hatpb.  The F7IV-V \object[tau Boo]{$\tau$ Boo} serves as the closest analog \citep{2011A&A...532A...6S} with synthetic x-ray coronal spectra available.  But \hatp resides closer to the Kraft break than does \object[tau Boo]{$\tau$ Boo}. The move to hotter F stars may be associated with rapid changes in the stellar wind and other atmospheric changes leading to the prospect of much lower XUV flux.  So it is not clear to what extent the \object[tau Boo]{$\tau$ Boo} x-ray spectrum resembles that of \hatp.  We scaled the synthetic SED of \object[tau Boo]{$\tau$ Boo} retrieved from X-exoplanets \citep{2011A&A...532A...6S} so that the integral of ground-state ionizing photons ($\lambda<504\AA$) exhibited $L_X/L_\mathrm{bol} \in [10^{-7}, 10^{-5}]$.  Figure \ref{fig:XUV} shows two conceivable SEDs with a high and low radiation hardness.
+
+\begin{figure}
+    \includegraphics[width=\linewidth]{figures/XUV_flux_schematic.png}
+    \caption{Synthetic XUV radiation scenarios for \hatpb.  }
+    \label{fig:XUV}
+\end{figure}
+
+\begin{figure}
+    \includegraphics[width=\linewidth]{figures/pwinds_1D_higXUV_t1p2Gyr.png}
+    \caption{Simulated 1D Parker wind model of Helium absorption in \hatpb.  The spectrum was generated with a mass loss rate of $1.7\times10^{13}$ g/s, exosphere gas temperature of 9100 K, and with the high XUV spectrum ($L_x/L_\mathrm{bol}=10^{-4}$) shown in Figure \ref{fig:XUV}.  The line depth and width broadly agrees with the width observed in HPF.}
+    \label{fig:pwinds}
+\end{figure}
 
 Figure XX shows the 1D wind velocity and density computed with \texttt{p-winds}, assuming the baseline planet properties, a characteristic exosphere temperature of $T\sim10^4$ K, and including tidal gravity.
 
