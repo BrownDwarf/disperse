@@ -375,7 +375,7 @@ Helium absorption occurs predominantly before the planet is in-transit, indicati
 The out-of-transit excess exhibits approximately the same line width as the stellar lines, which are rotationally broadened by a $v\sin{i}$ of 30-35 km/s \citep{2017AJ....153..211Z}.  The large size of the gas stream overfills the transit chord, which means both the advancing blue side and receding red side of the rotating star are nearly continuously obscured in this spin-orbit-aligned system \citep{2017AJ....153..211Z}. The planet transits near the Stellar equator \citep{2017AJ....153..211Z}, meaning the transit chord covers about 10$\%$ of the projected stellar surface area.  Hypothetically a nearly 100$\%$ opaque optically thick stream of gas covering only the transit chord could reproduce the observed 10$\%$ absorption excess.  Alternatively---and more likely---an optically thin gas stream has some additional vertical extent perpendicular to the plane of orbit, which would act to overfill the entire projected stellar disk.  Assuming the gas has a spatially uniform optical depth of about 0.1 would reproduce the 10\% absorption excess.
 
 
-\section{1D Parker wind models and mass loss rates}
+\subsection{1D Parker wind models and mass loss rates}\label{pwinds}
 The dramatic leading tail of atmospheric escape suggests that more complicated 3D hydrodymaic simulations coupled with stellar wind \citep{2022ApJ...926..226M} may be needed to depict the geometry faithfully.  Here we explore one-dimensional (1D) models, which offer ease of interpretation and rapid calculation.  We employ the open-source \texttt{p-winds} code \citep{2022A&A...659A..62D}, which implements a transonic 1D Parker wind model with radiative transfer of the Helium 10830 triplet \citep{2018ApJ...855L..11O,2020A&A...636A..13L}.
 
 The predicted Helium ionization depends sensitively on the XUV flux \citep{2019ApJ...881..133O}.  Ideally we would have a measurement of the XUV spectrum of \hatp, but the limited facilities and distance of the source preclude these challenging observations.  Instead we constructed panchromatic X-ray to visible SEDs by scaling and stitching together synthetic spectra to provide a range of high and low $L_X/L_\mathrm{bol}$.  We chose a 6400 K PHOENIX \citep{husser13} solar metallicity photospheric spectral template with $\log{g}=3.5$, scaled to the solid angle seen by \hatpb.  The F7IV-V \object[tau Boo]{$\tau$ Boo} serves as the closest analog with synthetic x-ray coronal spectra available \citep{2011A&A...532A...6S}.  But \hatp resides closer to the Kraft break than does \object[tau Boo]{$\tau$ Boo}, and the move to hotter F stars may be associated with rapid changes in the stellar wind and other atmospheric changes leading to the prospect of much lower XUV luminosity for \hatp.  So there remains significant uncertainty about the applicability of the \object[tau Boo]{$\tau$ Boo} x-ray spectrum to \hatp.  We scaled the synthetic SED of \object[tau Boo]{$\tau$ Boo} retrieved from X-exoplanets \citep{2011A&A...532A...6S} so that the integral of ground-state ionizing photons ($\lambda<504\AA$) exhibited $L_X/L_\mathrm{bol} \in [10^{-7}, 10^{-5}]$.  Figure \ref{fig:XUV} shows two conceivable SEDs with a high and low radiation hardness.
@@ -388,7 +388,11 @@ The predicted Helium ionization depends sensitively on the XUV flux \citep{2019A
 
 The SED shows two key features.   First the corona model does not extend all the way to 2600 $\AA$ photons capable of ionizing out of the 2 $^3$S Helium metastable state.  This apparent deficit probably does not matter because the F spectral type obtains most of its NUV photons ($\lambda\sim2600\AA$) from the Wein side of the photospheric spectrum, so the hardness of the radiation stems mostly from the assumptions of the corona flux level.  The wavelength-dependent cross section for absorption (not shown) is largest just blueward of the ionization thresholds, so the differences in the spectrum between 504 $\AA$ and 1000 $\AA$ have relatively little impact on the overall ionization out of the metastable state.
 
-Equipped with these three SEDs of differing radiation hardness, we explored different mass loss rates and exosphere temperatures.  Figure \ref{fig:pwinds} shows one example model spectrum with $\dot{M} = 7\times10^{13}$ g/s, and $T_0=9100$~K.  The model spectrum exhibits approximately the same line width and depth as our HPF observations, making it a plausible solution.  The model-dependent line profile (\emph{i.e. width and depth}) is degenerate with XUV flux, $\dot{M}$, and $T_0$.  We were able to replicate the line profile with mass loss rates as high as \censorbox{X}, assuming \censorbox{Y}, or as low as \censorbox{Z} assuming \censorbox{W}.
+Equipped with these three SEDs of differing radiation hardness, we explored different mass loss rates and exosphere temperatures.  Figure \ref{fig:pwinds} shows one example model spectrum with $\dot{M} = 7\times10^{13}$ g/s, and $T_0=9100$~K, with the high XUV spectrum ($L_x/L_\mathrm{bol}=10^{-4}$).  The model spectrum exhibits approximately the same line width and depth as our HPF observations, making it a conceivable solution.
+
+At least a few shortcomings limit the applicability of this 1D Parker wind model.  First, the model-dependent line profile (\emph{i.e. width and depth}) is degenerate with XUV flux, $\dot{M}$, and $T_0$, and so a range of these parameters can be fine-tuned to obtain a large range of mass loss rates consistent with the data and our limited understanding of the XUV flux.  Second, the 1D model breaks down when attempting to explain the inherently 3D leading tail geometry.  We discuss these two and other model-dependent interpretations in Section \ref{secDiscuss}.
+
+
 
 
 \begin{figure}
@@ -397,24 +401,30 @@ Equipped with these three SEDs of differing radiation hardness, we explored diff
     \label{fig:pwinds}
 \end{figure}
 
-Figure XX shows the 1D wind velocity and density computed with \texttt{p-winds}, assuming the baseline planet properties, a characteristic exosphere temperature of $T\sim10^4$ K, and including tidal gravity.
-
 
 
 \section{Discussion} \label{secDiscuss}
 
-\subsection{Physical mechanisms for atmospheric escape}
+\subsection{Ohmic Dissipation and runaway escape}
 \object{HAT-P-67 b} exhibits both dramatic atmospheric escape and significant radius inflation.  Ohmic dissipation stands out as a physical mechanism that could be responsible for both of these attributes.  \citet{2011ApJ...738....1B} showed that ohmic heating acts to inflate hot Jupiters, with low mass hot Jupiters overflowing their Roche lobes and leading to evaporation on Gyr timescales.  The Ohmic heating scenario requires only on a modest planetary magnetic field ($\sim$1 G) and enough photoionization to ionize some modest fraction of neutral metals.  The ``sweet spot'' for this phenomenon appears to prefer equilibrium temperatures in the range of $1500<T_\mathrm{eq}<2000$ K \citep{2011ApJ...738....1B}, well matched to HAT-P-67 b's $\sim$1900 K.  A plausible scaling law relationship approximate to an order-of-magnitude predicts an inflation timescales (Eq. 20 in \citet{2011ApJ...738....1B}):
 \begin{equation}
-    \tau_{\textit{infl}}\sim \left(\frac{0.01}{\epsilon} \right) \left(\frac{M}{M_{J}}\right)^2 \left(\frac{R_{J}}{R}\right)^3 \left(\frac{1500 \textrm{K}}{T_\mathrm{eff}}\right)^4 \textrm{Gyr}.
+    \tau_{\textit{infl}}\sim \left(\frac{0.01}{\epsilon} \right) \left(\frac{M}{M_{J}}\right)^2 \left(\frac{R_{J}}{R}\right)^3 \left(\frac{1500 \textrm{K}}{T_\mathrm{eff}}\right)^4 \textrm{Gyr}. \label{eqInflate}
 \end{equation}
 
 
 \noindent yielding an incredibly short 5 Myr timescale for \hatpb, assuming a typical $\epsilon\sim0.01$. The order of magnitude of this inflation timescale is so fleetingly short that \hatpb must be in the runaway stage of inflation, rapidly losing mass, and growing in surface area to fuel a positive feedback loop.
 
 
+\subsection{Constraining mass loss rate}
+A 5 Myr inflation timescale would imply an instantaneous $\dot{M}_\mathrm{infl}\sim10^{15}$ g/s, about 50 times larger than the 1D Parker wind model mass loss rate of $\dot{M}_\mathrm{1D}\sim2\times10^{13}$. Here we enumerate all of uncertainties that go into assessing mass loss rates to show that some in-between mass loss rate may be plausible.
+
+First, the scaling law arguments that produced Equation \ref{eqInflate} (Eq. 20 of \citet{2011ApJ...738....1B}) were only proposed as order of magnitude estimates not to be taken too faithfully.  So a $10\times$ higher inflation timescale of 50 Myr would yield $\dot{M}_\mathrm{infl}\sim10^{14}$ g/s, still a very large mass loss rate, but only a factor of 5 away from the baseline 1D model.  Order unity uncertainties in the Ohmic dissipation efficiency $\epsilon$ may also contribute.
+
+As mentioned in Section \ref{pwinds}, inferring the mass loss rate from observations is strongly model dependent, as seen in \censorbox{cite e.g. S.V. papers}.  In particular, the uncertain XUV-to-NUV flux ratio introduces a large degeneracy in
 
 
+the observations indicate a 3D geometry of the outflow-- a preference for escaping material to overtake the planet along the orbital path.  Once the The 1D Parker wind models for high mass loss rates
+During the moment of the planet transit midcenter ($\phi=0.0$), the subsolar point on the planet dayside will have material be preferrentially removed from the line-of-sight
 
 
 
