@@ -407,7 +407,7 @@ The SED shows that the corona model does not extend all the way to 2600 \AA~phot
 
 Equipped with these three SEDs of differing radiation hardness, we explored different mass loss rates and exosphere temperatures.  Figure \ref{fig:pwinds} shows one example model spectrum with $\dot{M} = 7\times10^{13}$ g/s, and $T_0=9100$~K, with the high XUV spectrum ($L_x/L_\mathrm{bol}=10^{-4}$).  The model spectrum exhibits approximately the same line width and depth as our HPF observations, making it a conceivable solution.
 
-At least a few shortcomings limit the applicability of this 1D Parker wind model.  First, the model-dependent line profile (\emph{i.e. width and depth}) is degenerate with XUV flux, $\dot{M}$, and $T_0$, and so a range of these parameters can be fine-tuned to obtain a large range of mass loss rates consistent with the data and our limited understanding of the XUV flux.  Second, the 1D model breaks down when attempting to explain the inherently 3D leading tail geometry.  We discuss these two and other model-dependent interpretations in Section \ref{secDiscuss}.
+At least a few shortcomings limit the applicability of this 1D Parker wind model.  First, the model-dependent line profile (\emph{i.e. width and depth}) is degenerate with XUV flux, $\dot{M}$, and $T_0$, and so a range of these parameters can be fine-tuned to obtain a large range of mass loss rates consistent with the data and our limited understanding of the XUV flux.  These known degeneracies have been pointed out previously \citep{2022AJ....164..234V,2019ApJ...881..133O}, but the problem for \hatpb~ appears somewhat more acute since XUV data are scarce for F-type stars near the Kraft break.  Second, the 1D model breaks down when attempting to explain the inherently 3D leading tail geometry.  We discuss these two and other model-dependent interpretations in Section \ref{secDiscuss}.
 
 
 \begin{figure}
@@ -420,31 +420,32 @@ At least a few shortcomings limit the applicability of this 1D Parker wind model
 \section{Discussion} \label{secDiscuss}
 
 \subsection{Ohmic Dissipation and runaway escape}
-\object{HAT-P-67 b} exhibits both dramatic atmospheric escape and significant radius inflation.  Ohmic dissipation stands out as a physical mechanism that could be responsible for both of these attributes.  \citet{2011ApJ...738....1B} showed that ohmic heating acts to inflate hot Jupiters, with low mass hot Jupiters overflowing their Roche lobes and leading to evaporation on Gyr timescales.  The Ohmic heating scenario requires only on a modest planetary magnetic field ($\sim$1 G) and enough photoionization to ionize some modest fraction of neutral metals.  The ``sweet spot'' for this phenomenon appears to prefer equilibrium temperatures in the range of $1500<T_\mathrm{eq}<2000$ K \citep{2011ApJ...738....1B}, well matched to HAT-P-67 b's $\sim$1900 K.  A plausible scaling law relationship approximate to an order-of-magnitude predicts an inflation timescales (Eq. 20 in \citet{2011ApJ...738....1B}):
+\object{HAT-P-67 b} exhibits both dramatic atmospheric escape and significant radius inflation.  Ohmic dissipation stands out as a physical mechanism that could be responsible for both of these oustanding attributes.  \citet{2011ApJ...738....1B} showed that Ohmic heating acts to inflate hot Jupiters, with planets $\lesssim 0.5 M_\mathrm{Jup}$ overflowing their Roche lobes and leading to evaporation on Gyr timescales.  The Ohmic heating scenario requires only a modest planetary magnetic field ($\gtrsim$1 G) and enough photoionization to ionize some modest fraction of neutral metals, such as the low ionization species of \ion{Na}{1} and \ion{K}{1}.  The ``sweet spot'' for this phenomenon appears to prefer equilibrium temperatures in the range of $1500<T_\mathrm{eq}<2000$ K \citep{2011ApJ...738....1B}, where the ionization is strong enough to cause an effective drag, but not so strong as to halt motion altogether.  The predicted range matches HAT-P-67 b's $\sim$1900 K.  A plausible scaling law relationship approximate to an order-of-magnitude predicts an inflation timescale (Eq. 20 in \citet{2011ApJ...738....1B}):
 \begin{equation}
     \tau_{\textit{infl}}\sim \left(\frac{0.01}{\epsilon} \right) \left(\frac{M}{M_{J}}\right)^2 \left(\frac{R_{J}}{R}\right)^3 \left(\frac{1500 \textrm{K}}{T_\mathrm{eff}}\right)^4 \textrm{Gyr}. \label{eqInflate}
 \end{equation}
 
 
-\noindent yielding an incredibly short 5 Myr timescale for \hatpb, assuming a typical $\epsilon\sim0.01$. The order of magnitude of this inflation timescale is so fleetingly short that \hatpb must be in the runaway stage of inflation, rapidly losing mass, and growing in surface area to fuel a positive feedback loop.
-
-\subsection{Photoevaporation}
-The prospect of Ohmic dissipation does not preclude the possibility that other mass loss drivers are at play.  Photoevaporation should simultaneously drive heating of the upper layers in the atmosphere, reinforcing the mass loss associated with Ohmic dissipation.  It is not clear which effect predominates.
+\noindent yielding an incredibly short 5 Myr timescale for \hatpb, assuming a typical $\epsilon\sim0.01$. The order of magnitude of this inflation timescale is so fleetingly short that \hatpb~ must be in the runaway stage of inflation, rapidly losing mass, and growing in surface area to fuel a positive feedback loop.  We therefore propose that \hatpb~ represents the first and only known example of a new category of planet system that is doomed to evaporate entirely due to the Ohmic Dissipation mechanism, as predicted by \citet{2011ApJ...738....1B}.
 
 
 \subsection{Constraining mass loss rate}
 A 5 Myr inflation timescale would imply an instantaneous $\dot{M}_\mathrm{infl}\sim10^{15}$ g/s, about 50 times larger than the 1D Parker wind model mass loss rate of $\dot{M}_\mathrm{1D}\sim2\times10^{13}$. Here we enumerate all of uncertainties that go into assessing mass loss rates to show that some in-between mass loss rate may be plausible.
 
-First, the scaling law arguments that produced Equation \ref{eqInflate} (Eq. 20 of \citet{2011ApJ...738....1B}) were only proposed as order of magnitude estimates not to be taken too faithfully.  So a $10\times$ higher inflation timescale of 50 Myr would yield $\dot{M}_\mathrm{infl}\sim10^{14}$ g/s, still a very large mass loss rate, but only a factor of 5 away from the baseline 1D model.  Order unity uncertainties in the Ohmic dissipation efficiency $\epsilon$ may also contribute.
+First, the scaling law arguments that produced Equation \ref{eqInflate} (Eq. 20 of \citet{2011ApJ...738....1B}) were only proposed as order of magnitude estimates not to be taken too faithfully.  So a $10\times$ higher inflation timescale of 50 Myr would yield $\dot{M}_\mathrm{infl}\sim10^{14}$ g/s, still a very large mass loss rate, but only a factor of 5 away from the baseline 1D model.  Factors of a few uncertainties in the Ohmic dissipation efficiency $\epsilon$ may also contribute.
 
-As mentioned in Section \ref{pwinds}, inferring the mass loss rate from observations is strongly model dependent, as seen in \censorbox{cite e.g. S.V. papers}.  The XUV flux, exosphere temperature $T_0$, and $\dot{M}$ are all at least partially degenerate.  In particular, the uncertain XUV-to-NUV flux ratio confounds the interpretation of the observed Helium signal.  Even the ``high XUV'' scenario in Figure \ref{fig:XUV} does not have enough ground-state ionizing photons to penetrate to within 5 $R_p$ of the planet surface.  This means that at best only 1 in $10^{6}$ Helium atoms participate in the observability of the Helium metastable triplet lines in the baseline 1D Parker wind model.  Turning down the XUV flux makes the signal even less observable.  A larger mass loss rate would be needed to explain the same observed HPF Helium absorption, if say only 1 in $10^{7}$ helium atoms are populating the metastable state.
+As mentioned in Section \ref{pwinds}, inferring the mass loss rate from observations is strongly model dependent.  The ionization fraction profile, exosphere temperature $T_0$, and $\dot{M}$ are all at least partially degenerate.  In particular, the uncertain XUV-to-NUV flux ratio confounds the interpretation of the observed Helium signal.  Even the ``high XUV'' scenario in Figure \ref{fig:XUV} does not have enough ground-state ionizing photons to penetrate to within 5 $R_p$ of the planet surface, in a 1D Parker wind model.  This means that at best only 1 in $10^{6}$ Helium atoms participate in the observability of the Helium metastable triplet lines in the baseline 1D Parker wind model.  Turning down the XUV flux makes the signal even less observable.  A larger mass loss rate would be needed to explain the same observed HPF Helium absorption, if say only 1 in $10^{7}$ helium atoms are populating the metastable state.
 
-Finally, the entire premise of the Parker wind model may be unjustified due to the inherently 3D geometry of the leading tail.  In the next section we critically examine the assumptions in the 1D Parker wind model.
+\subsection{Photoevaporation}
+The prospect of Ohmic dissipation does not preclude the possibility that other mass loss drivers are at play.  Photoevaporation \citep{2009ApJ...693...23M} could simultaneously drive heating of the upper layers in the atmosphere, driving a hydrodynamic wind and reinforcing the mass loss associated with Ohmic dissipation.  It is not clear \emph{a-priori} which effect predominates.
 
-\subsection{Causes for the leading tail}
-Several physical phenomena could give rise to a leading tail geometry.  Here we explore two leading candidates: orbital shear and stellar wind confinement.
+Photoevaporation stands out as a potential cause of dayside/nightside differences in mass loss, with the greatest supersonic motions stemming from the sub-solar point on the planetary dayside, and merely sonic motion originating on the nightside and near the dayside terminator \citep{2009ApJ...693...23M}.  Such a scenario is illustrated in Figure \ref{fig:KeplerianShear}.  We discuss how dayside/nightside differences could explain the leading tail in the next section.
 
-Figure \ref{fig:KeplerianShear} shows an illustration of Keplerian shear adapted to the system properties of \hatpb.  In this scenario, the wind launches primarily from the dayside, with relatively little or no wind launched from the nightside.  The wind initially launches radially from the planet, with the strongest wind located near the sub-stellar point, the line connecting the planet to star along the vertical axis in the figure.  Inefficient heating near the terminator subdues the mass loss in the $x-$direction, meaning that this wind exhibits not a hemi-spherical shape, more like a bulb or torpedo.  The gas increasingly experiences the star's Keplerian potential past the Roche lobe, accelerating in the direction of orbital motion, $+x$.  The accelerating column eventually overtakes the planet completely, with the prospect of extending to hundreds of planetary radii.
+
+\subsection{Causes for the leading tail} \label{secLeading}
+Several physical phenomena could give rise to a leading tail geometry.  Here we explore the predominant two physical effects: orbital shear and stellar wind confinement.
+
+Figure \ref{fig:KeplerianShear} shows an illustration of Keplerian shear adapted to the system properties of \hatpb.  In this scenario, the wind launches primarily from the dayside, with relatively little or no wind launched from the nightside.  The wind initially launches radially from the planet, with the strongest wind located near the sub-stellar point, the line connecting the planet to star along the vertical axis in the figure.  Inefficient heating near the terminator subdues the mass loss in the $x-$direction, meaning that this wind exhibits not a hemi-spherical shape, but more like a bulb or torpedo.  The gas increasingly experiences the star's Keplerian potential past the Roche lobe, accelerating in the direction of orbital motion, $+x$.  The accelerating column eventually overtakes the planet completely, with the prospect of extending to hundreds of planetary radii.
 
 \begin{figure}
     \includegraphics[width=0.8\linewidth]{figures/KeplerianShear_v0p3.png}
@@ -453,8 +454,9 @@ Figure \ref{fig:KeplerianShear} shows an illustration of Keplerian shear adapted
 \end{figure}
 
 
-Stellar wind confinement arises from a bow-shock configuration, in which the planetary wind encounters the stellar wind and a shock front causes a density enhancement.  A trailing tail may be present, but would not undergo the same boost in density, and would be rapidly carried away by the stellar wind.  This asymmetry could yield the appearance of a leading tail even if mass loss proceeds isotropically, or the asymmetry could be reinforced by an additional dayside/nightside asymmetry.  Examples of this asymmetry can be seen in 3D MHD modeling of WASP 107~b \citep{2022ApJ...926..226M}.
+Stellar wind confinement \citep{2022ApJ...926..226M} arises from a bow-shock configuration, in which the planetary wind encounters the stellar wind and a shock front causes a density enhancement.  A trailing tail may also be present, but would not undergo the same boost in density, and would be rapidly carried away by the stellar wind.  This asymmetry could yield the appearance of a leading tail even if mass loss proceeds isotropically, or the asymmetry could be reinforced by an additional dayside/nightside asymmetry.  Examples of this asymmetry can be seen in 3D MHD modeling of WASP 107~b \citep{2022ApJ...926..226M}.
 
+The overall observation of a leading tail comports with either of these two physical mechanisms, and both could be at play in \hatpb.  Here we discuss how the observed line profiles of the gas motions could be interpreted in these two paradigms.
 
 %\begin{figure*}[t]
 %    \includegraphics[width=\linewidth]{figures/murray_clay_schematic_v0p2.png}
@@ -462,20 +464,21 @@ Stellar wind confinement arises from a bow-shock configuration, in which the pla
 %    \label{fig:murrayClaySchematic}
 %\end{figure*}
 
-\subsection{The Ohmic Dissipation Cliff: Evaporative annihilation as the cause of a lack of sub-Saturns}
-The Ohmic dissipation mechanism predicts a rapid inflation timescale leading to the complete evaporation of hot Saturns.  The Ohmic dissipation mechanism made two key observable predictions.  The Ohmic dissipation heating should become less efficient as irradiation increased past an equilibrium temperature of about 2000 K.  Second, hot Saturns should should runaway evaporation, whereas hot Jupiters should reach equilibrium---albeit inflated---radii after Gyr timescales.  Both of these outcomes predated data that could adequately validate them, and these outcomes differ from the behavior of other heating mechanisms, such as photoevaporation or tides.
+\section{The Ohmic Dissipation Cliff}
+\subsection{Evaporative annihilation as the cause of a lack of sub-Saturns}
+The Ohmic dissipation mechanism made two key observable predictions.  Heating efficiency should initially increase as a function of equilibrium temperature, then degrade as irradiation exceeds equilibrium temperatures of about 2000 K.  Second, hot Saturns ($\lesssim0.5 M_\mathrm{Jup}$) should undergo runaway evaporation, whereas hot Jupiters ($\gtrsim 1 M_\mathrm{Jup}$) should reach equilibrium---albeit inflated---radii after Gyr timescales.  Both of these outcomes predated data that could adequately validate them, and these outcomes differ from the behavior of other heating mechanisms, such as photoevaporation or tides.  When applied to an ensemble of planet systems, the Ohmic dissipation mechanism would expect a dearth of inflated hot Saturns.
 
-\citet{2018AJ....155..214T} statistically favored Ohmic dissipation based on evidence for a turnover in the heating efficiency of hot Jupiters in a sample of 281 Giant planets.  Futhermore, \citet{2018AJ....155..214T} also highlighted the lack of inflated sub-Saturns as an anomaly: the observational capability exist to detect such sources in large numbers and yet they were not found.
+\citet{2018AJ....155..214T} statistically favored Ohmic dissipation based on evidence for a turnover in the heating efficiency of hot Jupiters in a sample of 281 Giant planets.  Futhermore, \citet{2018AJ....155..214T} also highlighted the lack of inflated sub-Saturns as an anomaly: by that time, the observational capability existed to detect such sources in large numbers and yet they were not found.
 
 \begin{figure}
     \includegraphics[width=\linewidth]{figures/tf2018_fig2_update2023_HAT.png}
     \caption{Mass-radius trends for inflated hot sub-Saturns and hot Jupiters, form modeled after Figure 2 from \citet{2018AJ....155..214T} and updated with NASA Exoplanet Archive confirmed planets.  The trend lines show mass-radius relationship for equilibrium temperatures of 500, 1000, 1250, 1500, and 2000 K, assuming the mean composition and mean heating efficiency from the original figure.  HAT-P-67~b stands alones as occupying the ``Ohmic Dissipation Ridge'', defined by the lack of inflated sub-Saturns, and explained by short lifetimes form runaway inflation and mass loss.}
-    \label{fig:murrayClaySchematic}
+    \label{fig:ThornFortUpdated}
 \end{figure}
 
-This dearth of hot-Saturns has persisted into the \emph{TESS} era.  Figure XX highlights the region of highly irradiated close-in planets with $N=$\censor{x} planets accessed through the NASA Exoplanet Archive \censor{cite NExScI}.  \hatpb occupies a relative void in this region.
+This dearth of hot-Saturns has persisted into the \emph{TESS} era.  Figure \ref{ThornFortUpdated} highlights the region of highly irradiated close-in planets with $N>5000$ planets accessed through the NASA Exoplanet Archive \censor{cite NExScI}.  \hatpb~ occupies a relative void in this region.
 
-The observation that \hatpb---the only hot Saturn searched for atmospheric escape to date---exhibits mass loss indicative of a terminal fate leads us to a natural explanation for the dearth of inflated hot Saturns.  The inflationary lifetime of this class is so short that observing planets of this class is unlikely.  \hatpb appears to be one of the rare planets that we happen to catch a glimpse of before it has been completely annihilated.
+The observation that \hatpb---the only hot Saturn searched for atmospheric escape to date---exhibits mass loss indicative of a terminal fate leads us to a natural explanation for the dearth of inflated hot Saturns.  The inflationary lifetime of hot Saturns is so short that observing planets of this class is unlikely.  \hatpb~ appears to be one of the rare planets that we happen to catch a glimpse of before it has been completely annihilated.  The lack of inflated hot Saturns is analogous to the small planet radius gap \citep{2017AJ....154..109F}, with Ohmic dissipation and replacing core-powered mass loss as the heating mechanism, and photoevaporation remaining a contender.
 
 We therefore attribute this cliff in the $m_p$ vs $R_p$ diagram to Ohmic dissipation.  \citet{2018AJ....155..214T} emphasized the positive feedback loop as a cause for the lack of sub-Saturns, and noted an alternative interpretation-- mass-dependent migration segregation.  While both scenarios are conceivable, the evidence of strong evaporation of \hatpb favors the evaporation scenario.  Futhermore, the runaway evaporation of hot-Saturns was naturally predicted by the Ohmic dissipation mechanism, whereas mass-dependent migration has only been developed as a post-diction.
 
@@ -529,10 +532,12 @@ The non-detection of variability in the \ion{Ca}{2} H and K lines and H~$\alpha$
 
     This research has made use of the Keck Observatory Archive (KOA), which is operated by the W. M. Keck Observatory and the NASA Exoplanet Science Institute (NExScI), under contract with the National Aeronautics and Space Administration.
 
+    This research has made use of the NASA Exoplanet Archive, which is operated by the California Institute of Technology, under contract with the National Aeronautics and Space Administration under the Exoplanet Exploration Program.
+
     This research has made use of NASA's Astrophysics Data System.
 \end{acknowledgements}
 
-\facilities{HET (HPF), TESS, ASAS}
+\facilities{HET (HPF), TESS, ASAS, Exoplanet Archive}
 
 \software{  \texttt{pandas} \citep{mckinney10},
     \texttt{emcee} \citep{foreman13},
