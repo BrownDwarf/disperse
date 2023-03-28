@@ -476,14 +476,47 @@ The Ohmic dissipation mechanism made two key observable predictions.  Heating ef
     \label{fig:ThornFortUpdated}
 \end{figure}
 
-This dearth of hot-Saturns has persisted into the \emph{TESS} era.  Figure \ref{ThornFortUpdated} highlights the region of highly irradiated close-in planets with $N>5000$ planets accessed through the NASA Exoplanet Archive \censor{cite NExScI}.  \hatpb~ occupies a relative void in this region.
+This dearth of hot-Saturns has persisted into the \emph{TESS} era.  Figure \ref{fig:ThornFortUpdated} highlights the region of highly irradiated close-in planets with $N>5000$ planets accessed through the NASA Exoplanet Archive.  \hatpb~ occupies a relative void in this region.
 
-The observation that \hatpb---the only hot Saturn searched for atmospheric escape to date---exhibits mass loss indicative of a terminal fate leads us to a natural explanation for the dearth of inflated hot Saturns.  The inflationary lifetime of hot Saturns is so short that observing planets of this class is unlikely.  \hatpb~ appears to be one of the rare planets that we happen to catch a glimpse of before it has been completely annihilated.  The lack of inflated hot Saturns is analogous to the small planet radius gap \citep{2017AJ....154..109F}, with Ohmic dissipation and replacing core-powered mass loss as the heating mechanism, and photoevaporation remaining a contender.
+The observation that \hatpb---the only hot Saturn searched for atmospheric escape to date---exhibits mass loss indicative of a terminal fate leads us to a natural explanation for the dearth of inflated hot Saturns.  The inflationary lifetime of hot Saturns is so short that observing planets of this class is unlikely.  \hatpb~ appears to be one of the rare planets that we happen to catch a glimpse of before it has been completely annihilated.  The lack of inflated hot Saturns is analogous to the small planet radius gap \citep{2017AJ....154..109F}, with Ohmic dissipation and replacing core-powered mass loss as a heating mechanism, and photoevaporation at play.
 
-We therefore attribute this cliff in the $m_p$ vs $R_p$ diagram to Ohmic dissipation.  \citet{2018AJ....155..214T} emphasized the positive feedback loop as a cause for the lack of sub-Saturns, and noted an alternative interpretation-- mass-dependent migration segregation.  While both scenarios are conceivable, the evidence of strong evaporation of \hatpb favors the evaporation scenario.  Futhermore, the runaway evaporation of hot-Saturns was naturally predicted by the Ohmic dissipation mechanism, whereas mass-dependent migration has only been developed as a post-diction.
+We therefore attribute this cliff in the $m_p$ vs $R_p$ diagram to Ohmic dissipation.  \citet{2018AJ....155..214T} emphasized the positive feedback loop as a cause for the lack of sub-Saturns, and noted an alternative interpretation-- mass-dependent migration segregation.  While both scenarios are conceivable, the evidence of strong evaporation of \hatpb~ favors the evaporation scenario.  Futhermore, the runaway evaporation of hot-Saturns was naturally predicted by the Ohmic dissipation mechanism, whereas mass-dependent migration has only been developed as a post-diction.
+
+\subsection{Predictions}
+
+As seen in Figure \ref{fig:ThornFortUpdated}, \hatpb has few other known analogs.  The closest analogues appear both smaller and more massive. Nevertheless, we predict that these few other inflated hot-Saturn \hatpb-analogs should also show evidence for atmospheric escape, albeit likely at a lesser scale.  These sources make excellent targets for \ion{He}{1} 10830 observations, and/or other atmospheric escape diagnostics.  The key figure-of-merit can be distilled to $\tau_\mathrm{infl}$, and setting the $\epsilon$ term to unity (Eq. \ref{eqInflate}).  Following \citet{2018PASP..130k4401K} we define a Helium Spectroscopy Metric (HeSM):
+
+\begin{eqnarray}
+    \mathrm{HeSM} = \tau_\mathrm{infl} \label{HeSM}
+\end{eqnarray}
+
+\begin{deluxetable}{lLLCR}
+    \tablewidth{0pc}
+    \tabletypesize{\scriptsize}
+    \tablecaption{
+        Coarse Inflation Timescales for hot Jupiters
+        \label{tabHeSM}
+    }
+    \tablehead{
+        \colhead{Planet}   &
+        \colhead{Mass} &
+        \colhead{Radius} &
+        \colhead{Eq. Temp.} &
+        \colhead{$\tau_\mathrm{infl}$} \\
+        \colhead{}   &
+        \colhead{$M_\mathrm{Jup}$} &
+        \colhead{$R_\mathrm{Jup}$}   &
+        \colhead{K} &
+        \colhead{Myr}
+    }
+    \startdata
+    \input{tables/tab_HeSM.tex}
+    \enddata
+    \tablecomments{Inflation timescale assumes $\epsilon=0.01$.}
+\end{deluxetable}
 
 
-We predict that the few other inflated hot-Saturn \hatpb-analogs should also show evidence for atmospheric escape.  These sources make excellent targets for \ion{He}{1} 10830 observations, and other atmospheric escape diagnostics.  The key figure-of-merit can be distilled to $\tau_\mathrm{infl}$, and ignoring the $\epsilon$ term.  Following \censor{Kempton} et al we define a Helium Spectroscopy Metric (HSM) defined as...
+As emphasized, there are significant uncertainties in the inflation timescale, but its order-of-magnitude value gives us a way to prioritize target selection, since these may be the sources most amenable to detection of atmospheric escape.  Table \ref{tabHeSM} lists $15$ candidates that have nominal lifetimes less than about 40 Myr.
 
 
 \subsection{Cause for stellar modulation}
