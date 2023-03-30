@@ -417,7 +417,23 @@ At least a few shortcomings limit the applicability of this 1D Parker wind model
 \end{figure}
 
 
-\section{Discussion} \label{secDiscuss}
+\section{Causal Interpretation} \label{secDiscuss}
+
+\subsection{Causes for the leading tail} \label{secLeading}
+Several physical phenomena could give rise to a leading tail geometry.  Here we explore the predominant two physical effects: orbital shear and stellar wind confinement.
+
+Figure \ref{fig:KeplerianShear} shows an illustration of Keplerian shear adapted to the system properties of \hatpb.  In this scenario, the wind launches primarily from the dayside, with relatively little or no wind launched from the nightside.  The wind initially launches radially from the planet, with the strongest wind located near the sub-stellar point, the line connecting the planet to star along the vertical axis in the figure.  Inefficient heating near the terminator subdues the mass loss in the $x-$direction, meaning that this wind exhibits not a hemi-spherical shape, but more like a bulb or torpedo.  The gas increasingly experiences the star's Keplerian potential past the Roche lobe, accelerating in the direction of orbital motion, $+x$.  The accelerating column eventually overtakes the planet completely, with the prospect of extending to hundreds of planetary radii.
+
+\begin{figure}
+    \includegraphics[width=0.8\linewidth]{figures/KeplerianShear_v0p3.png}
+    \caption{Schematic of Keplerian orbital shear.  Locations outside the Roche lobe experience orbital shear from the Keplerian potential.  A wind launched primarily from the dayside will tend to form a leading tail.}
+    \label{fig:KeplerianShear}
+\end{figure}
+
+
+Stellar wind confinement \citep{2022ApJ...926..226M} arises from a bow-shock configuration, in which the planetary wind encounters the stellar wind and a shock front causes a density enhancement.  A trailing tail may also be present, but would not undergo the same boost in density, and would be rapidly carried away by the stellar wind.  This asymmetry could yield the appearance of a leading tail even if mass loss proceeds isotropically, or the asymmetry could be reinforced by an additional dayside/nightside asymmetry.  Examples of this asymmetry can be seen in 3D MHD modeling of WASP 107~b \citep{2022ApJ...926..226M}.
+
+The overall observation of a leading tail comports with either of these two physical mechanisms, and both could be at play in \hatpb.  Here we discuss how the observed line profiles of the gas motions could be interpreted in these two paradigms.
 
 \subsection{Ohmic Dissipation and runaway escape}
 \object{HAT-P-67 b} exhibits both dramatic atmospheric escape and significant radius inflation.  Ohmic dissipation stands out as a physical mechanism that could be responsible for both of these oustanding attributes.  \citet{2011ApJ...738....1B} showed that Ohmic heating acts to inflate hot Jupiters, with planets $\lesssim 0.5 M_\mathrm{Jup}$ overflowing their Roche lobes and leading to evaporation on Gyr timescales.  The Ohmic heating scenario requires only a modest planetary magnetic field ($\gtrsim$1 G) and enough photoionization to ionize some modest fraction of neutral metals, such as the low ionization species of \ion{Na}{1} and \ion{K}{1}.  The ``sweet spot'' for this phenomenon appears to prefer equilibrium temperatures in the range of $1500<T_\mathrm{eq}<2000$ K \citep{2011ApJ...738....1B}, where the ionization is strong enough to cause an effective drag, but not so strong as to halt motion altogether.  The predicted range matches HAT-P-67 b's $\sim$1900 K.  A plausible scaling law relationship approximate to an order-of-magnitude predicts an inflation timescale (Eq. 20 in \citet{2011ApJ...738....1B}):
@@ -441,22 +457,6 @@ The prospect of Ohmic dissipation does not preclude the possibility that other m
 
 Photoevaporation stands out as a potential cause of dayside/nightside differences in mass loss, with the greatest supersonic motions stemming from the sub-solar point on the planetary dayside, and merely sonic motion originating on the nightside and near the dayside terminator \citep{2009ApJ...693...23M}.  Such a scenario is illustrated in Figure \ref{fig:KeplerianShear}.  We discuss how dayside/nightside differences could explain the leading tail in the next section.
 
-
-\subsection{Causes for the leading tail} \label{secLeading}
-Several physical phenomena could give rise to a leading tail geometry.  Here we explore the predominant two physical effects: orbital shear and stellar wind confinement.
-
-Figure \ref{fig:KeplerianShear} shows an illustration of Keplerian shear adapted to the system properties of \hatpb.  In this scenario, the wind launches primarily from the dayside, with relatively little or no wind launched from the nightside.  The wind initially launches radially from the planet, with the strongest wind located near the sub-stellar point, the line connecting the planet to star along the vertical axis in the figure.  Inefficient heating near the terminator subdues the mass loss in the $x-$direction, meaning that this wind exhibits not a hemi-spherical shape, but more like a bulb or torpedo.  The gas increasingly experiences the star's Keplerian potential past the Roche lobe, accelerating in the direction of orbital motion, $+x$.  The accelerating column eventually overtakes the planet completely, with the prospect of extending to hundreds of planetary radii.
-
-\begin{figure}
-    \includegraphics[width=0.8\linewidth]{figures/KeplerianShear_v0p3.png}
-    \caption{Schematic of Keplerian orbital shear.  Locations outside the Roche lobe experience orbital shear from the Keplerian potential.  A wind launched primarily from the dayside will tend to form a leading tail.}
-    \label{fig:KeplerianShear}
-\end{figure}
-
-
-Stellar wind confinement \citep{2022ApJ...926..226M} arises from a bow-shock configuration, in which the planetary wind encounters the stellar wind and a shock front causes a density enhancement.  A trailing tail may also be present, but would not undergo the same boost in density, and would be rapidly carried away by the stellar wind.  This asymmetry could yield the appearance of a leading tail even if mass loss proceeds isotropically, or the asymmetry could be reinforced by an additional dayside/nightside asymmetry.  Examples of this asymmetry can be seen in 3D MHD modeling of WASP 107~b \citep{2022ApJ...926..226M}.
-
-The overall observation of a leading tail comports with either of these two physical mechanisms, and both could be at play in \hatpb.  Here we discuss how the observed line profiles of the gas motions could be interpreted in these two paradigms.
 
 %\begin{figure*}[t]
 %    \includegraphics[width=\linewidth]{figures/murray_clay_schematic_v0p2.png}
