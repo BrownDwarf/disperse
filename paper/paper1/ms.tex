@@ -23,6 +23,7 @@
 \newcommand{\logl}{\ensuremath{\log{L}}}
 \newcommand{\vmac}{\ensuremath{v_{\rm mac}}}
 \newcommand{\vmic}{\ensuremath{v_{\rm mic}}}
+\newcommand{\ms}{\ensuremath{\rm m\,s^{-1}}}
 % Activity index R'_HK
 \newcommand{\rhk}{\ensuremath{R^{\prime}_{HK}}}
 % log of R'_HK
@@ -64,6 +65,7 @@
 %% Planetary
 \newcommand{\rpl}{\ensuremath{R_{p}}}
 \newcommand{\mpl}{\ensuremath{M_{p}}}
+\newcommand{\kms}{\ensuremath{\rm km\,s^{-1}}}
 \newcommand{\lpl}{\ensuremath{L_{p}}}
 \newcommand{\teffpl}{\ensuremath{T_{\rm eff,{p}}}}
 \newcommand{\rhopl}{\ensuremath{\rho_{p}}}
@@ -291,33 +293,12 @@ If we attribute this TESS modulation signal to stellar activity, we obtain a rot
 We computed the peak-to-valley modulation for the 1000-source \emph{TESS} comparison sample, defined as the difference between the 90$^{th}$ to 10$^{th}$ percentile of each normalized \emph{TESS} lightcurve.  Most lightcurves appear consistent with negligible astrophysical variability and/or variability predominated by instrumental artifacts. \object{HAT-P-67}'s 0.36$\%$ lightcurve modulation ranked in the 87$^{th}$ percentile of the ensemble, about 0.5$\times$ above the median.  Sources more variable than HAT-P-67 exhibited 3-5$\times$ its amplitude of modulation.
 
 
-\begin{deluxetable*}{lrrrh}
-    \tablewidth{0pc}
-    \tabletypesize{\scriptsize}
-    \tablecaption{
-        Revised orbital and planetary parameters
-        \label{tabOrbit}
-    }
-    \tablehead{
-        \colhead{Parameter}   &
-        \colhead{Zhou et al. 2017} &
-        \colhead{Ivshina \& Winn 2022} &
-        \colhead{This Work} &
-        \nocolhead{Alternate}
-    }
-    \startdata
-    %%
-    ~~~$P$ (days)             \dotfill    & $4.8101025_{-3.3\times 10^{-7}}^{+4.3\times 10^{-7}}$ & 4.8101046$\pm1.7\times10^{-6}$ & 4.81011 & z \\
-    ~~~$T_c$ (${\rm BTJD}$)  \dotfill    & $-1038.61533_{-0.00064}^{+0.00076}$ & 1958.08059$\pm$0.00032 & 1958.07933 & z \\
-    ~~~$T_{14}$ (hours)  \dotfill    & $6.9888 \pm 0.046$ &  & 7.0636 & z \\
-    ~~~$\rpl/\rstar$          \dotfill    & $0.0834\pm0.0017$ &  & 0.08231 & z \\
-    ~~~$b \equiv a \cos i/\rstar$
-    \dotfill    & $0.12_{-0.08}^{+0.12}$ &  & 0.45616 & z \\
-    \enddata
-\end{deluxetable*}
-
+\input{tables/revise_props_tbl.tex}
 
 \subsection{HPF analysis I: RV fitting}
+
+
+
 \authorcomment1{Insert Quang's work here}
 
 \subsection{HPF analysis II: \ion{He}{1} 10833 \AA}
