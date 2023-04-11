@@ -297,9 +297,14 @@ We computed the peak-to-valley modulation for the 1000-source \emph{TESS} compar
 
 \subsection{HPF analysis I: RV fitting}
 
+We reduced and analyzed the HPF data first for the purpose of orbit fitting via precision radial velocity measurements following the procedures described in \citet{2021AJ....161..173T} and updated for joint lightcurve and RV fits \citep{2022AJ....163..225T}.  Here we included the new TESS lightcurves, and the existing Keck HIRES points reported in Table 3 of \citet{2017AJ....153..211Z}.  The HPF points exhibited an RV jitter of $\sim164\kms$, a few times larger than the typical Keck HIRES measurements.  So even though the HPF points were more numerous, their marginal value for RV orbit determination was subdued owing to the lower RV information content in the near-IR for this relatively rapidly rotating F star.  Figure \ref{fig:RVfit} shows the fitted RV semiamplitude $K=33_{-15}^{+21}$, slightly decreasing the uncertainty compared to the previous $1\sigma$ limit.  Table \ref{tabOrbit} lists the revised properties, with minor differences from the existing values.  Notably our fit does not jointly model the Doppler tomographic signals reported in \citep{2017AJ....153..211Z}, which would further constrain the impact parameter.  Additionally our input $\rstar$ was slightly lower than the best fit value derived from \emph{Gaia DR3} and SED fitting.
+\authorcomment1{Quang Tran: please verify and revise.}
 
-
-\authorcomment1{Insert Quang's work here}
+\begin{figure}
+    \includegraphics[width=\linewidth]{figures/HAT-P-67b_rv.pdf}
+    \caption{RV orbit fit including both HPF and Keck HIRES data points.}
+    \label{fig:RVfit}
+\end{figure}
 
 \subsection{HPF analysis II: \ion{He}{1} 10833 \AA}
 The raw 2D echellograms were reduced with the \texttt{Goldilocks} package\footnote{\url{https://github.com/grzeimann/Goldilocks_Documentation}}, which outputs 1D extracted spectra for the target, and two reference fibers: blank sky and a laser frequency comb \citep[LFC,][]{2019Optic...6..233M}.  The observations were usually acquired with the LFC turned off, so this unilluminated spectrum was discarded.
