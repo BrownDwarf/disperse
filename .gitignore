@@ -148,3 +148,6 @@ data/TESS/
 data/NIRSPEC/
 data/VOSA/
 data/ZTF/
+
+# Misc notebooks used as a scatchpad
+notebooks/07_theory/07_11_scratchpad.ipynb
