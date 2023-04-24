@@ -319,7 +319,7 @@ As discussed in Section \ref{analysisgaiaDR3}, the slightly increased distance a
 \subsection{HPF analysis I: RV fitting}
 
 We reduced and analyzed the HPF data first for orbit fitting via precision radial velocity (PRV) measurements following the procedures described in \citet{2021AJ....161..173T} and updated for joint lightcurve and RV fits \citep{2022AJ....163..225T}.  Here we included the new TESS lightcurves and the existing Keck HIRES points reported in Table 3 of \citet{2017AJ....153..211Z}.  The HPF points exhibited an RV jitter of $\sim164\;\kms$, a few times larger than the typical Keck HIRES measurements.  So even though the HPF points were more numerous, their marginal value for RV orbit determination was subdued owing to the lower RV information content in the near-IR for this relatively rapidly rotating F star.  Figure \ref{fig:RVfit} shows the fitted RV semiamplitude $K=33_{-15}^{+21}$, slightly decreasing the uncertainty compared to the previous $1\sigma$ limit.  Table \ref{tabOrbit} lists the revised properties, with minor differences from the existing values.  Notably, our fit does not jointly model the Doppler tomographic signals reported in \citep{2017AJ....153..211Z}, which would further constrain the impact parameter.  Additionally, our input $\rstar$ was slightly lower than the best-fit value derived from \emph{Gaia DR3} and SED fitting.
-\authorcomment1{Quang Tran: please verify and revise.}
+%\authorcomment1{Quang Tran: please verify and revise.}
 
 \subsection{HPF analysis II: \ion{He}{1} 10833 \AA}
 The preparation for analyzing the Helium feature followed a similar but slightly different procedure than that used for the RV, namely, we used \texttt{Goldilocks}\footnote{\url{https://github.com/grzeimann/Goldilocks_Documentation}} for 2D echellogram reduction.  This tool outputs 1D extracted spectra for the target, and two reference fibers: blank sky and a laser frequency comb \citep[LFC,][]{2019Optic...6..233M}.  The observations were usually acquired with the LFC turned off, so this unilluminated spectrum was discarded.
@@ -373,7 +373,11 @@ We retrieved 22 epochs of archival \emph{Keck HIRES} spectra via the Keck Observ
 
 
 \subsection{Velocity substructure}
-Figure \ref{fig:HeliumZoom} shows a zoom-in of the in-transit portion of the Helium excess absorption scan, overlaid with line center positions.  The scan appears to exhibit some velocity substructure.  At transit ingress, the absorption appears more centrally concentrated near the vertical 10833 \AA~ line.  The line depth gets slightly shallower with a slight redshift approaching transit mid-center. \authorcomment1{Add more text here and revise figure.}
+Figure \ref{fig:centroids} shows the centroid positions of the Helium excess feature.  The bulk velocity drifts of the planet outflow can be seen with a few conspicuous trends.  The pre-transit phases ($-0.3$ - $+0.03$) show a slight tendency towards blueshift relative to stellar restframe, with an accelerating blueshift from phases ($-0.3$ - $-0.15$), albeit with some visit-to-visit scatter.  The post-transit observations ($+0.03$ - $+0.015$) exhibit weak-albeit-significant equivalent widths, as denoted by their smaller marker size.  The centroids dramatically accelerate to larger bulk blueshifts, as low as 10831 \AA.
+
+The densely sampled in-transit phases are shown as a zoomed-in, oversized inset.  Here we can see the planetary rest frame as the dotted line cutting across the panel.  At the moment of planet ingress, the centroids exhibit a redshifted absorption relative to the planet restframe. Measurements from April 2022 and May 2020 transits partially overlap in phase coverage while yielding slightly different line centroid locations.  Both visits appear consistent with near-zero restframe velocity.  The May 2020 visit shows a slight trend towards alignment with the planet restframe.  The April 2020 and June 2020 partial transits sampled phases close to planet egress, with a clear blueshift relative to both the star and planet.
+
+Overall this pattern of velocity centroids appears consistent with the majority of the gas rapidly obeying the stellar restframe, but with a large spread in the line-of-sight velocity distribution as we would expect from a range of launch angles.  We revisit the interpretations and caveats for this substructure in the Discussion section.
 
 
 \begin{figure}
@@ -382,7 +386,7 @@ Figure \ref{fig:HeliumZoom} shows a zoom-in of the in-transit portion of the Hel
     \hskip-3em
     \subfloat{\includegraphics[width=4cm]{figures/centroid_inset10833.png}}
     \caption{Line centroid positions of the  \ion{He}{1} 10830 \AA~ feature.  \emph{left}: The overview panel shows a slight blueshift relative to the stellar restframe, and a weak excess blueshift trend after planet egress. \emph{right:} The detailed zoom-in of the in-transit phase shows a redshift relative to the planet restframe at ingress and a blueshift relative to the planet restframe near egress.  The line-of-sight velocity distribution of 2-3 \AA~ means that the gas distribution exhibits both advancing and receding lobes at all phases other than post-egress.}
-    \label{fig:example}
+    \label{fig:centroids}
 \end{figure}
 
 
