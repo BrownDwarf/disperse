@@ -299,23 +299,24 @@ We computed the peak-to-valley modulation for the 1000-source \emph{TESS} compar
 
 \input{tables/revise_props_tbl.tex}
 
+\begin{figure}
+    \centering
+    \includegraphics[width=0.98\linewidth]{figures/MIST_only_HATP.png}
+    \caption{MIST evolutionary model tracks for \hatp.  The $T_\mathrm{eff}$ and luminosity of \hatp~ (gray circle) are consistent with either the late main sequence or recently evolved subgiant.}
+    \label{fig:evolTracks}
+\end{figure}
+
 \subsection{Revised system evolutionary state}\label{secMISTtracks}
 As discussed in Section \ref{analysisgaiaDR3}, the slightly increased distance and radius imply a slightly more luminous host star than previously estimated.  Figure \ref{fig:evolTracks} shows evolutionary tracks using the solar-metallicity MESA \citep{2011ApJS..192....3P,2013ApJS..208....4P,2015ApJS..220...15P} Isochrones and Stellar Tracks \citep[MIST;][]{2016ApJS..222....8D,2016ApJ...823..102C} for HAT-P-67.  The tracks show that a 1.8 Gyr, 1.64 $M_\odot$ \hatp~ could be at the end of its main sequence lifetime (teal track), yielding a gradual rise in incident radiation to \hatpb.  Alternatively, a 1.54 $M_\odot$ evolutionary track would send \hatp~ along the subgiant branch at an age over 2.2 Gyr, with a rapid 50\% increase in luminosity, potentially leading to ``re-inflation'' of the planet \citep{2021ApJ...909L..16T}.  Either evolutionary track appears consistent with the observed SED, stellar surface gravity, and available constraints from spectral fitting.  We therefore adopt a MIST-based 2$\pm$0.2 Gyr age for the system, in-between the previous Geneva and Dartmouth-based scenarios.
 
-\begin{figure*}
-    \centering
-    \includegraphics[width=0.7\linewidth]{figures/MIST_tracks_HATP.png}
-    \caption{MIST evolutionary model tracks for \hatp.  The $T_\mathrm{eff}$ and luminosity of \hatp~ (gray circle) are consistent with either the late main sequence or recently evolved subgiant.}
-    \label{fig:evolTracks}
-\end{figure*}
 
-
-\subsection{HPF analysis I: RV fitting}
 \begin{figure}
     \includegraphics[width=\linewidth]{figures/HAT-P-67b_rv.pdf}
     \caption{RV orbit fit including both HPF and Keck HIRES data points.}
     \label{fig:RVfit}
 \end{figure}
+
+\subsection{HPF analysis I: RV fitting}
 
 We reduced and analyzed the HPF data first for orbit fitting via precision radial velocity (PRV) measurements following the procedures described in \citet{2021AJ....161..173T} and updated for joint lightcurve and RV fits \citep{2022AJ....163..225T}.  Here we included the new TESS lightcurves and the existing Keck HIRES points reported in Table 3 of \citet{2017AJ....153..211Z}.  The HPF points exhibited an RV jitter of $\sim164\;\kms$, a few times larger than the typical Keck HIRES measurements.  So even though the HPF points were more numerous, their marginal value for RV orbit determination was subdued owing to the lower RV information content in the near-IR for this relatively rapidly rotating F star.  Figure \ref{fig:RVfit} shows the fitted RV semiamplitude $K=33_{-15}^{+21}$, slightly decreasing the uncertainty compared to the previous $1\sigma$ limit.  Table \ref{tabOrbit} lists the revised properties, with minor differences from the existing values.  Notably, our fit does not jointly model the Doppler tomographic signals reported in \citep{2017AJ....153..211Z}, which would further constrain the impact parameter.  Additionally, our input $\rstar$ was slightly lower than the best-fit value derived from \emph{Gaia DR3} and SED fitting.
 \authorcomment1{Quang Tran: please verify and revise.}
@@ -351,6 +352,12 @@ The in-transit phases exhibit over 10\% excess absorption peaks.  A large absorp
 
 We estimated bulk characteristics of the Helium excess absorption feature by fitting a Gaussian line profile to the 10828$-$10838 \AA~region of the residual spectra.  The single line initialized at 10833 \AA~ was intended to agglomerate all three components of the metastable triplet into a single feature, consistent with their appearance in Figure \ref{fig:HPFheliumOverview}.  The model constructed in this way has a total of 4 parameters: amplitude $A$, location $\lambda_c$, Gaussian width $\sigma$, and constant offset.  We repeated a similar process for the nearby Si line at 10830 \AA~as a control sample.
 
+\begin{figure}
+    \includegraphics[width=\linewidth]{figures/phase_2D_diagram_resid.png}
+    \caption{Absorption depth phase scan over the entire HAT-P-67b orbit from 41 visits with HPF.  }
+    \label{fig:HPFscanResid}
+\end{figure}
+
 Excess is confidently detected from phases $-$0.3 to $+$0.03.  The full-width at half maximum (FWHM) of the feature is about 1.8-2.6~\AA, equivalent to a line-of-sight velocity distribution in the range of 50-75~km/s.  Individual fits to the He feature show a typical line center uncertainty $\pm0.1$~\AA~ or better.  The out-of-transit phases exhibit a line center position of 10833.4~\AA, consistent with the stellar \ion{He}{1} rest frame zero velocity.  The excess absorption resides slightly blueward of the stellar zero restframe velocity reference.  As mentioned previously, the telluric masking near 10836 \AA~ censors our view of the existence (or not) of any redshifted lobe in this region.  A more careful treatment of the telluric absorption could rescue some of the data in this region.  The excess detections exhibit a bulk blueshift of up to 30~km/s.
 
 The excess absorption spectrum exhibits an increasing line-of-sight velocity distribution as the planet transits, going from 60~km/s at ingress, up to 100 km/s at egress.
@@ -358,13 +365,6 @@ The excess absorption spectrum exhibits an increasing line-of-sight velocity dis
 Finally, we detect a much weaker but still significant post-egress blue-shifted absorption.  This lobe appears to decrease linearly in wavelength, corresponding to a characteristic blueshift increasing from near zero at transit midpoint to 80~km/s at 12 hours after transit.  It exhibits a slightly lower line-of-sight velocity distribution of 50 km/s, about half of the peak during transit.
 
 We examined other spectral lines using the same methodology as above, finding no detectable variability in the \ion{Ca}{2} infrared triplet, Hydrogen lines, or other neutral metal lines.  We show some of the diagnostic plots for these non-detections in Appendix Section \ref{}.
-
-
-\begin{figure}
-    \includegraphics[width=\linewidth]{figures/phase_2D_diagram_resid.png}
-    \caption{Absorption depth phase scan over the entire HAT-P-67b orbit from 41 visits with HPF.  }
-    \label{fig:HPFscanResid}
-\end{figure}
 
 
 
@@ -375,13 +375,6 @@ We retrieved 22 epochs of archival \emph{Keck HIRES} spectra via the Keck Observ
 \subsection{Velocity substructure}
 Figure \ref{fig:HeliumZoom} shows a zoom-in of the in-transit portion of the Helium excess absorption scan, overlaid with line center positions.  The scan appears to exhibit some velocity substructure.  At transit ingress, the absorption appears more centrally concentrated near the vertical 10833 \AA~ line.  The line depth gets slightly shallower with a slight redshift approaching transit mid-center. \authorcomment1{Add more text here and revise figure.}
 
-
-
-%\begin{figure}
-%    \includegraphics[width=\linewidth]{figures/centroid_inset10833.png}
-%    \caption{A zoom-in of the line centroid positions of the  10830 triplet feature relative to the planet rest frame.}
-%    \label{fig:HeliumZoom}
-%\end{figure}
 
 \begin{figure}
     \centering
