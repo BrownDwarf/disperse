@@ -224,7 +224,7 @@ Only 19 out of the 39 nights possess A0V telluric calibration standard stars.  T
     \tablehead{
         \colhead{Date}   &
         \colhead{Track} &
-        \colhead{Transit?} &
+        \colhead{Desc.} &
         \colhead{BTJD} &
         \colhead{$N_\mathrm{exp}$} &
         \nocolhead{$t_\mathrm{exp}$} &
@@ -235,12 +235,12 @@ Only 19 out of the 39 nights possess A0V telluric calibration standard stars.  T
         \colhead{(days)} &
         \colhead{} &
         \nocolhead{(s)} &
-        \colhead{$\in(-0.5, 0.5)$}
+        \colhead{}
     }
     \startdata
     \input{tables/observation_log.tex}
     \enddata
-    \tablecomments{All exposure times were 308.85~s except for observations from 2020-07-21 to 2021-03-30, which were 511.20~s.}
+    \tablecomments{All exposure times were 308.85~s except for observations from 2020-07-21 to 2021-03-30, which were 511.20~s.  Column 2 describes the HET ``track'', restricted to either East (E) or West (W).  The thresholds for the prepositional description in Column 3 is defined in the text.  Column 5 is the normalized phase $\phi \in(-0.5, 0.5)$, with zero at midtransit.}
 \end{deluxetable}
 
 \subsection{TESS Light Curves}
@@ -417,8 +417,8 @@ At least a few shortcomings limit the applicability of this 1D Parker wind model
 
 
 \begin{figure}
-    \includegraphics[width=\linewidth]{figures/pwinds_1D_higXUV_t1p2Gyr.png}
-    \caption{Simulated 1D Parker wind model of Helium absorption in \hatpb.  The spectrum was generated with a mass loss rate of $1.7\times10^{13}$ g/s, exosphere gas temperature of 9100 K, and with the high XUV spectrum ($L_x/L_\mathrm{bol}=10^{-4}$) shown in Figure \ref{fig:XUV}.  The line depth and width broadly agree with those observed in HPF.}
+    \includegraphics[width=\linewidth]{figures/pwinds_data_overlay.png}
+    \caption{Simulated 1D Parker wind model of Helium absorption in \hatpb.  The spectrum was generated with a mass loss rate of $10^{13}$ g/s, exosphere gas temperature of 9100 K, and with an XUV luminosity $L_x/L_\mathrm{bol}=10^{-5}$ intermediate between those shown in Figure \ref{fig:XUV}.  The lines have about the same  equivalent width, while additional unmodeled velocity dispersion of the gas can explain differences between the line shapes of model and data.  Overall the 1D models may be too simplistic to represent the inherently 3D structure of the outflow.}
     \label{fig:pwinds}
 \end{figure}
 
@@ -473,7 +473,7 @@ Assuming $\log{L_\mathrm{XUV}/L_\mathrm{bol}}=-4.2$, we would expect \hatpb~ to 
 
 
 \subsection{Constraining mass loss rate}
-The theory-inspired mass loss rates above correspond to 1D Parker wind \ion{He}{1} feature depths and widths similar to what we observe, as evinced in Figure \ref{fig:pwinds}, with $\dot{M}_\mathrm{1D}\sim100$ M$_\oplus$/Gyr.  \authorcomment1{To be continued--- interpret this congruence}.
+The theory-inspired mass loss rates above correspond to 1D Parker wind \ion{He}{1} feature depths and widths similar to what we observe, as evinced in Figure \ref{fig:pwinds}, with $\dot{M}_\mathrm{1D}\sim100$ M$_\oplus$/Gyr.  %\authorcomment1{To be continued--- interpret this congruence}.
 
 First, the scaling law arguments that produced Equation \ref{eqInflate} were only proposed as order of magnitude estimates not to be taken too faithfully.  So a $10\times$ higher inflation timescale of 50 Myr would yield $\dot{M}_\mathrm{infl}\sim10^{14}$ g/s, still a very large mass loss rate, but only a factor of 5 away from the baseline 1D model.  Factors of a few uncertainties in the Ohmic dissipation efficiency $\epsilon$ may also contribute.
 
