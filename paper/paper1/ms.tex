@@ -109,6 +109,9 @@
 \newcommand{\UTSpace}{Center for Planetary Systems Habitability, The University of Texas at Austin, 2515 Speedway, Austin, TX 78712, USA}
 \newcommand{\Amsterdam}{Anton Pannekoek Institute for Astronomy, University of Amsterdam, Science Park 904, NL-1098 XH Amsterdam, The Netherlands}
 \newcommand{\UCSC}{Department of Astronomy \& Astrophysics, University of California, Santa Cruz, 1156 High St, Santa Cruz, CA 95064, USA}
+\newcommand{\Tata}{Department of Astronomy and Astrophysics, Tata Institute of Fundamental Research, Homi Bhabha Road, Colaba, Mumbai 400005, India}
+
+
 % -------------------------------------------------------
 
 \begin{document}
@@ -151,6 +154,8 @@
 \affil{\UTAustin}
 
 \author[0000-0001-8720-5612]{Joe P.\ Ninan}
+\affil{\Tata}
+
 \affil{\PSUAA}
 \affil{\PSUCEHW}
 
@@ -210,7 +215,7 @@ Large mass loss alone does not guarantee detectability.  The ability to detect e
     \label{fig:ThornFortUpdated}
 \end{figure}
 
-Here we present a multi-year observational campaign searching for atmospheric escape in \object{HAT-P-67 b}, a transiting inflated hot Saturn orbiting an F5 sub giant at an orbital separation of 0.06 AU and a 4.8-day orbital period \citep{2017AJ....153..211Z}.  Its strong insolation ($T_\mathrm{eq}\sim2000\;$K) combined with \object{HAT-P-67 b}'s extremely low surface gravity ($\log{g_p}<2.3$, cgs) makes it an exceptional candidate for strong atmospheric mass loss via Roche lobe overflow.  Its $\sim$0.05 g~cm$^{-3}$ density places it below the 0.1 g~cm$^{-3}$ threshold predicted to exhibit runaway inflation by \citet{2023ApJ...945L..36T}.  Figures \ref{fig:instellation} and \ref{fig:ThornFortUpdated} show how much of an outlier \hatpb~ is: large, low mass, and heavily irradiated.    
+Here we present a multi-year observational campaign searching for atmospheric escape in \object{HAT-P-67 b}, a transiting inflated hot Saturn orbiting an F5 subgiant at an orbital separation of 0.06 AU and a 4.8-day orbital period \citep{2017AJ....153..211Z}.  Its strong insolation ($T_\mathrm{eq}\sim2000\;$K) combined with \object{HAT-P-67 b}'s extremely low surface gravity ($\log{g_p}<2.3$, cgs) makes it an exceptional candidate for strong atmospheric mass loss via Roche lobe overflow.  Its $\sim$0.05 g~cm$^{-3}$ density places it below the 0.1 g~cm$^{-3}$ threshold predicted to exhibit runaway inflation by \citet{2023ApJ...945L..36T}.  Figures \ref{fig:instellation} and \ref{fig:ThornFortUpdated} show how much of an outlier \hatpb~ is: large, low mass, and heavily irradiated.    
 
 The evolutionary state of HAT-P-67~b offers even more intriguing possibilities.  The planet may have undergone re-inflation \citep{2022AJ....163...53S, 2022AJ....163..120G, 2023arXiv230306728G}, as the host star evolved through the subgiant phase-- with the planet's insolation increasing with the star's rapid luminosity increase in this part of the short-lived HR diagram.  The tidal gravity of the nearby massive ($M_\star \sim1.6\;M_\odot$) host star may amplify mass loss rates even further \citep{2007A&A...472..329E, 2023ApJ...945L..36T}. Its status as a rare inflated hot Saturn makes HAT-P-67~b a promising laboratory, uniquely suited for testing the runaway inflationary predictions of Ohmic dissipation and XUV photoevaporation.
 
@@ -300,7 +305,7 @@ We assembled a composite lightcurve by stitching TESS Sectors 24, 26, 51, 52, 53
 
 The TESS Sector 26 lightcurve exhibits a weak $\sim$3 ppt peak-to-valley out-of-transit modulation. TESS Sectors 51-53 do not show as conspicuous a modulation signal but still show some ostensibly stellar variability.  The ebb and flow of the modulation can be seen in the minimally processed TESS lightcurve in Figure \ref{fig:TESSoverview}.  We fit the TESS lightcurve modulation with a quasiperiodic Gaussian Process (GP) model using \texttt{celerite} \citep{celerite1,celerite2}.  The GP model fit to the entire composite lightcurve yields a 4.7-day period; when fit to individual sectors alone the periods hover around 5.9 days.
 
-We can constrain the expected stellar rotation period based on the stellar radius estimate, $v\sin{i_\star}$, and the observation of the planet's orbital inclination $i_p\sim90^\circ$ from orbit fitting and Doppler tomography \citep{2017AJ....153..211Z}.  We assume spin-orbit alignment, $i_\star \sim i_p$.  We adopt a high limit of $v\sin{i}=35.8\pm1.1$ km/s and a lower $v\sin{i}=30.9\pm2$ km/s value if macroturbulence is accounted for.  We obtain a range of $3.2 < P_\mathrm{rot}  < 4.8 $ days.  This range is typical for F stars that have not yet evolved too far into the sub giant branch \citep{2022ApJ...930....7A}.  The geometrical constraint comports with the 4.7-day GP-based modulation period derived from the stitched TESS lightcurve, but is lower than the 5.9-day per-Sector fits, slightly preferring the lower 4.7-day modulation as the stellar rotation period.  The 5.9-day value would require a stellar radius over 3.2$R_\odot$, which appears implausible.
+We can constrain the expected stellar rotation period based on the stellar radius estimate, $v\sin{i_\star}$, and the observation of the planet's orbital inclination $i_p\sim90^\circ$ from orbit fitting and Doppler tomography \citep{2017AJ....153..211Z}.  We assume spin-orbit alignment, $i_\star \sim i_p$.  We adopt a high limit of $v\sin{i}=35.8\pm1.1$ km/s and a lower $v\sin{i}=30.9\pm2$ km/s value if macroturbulence is accounted for.  We obtain a range of $3.2 < P_\mathrm{rot}  < 4.8 $ days.  This range is typical for F stars that have not yet evolved too far into the subgiant branch \citep{2022ApJ...930....7A}.  The geometrical constraint comports with the 4.7-day GP-based modulation period derived from the stitched TESS lightcurve, but is lower than the 5.9-day per-Sector fits, slightly preferring the lower 4.7-day modulation as the stellar rotation period.  The 5.9-day value would require a stellar radius over 3.2$R_\odot$, which appears implausible.
 
 
 \input{tables/revise_props_tbl.tex}
@@ -510,7 +515,7 @@ Evolved stars increase in luminosity, delivering greater insolation to planets a
 
 We further assume that the orbital location has not changed over the system lifetime, that the planet's response to anomalous heating stimulus is instantaneous, and that the anomalous heating efficiency $\hat{\epsilon}_G$ peaks at $T_\mathrm{eq}=1750$ K as derived by \citet{2018AJ....155..214T}.
 
-We conclude that reinflation likely does not have a significant effect on the evolution of HAT-P-67~b: inflation timescales remain relatively unchanged over the planet lifetime, despite a 50\% spike in incident radiation in the sub giant scenario.  The reason is subtle, as we describe next.  
+We conclude that reinflation likely does not have a significant effect on the evolution of HAT-P-67~b: inflation timescales remain relatively unchanged over the planet lifetime, despite a 50\% spike in incident radiation in the subgiant scenario.  The reason is subtle, as we describe next.  
 
 The second panel from the top illustrates a countervailing effect: the increase in flux actually triggers a decrease in anomalous heating efficiency, $\epsilon$. The greater stellar energy couples into the planet less effectively than the weaker radiation did, roughly balancing out. Together the effects nearly cancel when computing the inflationary lifetimes, yielding nearly identical curves in the bottom panel: a secularly evolving main sequence history gives almost the same inflation timescale as a rapidly increasing subgiant.  It is important to emphasize that the anomalous heating efficiency found by \citet{2018AJ....155..214T} is agnostic to what the actual heating mechanism is: either XUV Irradiation or Ohmic dissipation both have to obey the trend of $\hat{\epsilon}_G(T_\mathrm{eq})$.
 
@@ -527,7 +532,7 @@ The third panel recreates the numerically computed curve for $0.5\;M_\mathrm{Jup
 
 When applied to an ensemble of planet systems, both the XUV irradiation and Ohmic dissipation mechanisms expect a void in the planet mass-radius plane. However, the theories make different quantitative predictions for the placement of the dividing lines between stable and unstable populations.  We illustrate these differences in Figure \ref{fig:tf2018_theory}, which shades the mass-radius plane with predictions for the inflation timescale under HAT-P-67b-like conditions.  The XUV irradiation timescale better matches the distribution of planets, with the 0.1 $g\;cm^{-3}$ density contour setting a conspicuous dividing line in density.  The Ohmic dissipation shading predicts short inflation timescales extending into a region of Jupiter-mass planets with radii commonly observed.  The better match of observed exoplanet demographics to the XUV irradiation shading disfavors Ohmic dissipation.  
 
-Under either scenario, HAT-P-67b resides in an extremely short-lifetime region.  Its nearest analog, HAT-P-32b, offers an interesting test case since it has recently been shown to exhibit a large helium excess \authorcomment1{cite ZJ}.  It resides just slightly denser than the 0.1 $g\;cm^{-3}$ dividing line, with XUV predicting over 10$\times$ longer inflationary timescale for HAT-P-32b than for HAT-P-67b, while Ohmic dissipation expects merely a factor of 3 difference.  HAT-P-32b exhibits a more symmetric leading and trailing tail, whereas HAT-P-67b stands out as exhibiting evidence for preferential mass loss on the highly irradiated planet dayside.  These differences may make this pair an especially valuable laboratory for developing theories of atmospheric escape.
+Under either scenario, HAT-P-67b resides in an extremely short-lifetime region.  Its nearest analog, HAT-P-32b, offers an interesting test case since it has recently been shown to exhibit a large helium excess \citep{doi:10.1126/sciadv.adf8736}.  It resides just slightly denser than the 0.1 $g\;cm^{-3}$ dividing line, with XUV predicting over 10$\times$ longer inflationary timescale for HAT-P-32b than for HAT-P-67b, while Ohmic dissipation expects merely a factor of 3 difference.  HAT-P-32b exhibits a more symmetric leading and trailing tail, whereas HAT-P-67b stands out as exhibiting evidence for preferential mass loss on the highly irradiated planet dayside.  These differences may make this pair an especially valuable laboratory for developing theories of atmospheric escape.
 
 Finally, we consider the prospect that the planetary mass of HAT-P67b is much lower than the 1-$\sigma$ estimate, such that the white-light planetary radius \emph{is} the Hill radius (we have previously assumed the Hill radius is 2.7 planetary radii).  This extreme scenario could manifest enormous mass loss rates, with the atmosphere's reservoir of mass fleeing the gravitational potential well directly, without the cushion of an exosphere.  This terminal Roche Lobe overflow should have observational consequences.  In particular, heavy elements would easily leak into the planetary wind, yielding possibly many observable metal lines in the UV.
 
@@ -593,7 +598,7 @@ We measured a large extent of Helium escape along the arc of the orbit, but we n
 We have presented a multi-year spectroscopic survey of HAT-P-67~b, a low density, heavily irradiated Saturn-mass (or lower) planet.  We identified a large leading tail, with a much weaker trailing tail, which we found to be consistent with preferential dayside mass loss.  HAT-P-67~b stands out as an outlier in the mass-radius plane, which we examine through the lens of different mechanisms for anomalous heating.  Both XUV irradiation and Ohmic dissipation predict runaway inflation for such inflated hot Saturns, and we quantitatively weigh these two scenarios, finding XUV irrdation as more straightforwardly predictive of the overall demographic population of exoplanets observed to date.  
 
 We report in-transit line profile variability, which we attribute to the delicate interplay of planetary and stellar winds.  We identify several avenues for future work, including additional monitoring of the line profile variability to probe the stellar-and-planetary wind interaction.  The large signal should be perceptible in other spectral tracers, such as metal lines in the UV.  We offer a list other planets that may be likely to exhibit mass loss under the Ohmic dissipation and XUV irradiation scenarios.
-
+ 
 \clearpage
 \pagebreak
 
@@ -644,7 +649,8 @@ We examined the \ion{Ca}{2} IR Triplet lines (Ca IRT) for evidence of variabilit
     \texttt{telfit} \citep{2014AJ....148...53G},
     \texttt{exoplanet} \citep{exoplanet:joss},
     \texttt{jupyter} \citep{Kluyver2016jupyter},
-    \texttt{p-winds}, \citep{2022A&A...659A..62D}
+    \texttt{p-winds}, \citep{2022A&A...659A..62D},
+    \texttt{HxRGproc}, \citep{2018SPIE10709E..2UN}
 }
 
 
