@@ -228,7 +228,7 @@ We assemble both archival, previously published, and new observations of the HAT
 \section{Observations}\label{secObs}
 \subsection{Habitable Zone Planet Finder (HPF)}
 
-The Habitable Zone Planet Finder Spectrograph \citep[HPF;][]{2012SPIE.8446E..1SM,2014SPIE.9147E..1GM, 2019Optic...6..233M} on the queue-scheduled 10-meter \emph{Hobby-Eberly Telescope} \citep[HET;][]{1998SPIE.3352...34R} operates in the near-IR from $8100-12800~$\AA~ spanning the \textit{z}, \textit{Y}, and \textit{J} bands at spectral resolving power $R=55,000$. The HET fixed-elevation design \citep{2007PASP..119..556S} limits the observability of \object{HAT-P-67} to less than 1 hour ``tracks'' for a fixed range of hour angles before (east track) and after (west track) the star transits the meridian.  Whereas conventional steerable telescopes could conduct continuous point-and-stare observations of \object{HAT-P-67} for hours, HET cannot.  In practice, this limitation means that in-transit and out-of-transit observational phases were rarely possible on the same night.  Instead, we organized the observations into four campaigns to coincide with \object{HAT-P-67 b} transits on the nights beginning 2020 April 27, 2020; May 21, 2020; June 14, 2020; and 2022 April 28.  These campaigns have out-of-transit observations at least one night before and one night after, and often two nights on either side of the transit.  Two more transit snapshots were obtained in 2022 June-July without the accompanying visits immediately before and after.  The in-transit campaigns had up to 14 exposures per HET track, with integration times between 5-8.5 minutes.  We also obtained random-in-phase lower-priority P1-4 reconnaissance observations \citep{2007PASP..119..556S}.  These out-of-transit snapshot observations typically received 4 or fewer individual exposures.  We observed HAT-P-67 with HPF for a total of 41 visits on 39 unique nights, with two of those nights observing both the east and west HET tracks.  The total on-source integration time exceeds 13.8 hours, with $N=152$ individual spectra possessing typical signal-to-noise ratio of 80 per pixel.  Table \ref{tabHPFLog} summarizes the log of observations.
+The Habitable Zone Planet Finder Spectrograph \citep[HPF;][]{2012SPIE.8446E..1SM,2014SPIE.9147E..1GM, 2019Optic...6..233M} on the queue-scheduled 10-meter \emph{Hobby-Eberly Telescope} \citep[HET;][]{1998SPIE.3352...34R} operates in the near-IR from $8100-12800~$\AA~ spanning the \textit{z}, \textit{Y}, and \textit{J} bands at spectral resolving power $R=55,000$. The HET fixed-elevation design \citep{2007PASP..119..556S} limits the observability of \object{HAT-P-67} to less than 1 hour ``tracks'' for a fixed range of hour angles before (east track) and after (west track) the star transits the meridian.  Whereas conventional steerable telescopes could conduct continuous point-and-stare observations of \object{HAT-P-67} for hours, HET cannot.  In practice, this limitation means that in-transit and out-of-transit observational phases were rarely possible on the same night.  Instead, we organized the observations into four campaigns to coincide with \object{HAT-P-67 b} transits on UT dates 2020 April 28, 2020; May 22, 2020; June 15, 2020; and 2022 April 29.  These campaigns have out-of-transit observations at least one night before and one night after, and often two nights on either side of the transit.  Two more transit snapshots were obtained in 2022 June-July without the accompanying visits immediately before and after.  The in-transit campaigns had up to 14 exposures per HET track, with integration times between 5-8.5 minutes.  We also obtained random-in-phase lower-priority P1-4 reconnaissance observations \citep{2007PASP..119..556S}.  These out-of-transit snapshot observations typically received 4 or fewer individual exposures.  We observed HAT-P-67 with HPF for a total of 41 visits on 39 unique nights, with two of those nights observing both the east and west HET tracks.  The total on-source integration time exceeds 13.8 hours, with $N=152$ individual spectra possessing typical signal-to-noise ratio of 80 per pixel.  Table \ref{tabHPFLog} summarizes the log of observations.
 
 The observation schedule was strategically restricted to the spring season when the Barycentric Earth Radial Velocity (BERV) would Doppler shift telluric absorption lines sufficiently far away from the core of the Helium 10833 \AA~ feature \citep{2022ApJ...939L..11S}.  The small BERV still means the redward Helium line wing has significant telluric contamination between 10834$-$10836 \AA, but the core and blue line wings appear relatively pristine.  Sky emission lines land in this region, but are more easily mitigated by HPF's simultaneous sky reference fiber.
 
@@ -243,7 +243,7 @@ Only 19 out of the 39 nights possess A0V telluric calibration standard stars.  T
         \label{tabHPFLog}
     }
     \tablehead{
-        \colhead{Night-of}   &
+        \colhead{UTC}   &
         \colhead{Track} &
         \colhead{Desc.} &
         \colhead{BJD} &
@@ -261,7 +261,7 @@ Only 19 out of the 39 nights possess A0V telluric calibration standard stars.  T
     \startdata
     \input{tables/observation_log.tex}
     \enddata
-    \tablecomments{The ``night of'' refers to the local date at the start of the night.  All exposure times were 308.85~s except for observations from 2020-07-21 to 2021-03-30, which were 511.20~s.  Column 2 describes the HET ``track'', restricted to either East (E) or West (W).  Column 5 is the normalized phase $\phi \in(-0.5, 0.5)$, with zero at midtransit.}
+    \tablecomments{All exposure times were 308.85~s except for observations from 2020-07-22 to 2021-03-31, which were 511.20~s.  Column 2 describes the HET ``track'', restricted to either East (E) or West (W).  Column 5 is the normalized phase $\phi \in(-0.5, 0.5)$, with zero at midtransit.}
 \end{deluxetable}
 
 \subsection{TESS Light Curves}
@@ -272,7 +272,7 @@ We also assembled a comparison sample of about 1000 lightcurves to interpret the
 \begin{figure*}
     \centering
     \includegraphics[width=0.98\linewidth]{figures/TESS_HAT-P-67b_overview.png}
-    \caption{Overview of all available TESS Sectors showing 24 full or partial transits with 34 visits with HPF (vertical gray bars), 7 of which coincide with transits.  The rest of the visits sample out-of-transit phases.  The 8 HPF visits between BTJD 2050 and 2690 are not shown.  Note the large time breaks between some consecutive panels, which correspond roughly to the duration of a TESS sector.}
+    \caption{Overview of all available TESS Sectors showing 24 full or partial transits with 34 visits with HPF (vertical gray bars), 7 of which coincide with transits.  The rest of the visits sample out-of-transit phases.  The 8 HPF visits between days 2050 and 2690 are not shown.  Note the large time breaks between some consecutive panels, which correspond roughly to the duration of a TESS sector.}
     \label{fig:TESSoverview}
 \end{figure*}
 
@@ -416,7 +416,7 @@ Overall this pattern of velocity centroids appears consistent with the majority 
 
 \section{Atmospheric Escape}\label{secResults}
 
-\subsection{Signal inconsistent with stellar activity interpretation}
+\subsection{Signal Inconsistent with Stellar Activity Interpretation}
 The planet's orbital period is close to the stellar rotational period, so the prospect of stellar activity contamination arises.  Overall, the HPF spectra disfavor a stellar activity interpretation for a few reasons.  First, a hypothetical stellar origin of Helium 10833 \AA~ variability should be accompanied by variability in other tracers.  Instead, the \ion{Ca}{2} Infrared Triplet (IRT) shows stable line profiles in our HPF spectra.  The Appendix Section \ref{appendixSec} discusses these and other non-detections.  Second, the velocity substructure and phasing appears inconsistent with stellar activity: the gradual rise and then abrupt truncation of the Helium excess at the moment of planet egress (Figure \ref{fig:HPFtimeseries}) appears inconsistent with a more smoothly varying stellar variability.  Finally, the weak post-egress excess appears blueshifted to wavelengths as short as 10830 \AA, which would fall entirely outside of the original Helium spectral line's rotationally broadened profile, ruling out a heritage from the star's surface.  
 
 The recent discovery of giant tidal tails in HAT-P-32~b \citep{doi:10.1126/sciadv.adf8736} provides an additional anchor.  HAT-P-32~b is in many ways the most analogous known system to HAT-P-67~b, having comparably low mass and comparably large radius for similar insolation around an F star.  In HAT-P-32~b the planetary interpretation is unambiguous owing to the different stellar rotation and orbital periods.  In Section \ref{secLackofSaturns} we show that radius inflation mechanisms expect similar and large mass loss rates for both of these systems.  
@@ -469,7 +469,7 @@ Figure \ref{fig:KeplerianShear} shows an illustration of Keplerian shear adapted
 Stellar wind confinement \citep{2022ApJ...926..226M} arises from a bow-shock configuration, in which the planetary wind encounters the stellar wind and a shock front causes a density enhancement.  A trailing tail may also be present, but may not undergo the same boost in density, and could be rapidly carried away alongside the stellar wind.  A stellar-wind-induced asymmetry could result, yielding the appearance of a leading or trailing tail even if mass loss proceeds isotropically at first. Examples of this asymmetry can be seen in 3D MHD modeling of WASP 107~b \citep{2022ApJ...926..226M}.
 
 
-\subsection{Direct Evidence for Day-/Night- side mass loss asymmetry}\label{secPrimaFacie}
+\subsection{Direct Evidence for Preferential Dayside Mass Loss}\label{secPrimaFacie}
 The observation of such a prominent leading tail leads us to the inescapable conclusion that HAT-P-67~b is predominantly losing mass on the planet's dayside.  An isotropic mass loss would manifest a comparably conspicuous trailing tail, which we do not observe.  Stellar wind confinement alone should be expected to produce minor asymmetries such as those seen in the modeling of WASP 107~b \citep{2022ApJ...926..226M}, but in order to obtain the vastly dominant leading tail, an enhancing systematic effect is needed.  The schematic illustration in Figure \ref{fig:KeplerianShear} depicts this interplay.
 
 Importantly, orbital shear, stellar wind confinement, preferential dayside mass loss, and radiative transfer must all conspire to create the conditions of high enough column density to populate the \ion{He}{1} metastable triplet to detectable levels while imbuing the velocity substructure that we see.  The detailed 3D modeling of the interplay of these effects is beyond the scope of the current work, but is feasible with adaptations to existing 3D simulations.
@@ -627,7 +627,7 @@ We examined the \ion{Ca}{2} IR Triplet lines (Ca IRT) for evidence of variabilit
 
 \begin{acknowledgements}
 
-    This material is based upon work supported by the National Aeronautics and Space Administration under Grant Number 80NSSC20K0257 for the XRP program issued through the Science Mission Directorate.
+    This material is based upon work supported by the National Aeronautics and Space Administration under Grant Number 80NSSC21K0650 for the NNH20ZDA001N-ADAP:D.2 program and 80NSSC20K0257 for the XRP program issued through the Science Mission Directorate.
 
     Based on observations obtained with the Hobby-Eberly Telescope (HET), which is a joint project of the University of Texas at Austin, the Pennsylvania State University, Ludwig-Maximillians-Universitaet Muenchen, and Georg-August Universitaet Goettingen. The HET is named in honor of its principal benefactors, William P. Hobby and Robert E. Eberly.
 
