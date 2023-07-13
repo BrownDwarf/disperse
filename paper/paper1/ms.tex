@@ -210,13 +210,13 @@ Large mass loss alone does not guarantee detectability.  The ability to detect e
 
 \begin{figure}
     \centering
-    \includegraphics[width=\linewidth]{figures/HAT-P-67b_radius_valley.png}
+    \includegraphics[width=\linewidth]{HAT-P-67b_radius_valley.png}
     \caption{Overview of exoplanet demographics.  The pixel bins reflect the observed density of over 5000 planets accessed from the NASA Exoplanet Archive. Detections of atmospheric escape are common among large planets with strong insolation.  \hatpb is among the most inflated planets known.}
     \label{fig:instellation}
 \end{figure}
 
 \begin{figure}
-    \includegraphics[width=\linewidth]{figures/tf2018_fig2_update2023_HAT.png}
+    \includegraphics[width=\linewidth]{tf2018_fig2_update2023_HAT.png}
     \caption{Mass-radius trends for inflated hot sub-Saturns and hot Jupiters, with layout following Figure 2 of \citet{2018AJ....155..214T} and updated with NASA Exoplanet Archive confirmed planets.  The trend lines show the mass-radius relationship for equilibrium temperatures of 500, 1000, 1250, 1500, and 2000 K, assuming the mean composition and mean heating efficiency from the original figure.  HAT-P-67~b ($\star$ symbol) stands alone in a region defined by the lack of inflated sub-Saturns and explained by short lifetimes from runaway inflation and mass loss.}
     \label{fig:ThornFortUpdated}
 \end{figure}
@@ -264,7 +264,7 @@ Only 19 out of the 39 nights possess A0V telluric calibration standard stars.  T
         \colhead{}
     }
     \startdata
-    \input{tables/observation_log.tex}
+    \input{observation_log.tex}
     \enddata
     \tablecomments{All exposure times were 308.85~s except for observations from 2020-07-22 to 2021-03-31, which were 511.20~s.  Column 2 describes the HET ``track'', restricted to either East (E) or West (W).  Column 5 is the normalized phase $\phi \in(-0.5, 0.5)$, with zero at midtransit.}
 \end{deluxetable}
@@ -276,7 +276,7 @@ We also assembled a comparison sample of about 1000 lightcurves to interpret the
 
 \begin{figure*}
     \centering
-    \includegraphics[width=0.98\linewidth]{figures/TESS_HAT-P-67b_overview.png}
+    \includegraphics[width=0.98\linewidth]{TESS_HAT-P-67b_overview.png}
     \caption{Overview of all available TESS Sectors showing 24 full or partial transits with 34 visits with HPF (vertical gray bars), 7 of which coincide with transits.  The rest of the visits sample out-of-transit phases.  The 8 HPF visits between days 2050 and 2690 are not shown.  Note the large time breaks between some consecutive panels, which correspond roughly to the duration of a TESS sector.}
     \label{fig:TESSoverview}
 \end{figure*}
@@ -298,7 +298,7 @@ HAT-P-67A was saturated in ZTF \citep{2019PASP..131a8002B}, but the M-dwarf comp
 \citet{2017AJ....153..211Z} previously derived stellar radius estimates of 2.1-2.7 $R_\odot$ through Spectral Energy Distribution (SED) and isochrone fitting as part of a joint orbit fit.  We systematically increase those stellar radius estimates by 8.7\% to match the greater Gaia \emph{DR3} distance (\S \ref{gaiadr3}).  For a fixed $R_p/R_\star$ from the measured transit depth, the larger $R_\star$ implies a proportionally larger planet radius. This update systematically decreases the estimate for the already-low density of HAT-P-67 by 28\%, to a mere $<$0.035 g$\;$cm$^{-3}$, albeit with significant uncertainties from the weak mass constraint.  The luminosity increases by 18\%, to about 10.3 $L_\odot$.
 
 \begin{figure}
-    \includegraphics[width=\linewidth]{figures/best_fit_orbit.png}
+    \includegraphics[width=\linewidth]{best_fit_orbit.png}
     \caption{Best fit orbit overlaid on the composite TESS lightcurve.  Revised planet properties are consistent with \citet{2017AJ....153..211Z}, with a systematic shift from a revised \emph{Gaia} DR3 distance.}
     \label{fig:transit}
 \end{figure}
@@ -316,11 +316,11 @@ The TESS Sector 26 lightcurve exhibits a weak $\sim$3 ppt peak-to-valley out-of-
 We can independently constrain the expected stellar rotation period based on the stellar radius estimate, $v\sin{i_\star}$, and the observation of the planet's orbital inclination $i_p\sim90^\circ$ from orbit fitting and Doppler tomography \citep{2017AJ....153..211Z}.  We assume spin-orbit alignment, $i_\star \sim i_p$.  We adopt a high limit of $v\sin{i}=35.8\pm1.1$ km/s and a lower $v\sin{i}=30.9\pm2$ km/s value if macroturbulence is accounted for.  We obtain a range of $3.2 < P_\mathrm{rot}  < 4.8 $ days.  This range is typical for F stars that have not yet evolved too far into the subgiant branch \citep{2022ApJ...930....7A}.  The geometrical constraint comports with the 4.7-day GP-based modulation period derived from the stitched TESS lightcurve but is lower than the 5.9-day per-Sector fits, slightly preferring the lower 4.7-day modulation as the stellar rotation period.  The 5.9-day value would require a stellar radius over 3.2$R_\odot$, which appears implausible.
 
 
-\input{tables/revise_props_tbl.tex}
+\input{revise_props_tbl.tex}
 
 \begin{figure}
     \centering
-    \includegraphics[width=0.98\linewidth]{figures/MIST_only_HATP.png}
+    \includegraphics[width=0.98\linewidth]{MIST_only_HATP.png}
     \caption{MIST evolutionary model tracks for HAT-P-67.  The $T_\mathrm{eff}$ and luminosity of \hatp (gray circle) are consistent with either the late main sequence or recently evolved subgiant.  The labeled numbers indicate age in Gyr.}
     \label{fig:evolTracks}
 \end{figure}
@@ -330,7 +330,7 @@ The slightly increased distance and radius imply an 18\% more luminous host star
 
 
 \begin{figure}
-    \includegraphics[width=\linewidth]{figures/HAT-P-67b_rv.pdf}
+    \includegraphics[width=\linewidth]{HAT-P-67b_rv.pdf}
     \caption{RV orbit fit including both HPF and Keck HIRES data points.  The RV information content in HPF is much less than in Keck HIRES for this F5 spectral type, and so the joint fit constrains the mass to roughly a Saturn mass.}
     \label{fig:RVfit}
 \end{figure}
@@ -350,7 +350,7 @@ The HET's fixed-altitude design means that the airmass remains relatively consta
 Figure \ref{fig:HPFheliumOverview} shows a zoom-in on the He 10833 \AA~ region of interest, with all 152 individual exposures overlaid.  We see variability in the Helium line of up to 10\%, much greater than the $<1\%$ pixel-to-pixel variation.  The feature width spans about 3~\AA.
 
 \begin{figure}
-    \includegraphics[width=\linewidth]{figures/HAT_P_67b_He_spectrum.png}
+    \includegraphics[width=\linewidth]{HAT_P_67b_He_spectrum.png}
     \caption{Overlay of all 152 individual HPF exposures of HAT-P-67, spanning 2020-2022. Variability is seen in the \ion{He}{1} 10833 \AA~ triplet near the vertical orange shaded band but not in the adjacent Si line.  These snapshot spectra were barycentric corrected and continuum flattened with a linear fit to the regions in the blue vertical bands.  Sharp telluric absorption lines have been masked in regions near 10835 and 10837.5 \AA.}
     \label{fig:HPFheliumOverview}
 \end{figure}
@@ -358,7 +358,7 @@ Figure \ref{fig:HPFheliumOverview} shows a zoom-in on the He 10833 \AA~ region o
 Figure \ref{fig:HPFperCampaign} shows the spectra for four campaigns, with before and after spectra showing conspicuous excess absorption during transit and 1 day before transit but negligible excess absorption after transit.  The individual transits show significant morphological variation, with substructure in the bulk line-of-sight velocity distribution.
 
 \begin{figure}
-    \includegraphics[width=\linewidth]{figures/HAT_P_67b_byCampaign_Spectra.png}
+    \includegraphics[width=\linewidth]{HAT_P_67b_byCampaign_Spectra.png}
     \caption{Four observing campaigns centered on an in-transit epoch with before-and-after visits typically separated by 1 night. The after-transit spectra tend to show negligible absorption.  Line-of-sight velocity substructure can be seen in the before and during transit epochs.}
     \label{fig:HPFperCampaign}
 \end{figure}
@@ -369,7 +369,7 @@ The 13.8 hours of exposure, combined with \object{HAT-P-67 b}'s short ($P\sim4.8
 We define 4 additional distinct groups of phases with adjectival qualifiers in anticipation of the need to discuss bulk trends: \texttt{PRE}, \texttt{POST}, \texttt{CONTROL}, and \texttt{BASELINE}.  The \texttt{BASELINE} phases define the out-of-transit baseline.  The ``control'' spectra designate phases just before the baseline but are not used to define the baseline, to inspect minor correlation structure in the spectra without dividing it out.  Table \ref{tabHPFLog} lists the adjectival qualifiers for each HPF visit.
 
 \begin{figure}
-    \includegraphics[width=\linewidth]{figures/HAT_P_67b_Helium10830EW_byCampaign.png}
+    \includegraphics[width=\linewidth]{HAT_P_67b_Helium10830EW_byCampaign.png}
     \caption{Equivalent Width lightcurve of Helium absorption in HAT-P-67b.  The system exhibits a characteristic absorption leading up to transit, followed by a sharp decline after transit passage.  The EWs were computed in the orange shaded band (10832.3$-$10834.2 \AA) in Figure \ref{fig:HPFheliumOverview}.}
     \label{fig:HPFtimeseries}
 \end{figure}
@@ -382,7 +382,7 @@ The in-transit phases exhibit over 10\% excess absorption peaks.  A large absorp
 The underlying structure of the metastable \ion{He}{1} triplet consists of three quantum components, two of which ($J=$ 1 and 2) are typically blended owing to Doppler broadening from the finite temperature of the gas $T_0$.  HAT-P-67~b exhibits blending of all three components ($J=$ 0, 1, and 2) into a single broad Gaussian-like feature seen in Figure \ref{fig:HPFheliumOverview}.  The mere observation of this broadening implies that HAT-P-67~b probes a larger velocity dispersion than typical measurements and may be associated with either a higher gas temperature, complex planetary wind flows, or some mix of both.  Whatever the cause, we treat the feature as a single Gaussian line for the purpose of estimating bulk characteristics of the Helium excess absorption feature.  We restricted the fitting to the 10828$-$10838 \AA~region of the residual spectra.  The model constructed in this way has a total of 4 parameters: amplitude $A$, location $\lambda_c$, Gaussian width $\sigma$, and constant offset.  We repeated a similar process for the nearby Si line at 10830 \AA~as a control sample.
 
 \begin{figure}
-    \includegraphics[width=\linewidth]{figures/phase_2D_diagram_resid.png}
+    \includegraphics[width=\linewidth]{phase_2D_diagram_resid.png}
     \caption{Absorption depth phase scan over the entire HAT-P-67b orbit from 41 visits with HPF.  The planet orbital rest frame is shown as the black sine wave. Gaps in data at 10834-10836 \AA~ arise from telluric masking.  Unmasked telluric lines are perceptible at 10825 \AA.}
     \label{fig:HPFscanResid}
 \end{figure}
@@ -411,9 +411,9 @@ Overall this pattern of velocity centroids appears consistent with the majority 
 
 \begin{figure}
     \centering
-    \includegraphics[width=\linewidth]{figures/centroid_overview10833.png}
+    \includegraphics[width=\linewidth]{centroid_overview10833.png}
     %\hskip-3em
-    %\subfloat{\includegraphics[width=4cm]{figures/centroid_inset10833.png}}
+    %\subfloat{\includegraphics[width=4cm]{centroid_inset10833.png}}
     \caption{Line centroid positions of the  \ion{He}{1} 10833 \AA~ feature.  A slight blueshift relative to the stellar restframe (vertical line) can be seen, with a weak excess blueshift trend after planet egress. The line-of-sight velocity distribution of 2-3 \AA~ means that the gas distribution exhibits both advancing and receding lobes at all phases other than post-egress.}
     \label{fig:centroids}
 \end{figure}
@@ -441,7 +441,7 @@ We explore one-dimensional (1D) models, which offer ease of interpretation and r
 The predicted Helium ionization depends sensitively on the XUV flux \citep{2019ApJ...881..133O}.  Ideally, we would have a measurement of the XUV spectrum of HAT-P-67, but the limited facilities and distance of the source preclude these challenging observations.  Instead, we constructed panchromatic X-ray to visible SEDs by scaling and stitching together synthetic spectra to provide a range of high and low $L_X/L_\mathrm{bol}$.  We chose a 6400 K PHOENIX \citep{husser13} solar metallicity photospheric spectral template with $\log{g}=3.5$---the closest PHOENIX grid point to published and updated values available--- scaled to the solid angle seen by \hatpb.  The F7IV-V \object[tau Boo]{$\tau$ Boo} serves as the closest analog with available synthetic X-ray coronal spectra \citep{2011A&A...532A...6S}.  But \hatp resides closer to the Kraft break than does \object[tau Boo]{$\tau$ Boo}, and the move to hotter F stars may be associated with weakening of the stellar wind and other atmospheric changes leading to the prospect of much lower XUV luminosity for HAT-P-67 \citep{2022ApJ...930....7A}.  So there remains significant uncertainty about the applicability of the \object[tau Boo]{$\tau$ Boo} XUV spectrum to HAT-P-67.  We scaled the synthetic SED of \object[tau Boo]{$\tau$ Boo} retrieved from X-exoplanets \citep{2011A&A...532A...6S} so that the integral of ground-state ionizing photons ($\lambda<504\;$\AA) exhibited $L_X/L_\mathrm{bol} \in [10^{-6}, 10^{-4}]$.  Figure \ref{fig:XUV} shows two conceivable SEDs with these high and low radiation hardnesses.
 
 \begin{figure}
-    \includegraphics[width=\linewidth]{figures/XUV_flux_schematic.png}
+    \includegraphics[width=\linewidth]{XUV_flux_schematic.png}
     \caption{Synthetic XUV radiation scenarios for \hatpb.  The low and high XUV scenarios correspond to $L_X/L_\mathrm{bol}$ of $10^{-6}$ and $10^{-4}$, where $L_X$ is defined as He 1 $^1$S Ionizing photons that trigger the recombination cascade needed for observing the He 2 $^3$S ionization metastable state.  He 2 $^3$S Ionizing photons depopulate the state and suppress the observability of \ion{He}{1} 10833 \AA.  The XUV flux of HAT-P-67 is uncertain.}
     \label{fig:XUV}
 \end{figure}
@@ -454,7 +454,7 @@ At least a few shortcomings limit the applicability of this 1D Parker wind model
 
 
 \begin{figure}
-    \includegraphics[width=\linewidth]{figures/pwinds_May2020_14000_2e13Mdot_medXUV_formal_rv_rev.png}
+    \includegraphics[width=\linewidth]{pwinds_May2020_14000_2e13Mdot_medXUV_formal_rv_rev.png}
     \caption{Simulated 1D Parker wind model of Helium absorption in \hatpb.  The spectrum was generated with a mass loss rate of $2\times10^{13}$ g/s, exosphere gas temperature of $14\,000\;$K, and with an XUV luminosity $L_x/L_\mathrm{bol}=10^{-5}$ intermediate between those shown in Figure \ref{fig:XUV}.  The \texttt{p-winds} model yields the \ion{He}{1} 10833 triplet lines (colored thin lines), with a cumulative feature in black resembling the data, shown as the May 2020 in-transit mean.  Additional 3D velocity dispersion of the gas can explain differences between the line shapes of the model and data.  Overall the 1D models may be too simplistic to represent the inherently 3D structure of the outflow.}
     \label{fig:pwinds}
 \end{figure}
@@ -465,7 +465,7 @@ Several physical phenomena could conceivably control the geometry and extent of 
 Figure \ref{fig:KeplerianShear} shows an illustration of Keplerian shear adapted to the system properties of \hatpb.  In this shear-dominated scenario, the planetary wind launches primarily from the dayside, with relatively little or no wind launched from the nightside.  The planet wind initially launches radially outward from the exobase, with the strongest wind located near the sub-stellar point, the line connecting the planet to the star along the vertical axis in the figure.  Inefficient grazing incidence heating near the terminator subdues the mass loss in the $x-$direction, meaning that this wind exhibits not a hemispherical shape, but more concentration along the star-planet line.  The gas increasingly experiences the star's Keplerian potential past the Roche lobe, accelerating in the direction of orbital motion, $+x$.  The accelerating column eventually overtakes the planet completely, with the prospect of extending to hundreds of planetary radii.  The mass loss has to be large enough to shield the material to make it observable in the metastable \ion{He}{1} 10833 \AA~triplet.
 
 \begin{figure}
-    \includegraphics[width=0.8\linewidth]{figures/KeplerianShear_v0p5_alt.png}
+    \includegraphics[width=0.8\linewidth]{KeplerianShear_v0p5_alt.png}
     \caption{Schematic of Keplerian orbital shear.  Locations outside the Roche lobe experience orbital shear from the Keplerian potential.  A wind launched primarily from the dayside will tend to form a leading tail.}
     \label{fig:KeplerianShear}
 \end{figure}
@@ -532,7 +532,7 @@ The second panel from the top illustrates a countervailing effect: the increase 
 The third panel recreates the numerically computed curve for $0.5\;M_\mathrm{Jup}$, $T_\mathrm{eq}=$1800 K from \citep{2011ApJ...738....1B}, which should be considered as representative since it was not necessarily tailored to the evolutionary history of \hatpb.  Nevertheless, the similarity of the curve is remarkable since it arrives at approximately the correct planet radius at the right age for about the right initial mass.
 
 \begin{figure}
-    \includegraphics[width=\linewidth]{figures/reinflation_MIST2.png}
+    \includegraphics[width=\linewidth]{reinflation_MIST2.png}
     \caption{Conceivable evolutionary scenarios for \hatpb.  The planet's equilibrium temperature increases as the stellar luminosity gradually increases on the main sequence.  The second panel from the top shows the corresponding estimate for anomalous heating efficiency from \citet{2018AJ....155..214T}. The Ohmic dissipation model makes predictions for runaway inflation, depending on the incident stellar flux.  The heuristic scaling relation for the inflation timescale predicts vanishingly short inflationary lifetimes in this extreme regime but illustrates the countervailing effects of the top two panels.}
     \label{fig:OhmicInflate}
 \end{figure}
@@ -547,7 +547,7 @@ Under either scenario, HAT-P-67b resides in an extremely short-lifetime region. 
 Finally, we consider the prospect that the planetary mass of HAT-P67b is much lower than the 1-$\sigma$ estimate, such that the white-light planetary radius \emph{is} the Hill radius (we have previously assumed the Hill radius is 2.7 planetary radii).  This extreme scenario could manifest enormous mass loss rates, with the atmosphere's reservoir of mass fleeing the gravitational potential well directly, without the cushion of an exosphere.  This terminal Roche Lobe overflow should have observational consequences.  In particular, heavy elements would easily leak into the planetary wind, yielding possibly many observable metal lines in the UV.
 
 \begin{figure*}[t]
-    \includegraphics[width=\linewidth]{figures/thorn2023_theory.png}
+    \includegraphics[width=\linewidth]{thorn2023_theory.png}
     \caption{Runaway inflation timescale in the exoplanet mass-radius diagram.  The shading of the left panel shows $\tau_\mathrm{infl}$ from Ohmic dissipation; the right panel shows $\tau_\mathrm{infl}\equiv M/\dot{M}$ from photoionization-driven mass loss.  Individual planets with confident mass and radius detections are shown as small black dots. Helium non-detections are shown in red squares, atmospheric escape detections from any origin in green circles \citep{2022arXiv221116243D}.  Under either scenario, \hatpb~ resides in a sparsely populated region with a short inflationary timescale, making it unstable to runaway evaporation with large mass loss expected.  Photoionization better predicts the depopulation of sources in the upper left low-density region of the diagram, defined by the 0.1 g cm$^{-3}$ iso-density dashed white line.}
     \label{fig:tf2018_theory}
 \end{figure*}
@@ -584,7 +584,7 @@ The key figure-of-merit can be distilled to $\tau_\mathrm{infl}$, which can be t
         \colhead{Myr}
     }
     \startdata
-    \input{tables/tab_HeSM.tex}
+    \input{tab_HeSM.tex}
     \enddata
     \tablecomments{XUV Inflation timescale assumes $L_X/L_\mathrm{bol}=6.3\times10^{-4}$ (Equation 5 of Sanz-Forcada et al. 2011), which is an overestimate for HAT-P-67 and old/slowly-rotating host stars.}
 \end{deluxetable*}
@@ -617,7 +617,7 @@ We report in-transit line profile variability, which we attribute to the delicat
 We examined the \ion{Ca}{2} IR Triplet lines (Ca IRT) for evidence of variability.  No variation was seen in these features, which were pre-processed in the same way as the Helium feature.  Figure \ref{fig:CaPhaseScan} shows a similar phase plot as Figure \ref{fig:HPFscanResid}, adapted to the line at 8662 \AA.  We see no conspicuous variability at this or any of the other Ca IRT lines.  We also found no detectable variability in the Pa$\delta$ line at 10050 \AA, nor other deep lines at 10330 \AA~ and elsewhere.  \ion{He}{1} 10833 appears to be the only conspicuously variable line in the HPF spectrum.
 
 \begin{figure}
-    \includegraphics[width=0.5\linewidth]{figures/Ca8662_phase_2D_diagram_resid.png}
+    \includegraphics[width=0.5\linewidth]{Ca8662_phase_2D_diagram_resid.png}
     \caption{Non-detection of variability in the Calcium IR Triplet line at 8862 \AA.  No other HPF lines appear to show any variability.}
     \label{fig:CaPhaseScan}
 \end{figure}
