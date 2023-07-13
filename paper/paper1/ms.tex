@@ -453,25 +453,21 @@ At least a few shortcomings limit the applicability of this 1D Parker wind model
     \label{fig:pwinds}
 \end{figure}
 
-\subsection{Physical mechanisms guiding the leading tail} \label{secLeading}
-Several physical phenomena control the geometry and extent of the escaping material.  Here we explore the three predominant dynamical effects: orbital shear, stellar wind confinement, and day-/night- side mass loss asymmetries.
+\subsection{Direct Evidence for Preferential Dayside Mass Loss} \label{secLeading}
+Several physical phenomena could conceivably control the geometry and extent of the escaping material.  The stellar potential controls the overall geometry through tides and the Coriolis force, resulting in lobe morphologies that lead and trail the planet \citep{2019ApJ...873...89M}.  Here we explore the three predominant dynamical effects: orbital shear, stellar wind confinement, and day-/night- side mass loss asymmetries.
 
 Figure \ref{fig:KeplerianShear} shows an illustration of Keplerian shear adapted to the system properties of \hatpb.  In this shear-dominated scenario, the planetary wind launches primarily from the dayside, with relatively little or no wind launched from the nightside.  The planet wind initially launches radially outward from the exobase, with the strongest wind located near the sub-stellar point, the line connecting the planet to the star along the vertical axis in the figure.  Inefficient grazing incidence heating near the terminator subdues the mass loss in the $x-$direction, meaning that this wind exhibits not a hemispherical shape, but more concentration along the star-planet line.  The gas increasingly experiences the star's Keplerian potential past the Roche lobe, accelerating in the direction of orbital motion, $+x$.  The accelerating column eventually overtakes the planet completely, with the prospect of extending to hundreds of planetary radii.  The mass loss has to be large enough to shield the material to make it observable in the metastable \ion{He}{1} 10833 \AA~triplet.
 
 \begin{figure}
-    \includegraphics[width=0.8\linewidth]{figures/KeplerianShear_v0p3.png}
+    \includegraphics[width=0.8\linewidth]{figures/KeplerianShear_v0p5_alt.png}
     \caption{Schematic of Keplerian orbital shear.  Locations outside the Roche lobe experience orbital shear from the Keplerian potential.  A wind launched primarily from the dayside will tend to form a leading tail.}
     \label{fig:KeplerianShear}
 \end{figure}
 
 
-Stellar wind confinement \citep{2022ApJ...926..226M} arises from a bow-shock configuration, in which the planetary wind encounters the stellar wind and a shock front causes a density enhancement.  A trailing tail may also be present, but may not undergo the same boost in density, and could be rapidly carried away alongside the stellar wind.  A stellar-wind-induced asymmetry could result, yielding the appearance of a leading or trailing tail even if mass loss proceeds isotropically at first. Examples of this asymmetry can be seen in 3D MHD modeling of WASP 107~b \citep{2022ApJ...926..226M}.
+The observation of such a prominent leading tail leads us to the inescapable conclusion that HAT-P-67~b is predominantly losing mass on the planet's dayside.  An isotropic mass loss would manifest a comparably conspicuous trailing tail, which we do not observe. 
 
-
-\subsection{Direct Evidence for Preferential Dayside Mass Loss}\label{secPrimaFacie}
-The observation of such a prominent leading tail leads us to the inescapable conclusion that HAT-P-67~b is predominantly losing mass on the planet's dayside.  An isotropic mass loss would manifest a comparably conspicuous trailing tail, which we do not observe.  Stellar wind confinement alone should be expected to produce minor asymmetries such as those seen in the modeling of WASP 107~b \citep{2022ApJ...926..226M}, but in order to obtain the vastly dominant leading tail, an enhancing systematic effect is needed.  The schematic illustration in Figure \ref{fig:KeplerianShear} depicts this interplay.
-
-Importantly, orbital shear, stellar wind confinement, preferential dayside mass loss, and radiative transfer must all conspire to create the conditions of high enough column density to populate the \ion{He}{1} metastable triplet to detectable levels while imbuing the velocity substructure that we see.  The detailed 3D modeling of the interplay of these effects is beyond the scope of the current work, but is feasible with adaptations to existing 3D simulations.
+Importantly, orbital shear, stellar wind confinement, preferential dayside mass loss, and radiative transfer must all conspire to create the conditions of high enough column density to populate the \ion{He}{1} metastable triplet to detectable levels while imbuing the velocity substructure that we see.  The detailed 3D modeling of the interplay of these effects is beyond the scope of the current work, but is feasible with adaptations to existing 3D simulations \citep{2022ApJ...926..226M}.
 
 Here we interpret the bulk velocity substructure in Figure \ref{fig:centroids} under these conceptual gas dynamics mechanisms.  We attribute the mild pre-transit arc to stellar wind acceleration.  The stellar wind is initially too weak to plow the dense escaping gas until a separation of 60-130 planetary radii ($+0.15$ orbital phase), the inflection point in an enormous bow shock.  Gas at these separations has had enough time to diffuse, both out of the orbital plane and to slightly larger radii shells, in turn lowering the column density along the line-of-sight.  The lower column density provides both fewer Helium atoms to participate in absorption, and less overall NUV shielding, leading to greater fractional ionization and further depopulation of the \ion{He}{1} metastable state.
 
@@ -660,15 +656,13 @@ We examined the \ion{Ca}{2} IR Triplet lines (Ca IRT) for evidence of variabilit
     \texttt{seaborn} \citep{waskom14},
     \texttt{astropy} \citep{2022ApJ...935..167A},
     \texttt{muler} \citep{2022JOSS....7.4302G},
+    \texttt{lightkurve}, \citep{geert_barentsen_2019_2565212},
     \texttt{telfit} \citep{2014AJ....148...53G},
     \texttt{exoplanet} \citep{exoplanet:joss},
     \texttt{jupyter} \citep{Kluyver2016jupyter},
     \texttt{p-winds}, \citep{2022A&A...659A..62D},
     \texttt{HxRGproc}, \citep{2018SPIE10709E..2UN}
 }
-
-
-\clearpage
 
 
 \bibliography{ms}
