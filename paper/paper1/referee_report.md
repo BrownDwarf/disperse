@@ -14,6 +14,9 @@ Thank you for the useful review--we believe we have addressed all comments in th
 
 > 5. As I understand it, the Ohmic dissipation approach to mass loss involves inflating the planet until Roche lobe overflow occurs. If that is the cause of the observed mass loss, it prescribes a particular mass for the planet such that its hill radius is equal to its radius. You mention this in Section 5.4, but I feel like it should be more prominent as a prediction of the RLO hypothesis. You should also calculate the required mass to evaluate how consistent it is with observations.
 
+Well put.  We have added an opening paragraph to Section 5.2 explaining this scenario, and revise the discussion in Section 5.4.
+
+
 > 4. In the right panel of Fig. 16, you must be assuming an XUV flux (or XUV luminosity and semi-major axis). Would you put that in the caption somewhere?
 a. Also, on the off chance you care, the reason the dotted line and the mass loss rate don't line up is because it plots a line of constant mass-loss rate, not timescale (a factor of M_planet). I avoided timescales as I worried that the positive-feedback makes them misleading, but perhaps it's helpful here for comparison with Ohmic dissipation predictions.
 
