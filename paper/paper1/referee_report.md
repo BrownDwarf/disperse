@@ -19,6 +19,7 @@ a. Also, on the off chance you care, the reason the dotted line and the mass los
 
 > 5. "In particular, heavy elements would easily leak into the planetary wind, yielding possibly many observable metal lines in the UV." While true, I don't think this is much different from XUV-driven mass loss, which also carries out any heavy elements that are present in the planet's upper atmosphere.
 
+Agreed, this distinction as written appears more mild than initially proposed. We still believe there could/should be a measurable enhancement in metal lines in the the RLO limit, so we added text to clarify that RLO should show an enhancement above-and-beyond what we may expect from XUV-driven escape alone.  The provisos may be somewhat speculative since the capability to distinguish these enhancements uniquely does not appear feasible with current theory or observations.  The main motivation to keep this somewhat speculative paragraph is to encourage the risky business of observing metal line tracers that may otherwise be projected as non-detections.
 
 > 6. Line 1143: absurdly minor nitpick: I think plages is pluralized with an unpronounced 's'.
 Corrected! 
