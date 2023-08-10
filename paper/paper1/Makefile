@@ -1,11 +1,10 @@
 all: ms.pdf
 
 %.pdf: %.tex
-	tectonic ms.tex
+	tectonic --keep-intermediates ms.tex 
 	#cp ms.tex final
 	rm -rf *Notes.bib
 	rm -rf *.log
-	rm -rf *.bbl
 	rm -rf *.aux
 	rm -rf *.out
 	rm -rf *.blg
