@@ -8,7 +8,8 @@ Thank you for the useful review--we believe we have addressed all comments in th
 
 > 2. I don't think you've mentioned it, but the orbital evolution of this system is of great interest. Whether by RLO or XUV mass-loss, the asymmetric tail of the planet will drive up the planet's semimajor axis. This is discussed for the RLO case by Valsecci et al. 2014 & 2015, and I think it bears mentioning here. It may even be that the present rate of mass loss could not have occurred over the planet's lifetime, as it would no longer be at such a close semi-major axis.
 
-
+We had contemplated (but did not include in the submitted paper) the prospect of searching for TTVs in the TESS data-- a non-detection could still provide constraints on extreme mass loss scenarios.  On the theory side, we thought that the details of the specific angular momentum loss would alter the TTVs we may expect, and so fully interpreting TTV data may need an MHD simulation.  
+In response to your report, we prepended a section to the discussion "Prospect for orbital evolution".  Here we added the references to Valsecchi et al. 2014 & 2015 (thank you), and describe a coarse constraint on P-dot from the circa 2013 ground-based Period estimate and the circa 2020 TESS estimate.
 
 > 3. Line 816, "The gas increasingly experiences the star's Keplerian potential past the Roche lobe, accelerating in the direction of orbital motion, +x" The first part of this sentence is true, but to my eye it's not a great way to explain the prograde acceleration. In the rotating frame, the coriolis effect causes the inward-moving gas to advance ahead of the planet. In the inertial frame, the gas is launched onto an orbit with a smaller periapse than the planet, and so runs ahead. Elsewhere you say Keplerian shear, which is better, but I still feel like this is a roundabout way to explain things. Still, if you prefer your existing explanation, you need only change this sentence to mention shear.
 
