@@ -8,11 +8,15 @@ Thank you for the useful review--we believe we have addressed all comments in th
 
 > 2. I don't think you've mentioned it, but the orbital evolution of this system is of great interest. Whether by RLO or XUV mass-loss, the asymmetric tail of the planet will drive up the planet's semimajor axis. This is discussed for the RLO case by Valsecci et al. 2014 & 2015, and I think it bears mentioning here. It may even be that the present rate of mass loss could not have occurred over the planet's lifetime, as it would no longer be at such a close semi-major axis.
 
+
+
 > 3. Line 816, "The gas increasingly experiences the star's Keplerian potential past the Roche lobe, accelerating in the direction of orbital motion, +x" The first part of this sentence is true, but to my eye it's not a great way to explain the prograde acceleration. In the rotating frame, the coriolis effect causes the inward-moving gas to advance ahead of the planet. In the inertial frame, the gas is launched onto an orbit with a smaller periapse than the planet, and so runs ahead. Elsewhere you say Keplerian shear, which is better, but I still feel like this is a roundabout way to explain things. Still, if you prefer your existing explanation, you need only change this sentence to mention shear.
+
+We prefer your explanation and have replaced the quoted text the revised sentences.  The resulting paragraph is much clearer.
 
 > 4. Inspection of Fig. 10 seems to indicate a faint trailing tail in the blue-shifted range (0.1 phase, ~10831 Angstroms). I take it you've concluded that this is not statistically significant?
 
-We briefly note this feature in Section 3.5 and find it to be statistically significant.  The conspicuous blueshift pattern is consistent with a lower total mass of material accelerated by the stellar wind.
+We briefly note this feature in Section 3.5 and find it to be statistically significant.  Although it appears weak in Figure 10, it is robustly detected in MCMC fits in Figure 11, where the accelerating blueshift is conspicuous. Such a  pattern is consistent with a lower total mass of material (compared to the leading tail) accelerated by the stellar wind.  Hypothetically, constraints on the impulse by the stellar wind could be worked out based on these observations, but we do not attempt to model such effects.
 
 > 5. As I understand it, the Ohmic dissipation approach to mass loss involves inflating the planet until Roche lobe overflow occurs. If that is the cause of the observed mass loss, it prescribes a particular mass for the planet such that its hill radius is equal to its radius. You mention this in Section 5.4, but I feel like it should be more prominent as a prediction of the RLO hypothesis. You should also calculate the required mass to evaluate how consistent it is with observations.
 
