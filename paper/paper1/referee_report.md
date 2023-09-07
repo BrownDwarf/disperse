@@ -12,6 +12,8 @@ Thank you for the useful review--we believe we have addressed all comments in th
 
 > 4. Inspection of Fig. 10 seems to indicate a faint trailing tail in the blue-shifted range (0.1 phase, ~10831 Angstroms). I take it you've concluded that this is not statistically significant?
 
+We briefly note this feature in Section 3.5 and find it to be statistically significant.  The conspicuous blueshift pattern is consistent with a lower total mass of material accelerated by the stellar wind.
+
 > 5. As I understand it, the Ohmic dissipation approach to mass loss involves inflating the planet until Roche lobe overflow occurs. If that is the cause of the observed mass loss, it prescribes a particular mass for the planet such that its hill radius is equal to its radius. You mention this in Section 5.4, but I feel like it should be more prominent as a prediction of the RLO hypothesis. You should also calculate the required mass to evaluate how consistent it is with observations.
 
 Well put.  We have added an opening paragraph to Section 5.2 explaining this scenario, and revise the discussion in Section 5.4.
