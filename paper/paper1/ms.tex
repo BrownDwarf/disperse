@@ -294,6 +294,8 @@ HAT-P-67A was saturated in ZTF \citep{2019PASP..131a8002B}, but the M-dwarf comp
 
 \section{Analysis} \label{secAnalysis}
 
+\authorcomment1{The entire suite of project files, reproducible Jupyter Notebooks, selected data files, and revision history are publically available as a reproducible GitHub repository\footnote{\url{https://github.com/BrownDwarf/disperse}}.}
+
 \subsection{Gaia DR3}\label{analysisgaiaDR3}
 \citet{2017AJ....153..211Z} previously derived stellar radius estimates of 2.1-2.7 $R_\odot$ through Spectral Energy Distribution (SED) and isochrone fitting as part of a joint orbit fit.  We systematically increase those stellar radius estimates by 8.7\% to match the greater Gaia \emph{DR3} distance (\S \ref{gaiadr3}).  For a fixed $R_p/R_\star$ from the measured transit depth, the larger $R_\star$ implies a proportionally larger planet radius. This update systematically decreases the estimate for the already-low density of HAT-P-67 by 28\%, to a mere $<$0.035 g$\;$cm$^{-3}$, albeit with significant uncertainties from the weak mass constraint.  The luminosity increases by 18\%, to about 10.3 $L_\odot$.
 
@@ -314,6 +316,8 @@ We assembled a composite lightcurve by stitching TESS Sectors 24, 26, 51, 52, 53
 The TESS Sector 26 lightcurve exhibits a weak $\sim$3 ppt peak-to-valley out-of-transit modulation. TESS Sectors 51-53 do not show as conspicuous a modulation signal but still show some ostensibly stellar variability.  The ebb and flow of the modulation can be seen in the minimally processed TESS lightcurve in Figure \ref{fig:TESSoverview}.  We fit the TESS lightcurve modulation with a quasiperiodic Gaussian Process (GP) model using \texttt{celerite} \citep{celerite1,celerite2}.  The GP model fit to the entire composite lightcurve yields a 4.7-day period; when fit to individual sectors alone, the periods hover around 5.9 days.  The signal is weak enough, especially in Sectors 51-53, that \emph{TESS} instrumental systematics may contribute some of the out-of-transit modulation that we see in Figure \ref{fig:TESSoverview}.
 
 We can independently constrain the expected stellar rotation period based on the stellar radius estimate, $v\sin{i_\star}$, and the observation of the planet's orbital inclination $i_p\sim90^\circ$ from orbit fitting and Doppler tomography \citep{2017AJ....153..211Z}.  We assume spin-orbit alignment, $i_\star \sim i_p$.  We adopt a high limit of $v\sin{i}=35.8\pm1.1$ km/s and a lower $v\sin{i}=30.9\pm2$ km/s value if macroturbulence is accounted for.  We obtain a range of $3.2 < P_\mathrm{rot}  < 4.8 $ days.  This range is typical for F stars that have not yet evolved too far into the subgiant branch \citep{2022ApJ...930....7A}.  The geometrical constraint comports with the 4.7-day GP-based modulation period derived from the stitched TESS lightcurve but is lower than the 5.9-day per-Sector fits, slightly preferring the lower 4.7-day modulation as the stellar rotation period.  The 5.9-day value would require a stellar radius over 3.2$R_\odot$, which appears implausible.
+
+
 
 
 \input{revise_props_tbl.tex}
