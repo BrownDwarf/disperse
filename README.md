@@ -1,11 +1,10 @@
 # disperse
 
+Reproducible GitHub Repository and revision history for the paper:
 
-Quantifying the variety of exoplanet atmosphere signals in HPF spectroscopy
+"A Large and Variable Leading Tail of Helium in a Hot Saturn Undergoing Runaway Inflation"
 
-### Authors  
-- Aishwarya Ganesh (UT Austin)
-- Caroline Morley (UT Austin)
-- Michael Gully-Santiago (UT Austin)
+<a href="https://ui.adsabs.harvard.edu/abs/2023arXiv230708959G/abstract"><img src="https://img.shields.io/badge/NASA ADS-Gully--Santiago et al. (2023)-green"></a>
 
-Copyright The Authors (2020)
+
+Copyright The Authors (2020, 2021, 2022, 2023)
