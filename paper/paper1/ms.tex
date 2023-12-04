@@ -270,9 +270,9 @@ Only 19 out of the 39 nights possess A0V telluric calibration standard stars.  T
 \end{deluxetable}
 
 \subsection{TESS Light Curves}
-HAT-P-67 was observed with the \emph{Transiting Exoplanet Survey Satellite} \citep[TESS,][]{2014SPIE.9143E..20R} in Sectors 24, 26, 51, 52, 53 with 2-minute cadence, and in Sector 25 with 30-minute (FFI) cadence.  The Sector 25 FFI data fell just barely off the TESS detectors, in collateral pixels where no starlight ever hit the detector.
+HAT-P-67 was observed with the \emph{Transiting Exoplanet Survey Satellite} \citep[TESS,][]{2014SPIE.9143E..20R} in Sectors 24, 26, 51, 52, 53 with 2-minute cadence, and in Sector 25 with 30-minute (FFI) cadence.  The Sector 25 FFI data fell just barely off the TESS detectors, in collateral pixels where no starlight ever hit the detector.  \authorcomment1{We retrieved the data via the Mikulski Archive for Space Telescopes (MAST) available publically through the public portal \dataset[10.17909/pc4f-f919]{http://doi.org/10.17909/pc4f-f919}.}
 
-We also assembled a comparison sample of about 1000 lightcurves to interpret the prevalence of lightcurve modulation and stellar activity among broadly F subgiant-like stars.  We selected sources based on \emph{Gaia} DR3 $T_\mathrm{eff}$ estimates and similar $\log{g}$,  and availability of at least one sector of TESS 2-minute cadence data.  We visually spot-checked these lightcurves to understand artifacts and windowing effects.
+We also assembled a comparison sample of about 1000 lightcurves to interpret the prevalence of lightcurve modulation and stellar activity among broadly F subgiant-like stars.  We selected sources based on \emph{Gaia} DR3 \citep{2023A&A...674A...1G} $T_\mathrm{eff}$ estimates and similar $\log{g}$,  and availability of at least one sector of TESS 2-minute cadence data.  We visually spot-checked these lightcurves to understand artifacts and windowing effects.
 
 \begin{figure*}
   \centering
@@ -307,7 +307,7 @@ HAT-P-67A was saturated in ZTF \citep{2019PASP..131a8002B}, but the M-dwarf comp
 Previously, \hatpb~transits had only been detected with \emph{HATNet} \citep{2004PASP..116..266B} and followed up with KeplerCam on the FLWO 1.2 m telescope \citep{2017AJ....153..211Z}. These ground-based photometers were not intended to measure weak, long-term stellar variability signals.  We, therefore, examined the \emph{TESS} lightcurves for out-of-transit photometric variability.  The revised precision and continuous coverage of \emph{TESS} can also refine the orbital solution.
 
 \subsubsection{Revised exoplanet orbital parameters}
-We assembled a composite lightcurve by stitching TESS Sectors 24, 26, 51, 52, 53, which were reduced with the default SPOC pipeline \citep{2020RNAAS...4..201C}, and lightly post-processed with \texttt{lightkurve} \citep{geert_barentsen_2019_2565212}.  These TESS data exhibit an RMS scatter of better than 1 part-per-thousand (ppt) at native 2-minute sampling.  We fit a Keplerian orbit model to the TESS lightcurve using the \texttt{exoplanet} framework \citep{exoplanet:joss}.  We obtained revised orbital properties shown in Table \ref{tabOrbit}.  These properties are broadly consistent with the previously reported values from \citet{2017AJ....153..211Z} and the updated ephemeris of \citet{2022ApJS..259...62I}.  Figure \ref{fig:TESSoverview} shows an overview of all the TESS Sectors with a Gaussian Process trendline in green highlighting the out-of-transit modulations, and the exoplanet transit model in orange.  Figure \ref{fig:transit} shows the best-fit orbit overlaid in purple on the detrended TESS lightcurve, which is binned in the orange dots.  Table \ref{tabOrbit} lists only one of the previous orbit determinations---also assuming a circular orbit---compared with the orbital solution reported here.
+We assembled a composite lightcurve by stitching TESS Sectors 24, 26, 51, 52, 53, which were reduced with the default SPOC pipeline \citep{2020RNAAS...4..201C}, and lightly post-processed with \texttt{lightkurve} \citep{2018ascl.soft12013L,geert_barentsen_2019_2565212}.  These TESS data exhibit an RMS scatter of better than 1 part-per-thousand (ppt) at native 2-minute sampling.  We fit a Keplerian orbit model to the TESS lightcurve using the \texttt{exoplanet} framework \citep{exoplanet:joss}.  We obtained revised orbital properties shown in Table \ref{tabOrbit}.  These properties are broadly consistent with the previously reported values from \citet{2017AJ....153..211Z} and the updated ephemeris of \citet{2022ApJS..259...62I}.  Figure \ref{fig:TESSoverview} shows an overview of all the TESS Sectors with a Gaussian Process trendline in green highlighting the out-of-transit modulations, and the exoplanet transit model in orange.  Figure \ref{fig:transit} shows the best-fit orbit overlaid in purple on the detrended TESS lightcurve, which is binned in the orange dots.  Table \ref{tabOrbit} lists only one of the previous orbit determinations---also assuming a circular orbit---compared with the orbital solution reported here.
 
 \subsubsection{Stellar rotation rate from periodogram analysis}\label{TESSmodulation}
 
@@ -669,10 +669,10 @@ We examined the \ion{Ca}{2} IR Triplet lines (Ca IRT) for evidence of variabilit
   \texttt{numpy} \citep{2020NumPy-Array},
   \texttt{scipy} \citep{2020SciPy-NMeth},
   \texttt{ipython} \citep{perez07},
-  \texttt{seaborn} \citep{waskom14},
+  \texttt{seaborn} \citep{waskom14,2021JOSS....6.3021W},
   \texttt{astropy} \citep{2022ApJ...935..167A},
   \texttt{muler} \citep{2022JOSS....7.4302G},
-  \texttt{lightkurve}, \citep{geert_barentsen_2019_2565212},
+  \texttt{lightkurve}, \citep{2018ascl.soft12013L,geert_barentsen_2019_2565212},
   \texttt{telfit} \citep{2014AJ....148...53G},
   \texttt{exoplanet} \citep{exoplanet:joss},
   \texttt{jupyter} \citep{Kluyver2016jupyter},
